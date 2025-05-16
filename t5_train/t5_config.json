@@ -1,0 +1,13 @@
+{
+    "model": "codet5",
+    "multi_gpu": true,
+    "load_trained": false,
+    "b_size": 32,
+    "n_epochs": 10,
+    "lr": 1e-4,
+    "max_i_len": 128,
+    "max_o_len": 512,
+    "seed": 1,
+    "model_path": "codet5-shio10K/",
+    "data_path": "data/"
+}

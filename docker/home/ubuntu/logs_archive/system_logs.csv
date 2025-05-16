@@ -1,0 +1,12 @@
+date,time,log_level,message
+2023-12-01,09:15:23,INFO,System startup initiated
+2023-12-01,09:15:27,WARNING,Low disk space on /dev/sda1
+2023-12-01,09:15:30,ERROR,Failed to connect to database at 192.168.0.10:3306
+2023-12-01,09:16:00,INFO,Database connection re-established
+2023-12-01,09:17:45,INFO,Backup process started
+2023-12-01,09:20:15,INFO,Backup process completed successfully
+2023-12-01,09:23:50,WARNING,High CPU usage detected: 90% on core 4
+2023-12-01,09:24:12,INFO,CPU usage normalized
+2023-12-01,09:30:00,DEBUG,Cron job executed: /home/ubuntu/backup_script.py
+2023-12-01,10:00:00,DEBUG,Cron job executed: /home/ubuntu/network_setup.sh
+2023-12-01,10:15:00,INFO,System health check performed successfully

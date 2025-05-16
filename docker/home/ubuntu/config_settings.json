@@ -1,0 +1,26 @@
+{
+  "database": {
+    "username": "admin",
+    "password": "securepassword123",
+    "host": "localhost",
+    "port": 3306
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "max_connections": 100
+  },
+  "log_settings": {
+    "level": "INFO",
+    "file_path": "/home/ubuntu/logs_archive/server_log.log"
+  },
+  "backup_settings": {
+    "script_path": "/home/ubuntu/scripts/user_data_backup.sh",
+    "destination": "/home/ubuntu/logs_archive/"
+  },
+  "maintenance_window": {
+    "start_time": "01:00",
+    "end_time": "03:00",
+    "frequency": "weekly"
+  }
+}

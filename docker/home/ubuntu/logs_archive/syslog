@@ -1,0 +1,18 @@
+Apr 30 14:23:11 ubuntu systemd[1]: Starting Daily apt download activities...
+Apr 30 14:23:12 ubuntu systemd[1]: apt-daily.timer: Adding 1h 12min 34.453s random time.
+Apr 30 14:23:12 ubuntu systemd[1]: Started Daily apt download activities.
+Apr 30 14:24:05 ubuntu CRON[2431]: (ubuntu) CMD (/usr/bin/python3 /home/ubuntu/scripts/cleanup.py)
+Apr 30 14:25:17 ubuntu sshd[2472]: Accepted publickey for ubuntu from 192.168.1.102 port 58432 ssh2: RSA SHA256:Xa...
+Apr 30 14:25:17 ubuntu sshd[2472]: pam_unix(sshd:session): session opened for user ubuntu by (uid=0)
+Apr 30 14:25:30 ubuntu sudo:     ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/systemctl restart apache2
+Apr 30 14:25:30 ubuntu sudo: pam_unix(sudo:session): session opened for user root by ubuntu(uid=0)
+Apr 30 14:25:30 root systemd[1]: Stopping The Apache HTTP Server...
+Apr 30 14:25:31 root systemd[1]: Starting The Apache HTTP Server...
+Apr 30 14:25:31 root systemd[1]: Started The Apache HTTP Server.
+Apr 30 14:25:31 ubuntu sudo: pam_unix(sudo:session): session closed for user root
+Apr 30 14:27:02 root CRON[2514]: (root) CMD (/usr/local/bin/backup.sh)
+Apr 30 14:28:44 ubuntu kernel: [ 8231.675432] eth0: Link is Down
+Apr 30 14:28:47 ubuntu kernel: [ 8234.984720] eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+Apr 30 14:29:12 ubuntu systemd[1]: Starting Rotate log files...
+Apr 30 14:29:12 ubuntu systemd[1]: logrotate.service: Succeeded.
+Apr 30 14:29:12 ubuntu systemd[1]: Finished Rotate log files.

@@ -1,0 +1,11 @@
+Session ID: 456993041
+User: test_user
+Login Time: 2023-12-10 14:05:32
+Session Type: Remote SSH
+Actions Taken:
+- Accessed config_settings.json
+- Modified server_log.log
+Logout Time: 2023-12-10 16:20:18
+Duration: 2 hours 14 minutes 46 seconds
+Location: 192.168.1.102
+Session Status: Terminated normally

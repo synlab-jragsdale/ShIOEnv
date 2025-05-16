@@ -1,0 +1,11 @@
+Apr 30 10:42:15 ubuntu sudo:     ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/apt update
+Apr 30 10:42:16 ubuntu sudo: pam_unix(sudo:session): session opened for user root by ubuntu(uid=0)
+Apr 30 10:42:18 ubuntu systemd[1]: Started APT update for user session.
+Apr 30 10:42:20 root CRON[3215]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Apr 30 10:43:01 ubuntu sshd[3220]: Accepted password for ubuntu from 192.168.1.10 port 55022 ssh2
+Apr 30 10:43:01 ubuntu sshd[3220]: pam_unix(sshd:session): session opened for user ubuntu by (uid=0)
+Apr 30 10:45:10 root systemd[1]: Stopping User Manager for UID 1000...
+Apr 30 10:45:10 root systemd[1]: Stopped User Manager for UID 1000.
+Apr 30 10:45:30 ubuntu sudo:     ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/systemctl restart apache2
+Apr 30 10:45:30 ubuntu sudo: pam_unix(sudo:session): session opened for user root by ubuntu(uid=0)
+Apr 30 10:45:32 root systemd[1]: Restarted The Apache HTTP Server.

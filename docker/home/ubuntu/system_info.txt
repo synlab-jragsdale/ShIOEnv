@@ -1,0 +1,21 @@
+System Information Report - Generated 2023-12-01
+
+Hostname: ubuntu-server
+Operating System: Ubuntu 20.04 LTS
+Kernel Version: 5.4.0-42-generic
+
+Hardware:
+- CPU: Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+- Memory: 16GB
+- Disk: 1TB SSD
+
+Network Interfaces:
+- eth0: 192.168.1.101
+- wlan0: Not Connected
+
+Uptime: 15 days 7 hours 32 minutes
+
+Security Updates:
+- All security updates applied up to 2023-11-30
+
+End of Report

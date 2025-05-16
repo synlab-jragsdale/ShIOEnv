@@ -1,0 +1,11 @@
+id,username,email,registration_date,last_login
+1,johndoe,johndoe@example.com,2021-06-15,2023-12-01
+2,janesmith,janesmith@example.com,2021-08-23,2023-12-05
+3,bobkay,bobkay@example.com,2022-01-09,2023-12-10
+4,alicewong,alicewong@example.com,2022-03-15,2023-11-28
+5,stevejobs,stevejobs@example.com,2022-05-21,2023-11-30
+6,lisagriffin,lisagriffin@example.com,2022-07-30,2023-12-08
+7,markzulu,markzulu@example.com,2022-09-11,2023-12-09
+8,sarahconnor,sarahconnor@example.com,2023-01-02,2023-12-10
+9,rickflagg,rickflagg@example.com,2023-03-22,2023-12-12
+10,emilystone,emilystone@example.com,2023-06-18,2023-12-11
