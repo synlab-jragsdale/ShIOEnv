@@ -41,16 +41,17 @@ ShIOEnv is a custom OpenAI Gym environment that models command construction as a
 See `requirements.txt` for Python dependencies:
 
 ```text
-docker_py==1.10.6
+docker==7.1.0
+docker-compose==1.29.2
 gym==0.26.2
 nltk==3.9.1
-numpy==2.2.5
-python_Levenshtein==0.27.1
+numpy==1.24.4
+python_Levenshtein==0.25.1
 sacrebleu==2.5.1
-scikit_learn==1.6.1
-torch==2.3.1
-tqdm==4.66.2
-transformers==4.40.2
+scikit_learn==1.3.2
+torch==2.4.1
+tqdm==4.67.1
+transformers==4.46.3
 ```
 
 Install via:
