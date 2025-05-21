@@ -5,7 +5,7 @@ from time import sleep
 from typing import Optional, Tuple, List, Any, Dict
 from collections import defaultdict
 
-import gym
+import gymnasium as gym
 import random
 
 from ShIOEnv.utils import calc_lev_sim_single, get_env_context, simple_send_cmds_docker, get_context_diff, \

@@ -13,7 +13,7 @@ from typing import List, Tuple
 from tqdm import tqdm
 import numpy as np
 import torch
-import gym
+import gymnasium as gym
 from torch import nn
 
 from ShIOEnv.policyMasked import PolicyNetwork
@@ -469,7 +469,7 @@ class ShIOAgent:
 
         n_seqs = 0  # counter for trunc reset for next seq if multicommand session
 
-        env_name = env.get_image_name()
+        env_name = env.unwrapped.get_image_name()
         rand_map = copy.deepcopy(self.rand_map)  # create local instance to prevent created ghost files on reset
         dir_map = copy.deepcopy(self.dir_map)
 
@@ -504,12 +504,12 @@ class ShIOAgent:
                         exec_seq_rewards.append(info["redundancy_score"])  # redundancy score
                         rewards[-1] += reward
 
-                        cwd = env.get_curr_cwd()  # updating cwd after exec_action (full cmd in sequence)
+                        cwd = env.unwrapped.get_curr_cwd()  # updating cwd after exec_action (full cmd in sequence)
                         if cwd not in dir_map[env_name].keys():
                             get_local_ph(cwd, rand_map=rand_map, dir_map=dir_map,
                                               container_name=env_name)
 
-                        if n_seqs >= env.get_max_global():  # final command is done, exit loop
+                        if n_seqs >= env.unwrapped.get_max_global():  # final command is done, exit loop
                             done = True
                         else:
                             trunc = False  # reset loop for next iteration
@@ -596,7 +596,7 @@ class ShIOAgent:
                         new_seq = ''.join(random.choices(string.ascii_letters + string.digits, k=random.randint(1, 8)))
                 elif _ in LOCAL_RANDOM_PLACEHOLDERS:
                     # get second to most previous cwd in case current command is cd (will be an invalid key since cd current cmd may not be fully built)
-                    cwd = env.get_prev_cwd()
+                    cwd = env.unwrapped.get_prev_cwd()
                     try:
                         new_seq = dir_map[env_name][cwd][_][random.randint(0, len(dir_map[env_name][cwd][_]) - 1)]
                     except ValueError:  # no valid placeholder in current directory, create random string
