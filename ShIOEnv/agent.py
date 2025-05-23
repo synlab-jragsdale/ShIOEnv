@@ -601,8 +601,8 @@ class ShIOAgent:
                         new_seq = dir_map[env_name][cwd][_][random.randint(0, len(dir_map[env_name][cwd][_]) - 1)]
                     except ValueError:  # no valid placeholder in current directory, create random string
                         new_seq = ''.join(random.choices(string.ascii_letters + string.digits, k=random.randint(1, 8)))
-                elif _ in RANDOM_STR_PLACEHOLDERS:
-                    new_seq = ''.join(random.choices(string.ascii_letters + string.digits, k=random.randint(1, 8)))
+                elif _ in RANDOM_STR_PLACEHOLDERS.keys():
+                    new_seq = RANDOM_STR_PLACEHOLDERS[_][random.randint(0, len(RANDOM_STR_PLACEHOLDERS[_]) - 1)]
                 elif _ == "[Character]":
                     new_seq = ''.join(random.choices(string.ascii_letters + string.digits, k=1))
                 elif _ in RANDOM_NUM_PLACEHOLDERS.keys():
