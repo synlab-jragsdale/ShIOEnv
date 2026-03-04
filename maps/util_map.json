@@ -1,0 +1,6529 @@
+{
+  "[START]": [
+    "[InputNest]",
+    "[InputNest][SemiInputNest]",
+    "[InputNest][FileRedirInputNest]"
+  ],
+  "[InputNest]": [
+    "[Input]"
+  ],
+  "[PipeInputNest]": [
+    " | [PipeInput]"
+  ],
+  "[FileRedirInputNest]": [
+    " >> [FileTarget]",
+    " >> [NewFile]",
+    " > [FileTarget]",
+    " > [NewFile]"
+  ],
+  "[LOpInputNest]": [
+    " && [Input]",
+    " || [Input]"
+  ],
+  "[SemiInputNest]": [
+    "; [Input]"
+  ],
+  "[PipeInput]": [
+    "[grepPipe]",
+    "[wcPipe]",
+    "[cutPipe]",
+    "[uniqPipe]",
+    "[headPipe]",
+    "[tailPipe]",
+    "[sortPipe]",
+    "[gzipPipe]",
+    "[pastePipe]",
+    "[nlPipe]",
+    "[splitPipe]",
+    "[trPipe]",
+    "[cpioPipe]",
+    "[teePipe]",
+    "[odPipe]",
+    "[foldPipe]",
+    "[revPipe]",
+    "[commPipe]",
+    "[xargsPipe]"
+  ],
+    "[df]": [
+        "df [dfOptions]",
+        "df [dfOptions] [FileTarget]"
+    ],
+    "[cd]": [
+        "cd [cdOptions] [cdTarget]"
+    ],
+    "[cdTarget]": [
+        "[DirectoryTarget]"
+    ],
+    "[wTarget]": [
+        "[Username]",
+        "[BadTarget]",
+        ""
+    ],
+    "[w]": [
+        "w [wOptions] [wTarget]"
+    ],
+    "[lsTarget]": [
+        "[Files]",
+        "[FilePattern]",
+        "[Directories]",
+        "[DirectoryTarget]",
+        "[FileTarget]",
+        ""
+    ],
+    "[ls]": [
+        "ls [lsOptions] [lsTarget]"
+    ],
+    "[chmodTarget]": [
+        "[FileTarget]",
+        "--reference=[FileTarget] [FileTarget]",
+        "[ChmodPerms] [FileTarget]",
+        "[ChmodPerms],[ChmodPerms] [FileTarget]"
+    ],
+    "[chmod]": [
+        "chmod [chmodOptions] [chmodTarget]"
+    ],
+    "[chownTarget]": [
+        "[Username] [FileTarget]",
+        "[Username]:[Groupname] [FileTarget]",
+        "--reference=[FileTarget] [FileTarget]"
+    ],
+    "[chown]": [
+        "chown [chownOptions] [chownTarget]"
+    ],
+    "[chgrpTarget]": [
+        "[Groupname] [FileTarget]",
+        "--reference=[FileTarget] [FileTarget]"
+    ],
+    "[chgrp]": [
+        "chgrp [chgrpOptions] [chgrpTarget]"
+    ],
+    "[rmTarget]": [
+        "[FileTarget]",
+        "[FileTarget] [FileTarget]",
+        "[DirectoryTarget]",
+        "[FilePattern]"
+    ],
+    "[rm]": [
+        "rm [rmOptions] [rmTarget]"
+    ],
+    "[file]": [
+        "file [fileOptions] [FileTarget]",
+        "file [fileOptions] [Files]"
+    ],
+    "[uname]": [
+        "uname [unameOptions]"
+    ],
+    "[find]": [
+        "find [findOptions] [AnyDir] [findExpr]"
+    ],
+    "[who]": [
+        "who [whoOptions] [FileTarget]",
+        "who [whoOptions]"
+    ],
+    "[duTarget]": [
+        "[FileTarget]",
+        "[DirectoryTarget]",
+        "--files0-from=[FileTarget] [FileTarget]"
+    ],
+    "[du]": [
+        "du [duOptions] [duTarget]"
+    ],
+    "[users]": [
+        "users [usersOptions] [FileTarget]",
+        "users [usersOptions]"
+    ],
+    "[whoami]": [
+        "whoami [whoamiOptions]"
+    ],
+    "[ps]": [
+        "ps [psOptions]"
+    ],
+    "[echoTarget]": [
+        "[String]",
+        "\"[String]\"",
+        "[String] > [NewFile]",
+        "[String] >> [FileTarget]",
+        "[String] > [FileTarget]"
+    ],
+    "[echo]": [
+        "echo [echoOptions] [echoTarget]"
+    ],
+    "[echoString]": [
+        "-[echoChar]",
+        "-[echoChar][echoChar]",
+        "-[echoChar][echoChar][echoChar]"
+    ],
+    "[echoChar]": [
+        "n",
+        "e",
+        "E"
+    ],
+    "[echoOptions]": [
+        "-[echoChar]<ns>",
+        "<ns>[echoChar]<ns>",
+        "[echoLongOpt]"
+    ],
+    "[ulimit]": [
+        "ulimit [ulimitOptions]"
+    ],
+    "[uptime]": [
+        "uptime [uptimeOptions]"
+    ],
+    "[pwd]": [
+        "pwd [pwdOptions]"
+    ],
+    "[dd]": [
+        "dd [ddOptions]"
+    ],
+    "[lnOne]": [
+        "-t [DirectoryTarget]",
+        "[UtilPath]",
+        "[FileTarget]"
+    ],
+    "[lnTwo]": [
+        "[FileTarget]",
+        "[DirectoryTarget]",
+        "[UtilPath]"
+    ],
+    "[ln]": [
+        "ln [lnOptions] [lnOne] [lnTwo]"
+    ],
+    "[touch]": [
+        "touch [touchOptions] [NewFiles]",
+        "touch [touchOptions] [Files]"
+    ],
+    "[free]": [
+        "free [freeOptions]"
+    ],
+    "[UserTarget]": [
+        "[Username]",
+        "[BadTarget]"
+    ],
+    "[id]": [
+        "id [idOptions] [UserTarget]",
+        "id [idOptions]"
+    ],
+    "[export]": [
+        "export [exportOptions][exportTarget]"
+    ],
+    "[exportTarget]": [
+        "",
+        " [Variable]",
+        " [SystemVarAssign]",
+        " [BadTarget]"
+    ],
+    "[env]": [
+        "env [envOptions]"
+    ],
+    "[last]": [
+        "last [lastOptions][lastTarget][lastTarget]"
+    ],
+    "[lastTarget]": [
+        "",
+        " [Username]",
+        " tty[SmallNumber]",
+        " [SmallNumber]",
+        " [BadTarget]"
+    ],
+    "[grep]": [
+        "grep [grepOptions] [QuotePattern] [Files]",
+        "grep [grepOptions] [QuotePattern] [FileTarget]"
+    ],
+  "[grepPipe]": [
+        "grep [grepOptions] [QuotePattern]"
+    ],
+    "[tar]": [
+        "tar [tarCatOpt] [tarOptions] [TarFile] [TarFile]",
+        "tar [tarOperation] [tarArchiveUseOpt] [tarOptions] [FileTarget]",
+        "tar [tarDelExtractOpt] [tarArchiveUseOpt] [tarOptions] [FileTarget]",
+        "tar [tarCatOpt] [tarOptions] [TarFile] [BadTarget]",
+        "tar [tarOperation] [tarArchiveUseOpt] [tarOptions] [BadTarget]",
+        "tar [tarDelExtractOpt] [tarArchiveUseOpt] [tarOptions] [BadTarget]"
+    ],
+    "[gzip]": [
+        "gzip [gzipOptions] [gzipTarget]"
+    ],
+  "[gzipPipe]": [
+        "gzip [gzipOptions]",
+        "gzip [gzipOptions] -"
+    ],
+    "[cat]": [
+        "cat [catOptions] [Files]",
+        "cat [catOptions] [FileTarget]"
+    ],
+    "[wc]": [
+        "wc [wcOptions] [Files]",
+        "wc [wcOptions] [FileTarget]"
+    ],
+  "[wcPipe]": [
+        "wc [wcOptions]"
+    ],
+    "[rmdir]": [
+        "rmdir [rmdirOptions] [DirectoryTarget]",
+        "rmdir [rmdirOptions] [BadTarget]"
+    ],
+    "[mkdir]": [
+        "mkdir [mkdirOptions] [NewDirectory]"
+    ],
+    "[mv]": [
+        "mv [mvOptions] [FileTarget] [NewFile]",
+        "mv [mvOptions] [DirectoryTarget] [NewDirectory]",
+        "mv [mvOptions] [BadTarget] [NewFile]"
+    ],
+    "[cp]": [
+        "cp [cpOptions] [CpSrc] [NewFile]"
+    ],
+    "[whoamiOptions]": [
+        "[whoamiLongOpt]"
+    ],
+    "[ethtoolOptions]": [
+        "[ethtoolLongOpt]"
+    ],
+    "[ethtool]": [
+        "ethtool [Interface]",
+        "ethtool -a [Interface]",
+        "ethtool --show-pause [Interface]",
+        "ethtool -A [Interface] [ethAOpts]",
+        "ethtool --pause [Interface] [ethAOpts]",
+        "ethtool -c [Interface]",
+        "ethtool --show-coalesce [Interface]",
+        "ethtool -C [ethCOpts] [Interface]",
+        "ethtool --coalesce [ethCOpts] [Interface]",
+        "ethtool -g [Interface]",
+        "ethtool --show-ring [Interface]",
+        "ethtool -G [Interface] [ethGOpts]",
+        "ethtool --set-ring [Interface] [ethGOpts]",
+        "ethtool -i [Interface]",
+        "ethtool --driver [Interface]",
+        "ethtool -d [Interface] [ethDOpts]",
+        "ethtool --register-dump [Interface] [ethDOpts]",
+        "ethtool -e [Interface] [ethEOpts]",
+        "ethtool --eeprom-dump [Interface] [ethEOpts]",
+        "ethtool -E [Interface] [ethEEOpts]",
+        "ethtool --change-eeprom [Interface] [ethEEOpts]",
+        "ethtool -k [Interface]",
+        "ethtool --show-features [Interface]",
+        "ethtool --show-offload [Interface]",
+        "ethtool -K [Interface] [ethKOpts]",
+        "ethtool --features [Interface] [ethKOpts]",
+        "ethtool --offload [Interface] [ethKOpts]",
+        "ethtool -p [Interface] [ethPOpts]",
+        "ethtool --identify [Interface] [ethPOpts]",
+        "ethtool -P [Interface]",
+        "ethtool --show [Interface]",
+        "ethtool -r [Interface]",
+        "ethtool --negotiate [Interface]",
+        "ethtool -S [Interface]",
+        "ethtool --statistics [Interface]",
+        "ethtool --phy [Interface]",
+        "ethtool -t [Interface] [ethTOpts]",
+        "ethtool --test [Interface] [ethTOpts]",
+        "ethtool -s [Interface] [ethSOpts]",
+        "ethtool -n [Interface] [ethNOpts]",
+        "ethtool -u [Interface] [ethNOpts]",
+        "ethtool --show-ntuple [Interface] [ethNOpts]",
+        "ethtool --show-nfc [Interface] [ethNOpts]",
+        "ethtool -N [Interface] [ethNNOpts]",
+        "ethtool -U [Interface] [ethNNOpts]",
+        "ethtool --config-nfc [Interface] [ethNNOpts]",
+        "ethtool --config-ntuple [Interface] [ethNNOpts]",
+        "ethtool -w [Interface] [ethWOpts]",
+        "ethtool --get-dump [Interface] [ethWOpts]",
+        "ethtool -W [Interface] [ethWWOpts]",
+        "ethtool --set-dump [Interface] [ethWWOpts]",
+        "ethtool -T [Interface]",
+        "ethtool --show-time-stamping [Interface]",
+        "ethtool -x [Interface]",
+        "ethtool --show-rxfh-indir [Interface]",
+        "ethtool --show-rxfh [Interface]",
+        "ethtool -X [Interface] [Interface] [ethXOpts]",
+        "ethtool --set-rxfh-indir [Interface] [ethXOpts]",
+        "ethtool --rxfh [Interface] [ethXOpts]",
+        "ethtool -f [Interface] [ethFOpts]",
+        "ethtool --flash [Interface] [ethFOpts]",
+        "ethtool -l [Interface]",
+        "ethtool --show-channels [Interface]",
+        "ethtool -L [Interface] [ethLOpts]",
+        "ethtool --set-channels [Interface] [ethLOpts]",
+        "ethtool -m [Interface] [ethMOpts]",
+        "ethtool --dump-module-eeprom [Interface] [ethMOpts]",
+        "ethtool --module-info [Interface] [ethMOpts]",
+        "ethtool --show-priv-flags [Interface]",
+        "ethtool --set-priv-flags [Interface] [ethSPFOpts]",
+        "ethtool --show-eee [Interface]",
+        "ethtool --set-eee [Interface] [ethSEEEOpts]",
+        "ethtool --set-phy-tunable [Interface] [ethSPTOpts]",
+        "ethtool --get-phy-tunable [Interface] [ethGPTOpts]",
+        "ethtool --reset [Interface] [ethResetOpts]",
+        "ethtool --show-fec [Interface]",
+        "ethtool --set-fec [Interface] encoding [ethSFopts]"
+    ],
+  "[dateObj]": [
+    "'+[DateTimeFormatList]'",
+    "+[DateTimeObj]",
+    ""
+  ],
+    "[date]": [
+        "date [dateOptions] [dateObj]"
+    ],
+    "[dmesg]": [
+        "dmesg [dmesgOptions]"
+    ],
+    "[lsblk]": [
+        "lsblk [lsblkOptions]"
+    ],
+    "[lscpu]": [
+        "lscpu [lscpuOptions]"
+    ],
+    "[dfChar]": [
+        "a",
+        "h",
+        "H",
+        "i",
+        "k",
+        "l",
+        "P"
+    ],
+    "[dfOptions]": [
+        "-[dfChar]<ns>",
+        "<ns>[dfChar]<ns>",
+        "-[dfCharOpt]",
+        "<ns>[dfCharOpt]",
+        "[dfLongOpt]"
+    ],
+    "[cdChar]": [
+        "L",
+        "P",
+        "e"
+    ],
+    "[cdOptions]": [
+        "-[cdChar]<ns>",
+        "<ns>[cdChar]<ns>",
+        "[cdLongOpt]",
+        "[cdLongOpt]"
+    ],
+    "[wChar]": [
+        "h",
+        "f",
+        "i",
+        "o",
+        "p",
+        "s",
+        "u",
+        "V"
+    ],
+    "[wOptions]": [
+        "-[wChar]<ns>",
+        "<ns>[wChar]<ns>",
+        "[wLongOpt]"
+    ],
+    "[lsChar]": [
+        "1",
+        "A",
+        "B",
+        "C",
+        "D",
+        "F",
+        "G",
+        "H",
+        "L",
+        "N",
+        "Q",
+        "R",
+        "S",
+        "U",
+        "X",
+        "Z",
+        "a",
+        "b",
+        "c",
+        "d",
+        "f",
+        "g",
+        "h",
+        "i",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "x"
+    ],
+    "[lsOptions]": [
+        "-[lsChar]<ns>",
+        "<ns>[lsChar]<ns>",
+        "-[lsCharOpt]",
+        "<ns>[lsCharOpt]",
+        "[lsLongOpt]"
+    ],
+    "[chmodChar]": [
+        "R",
+        "c",
+        "f",
+        "v"
+    ],
+    "[chmodOptions]": [
+        "-[chmodChar]<ns>",
+        "<ns>[chmodChar]<ns>",
+        "[chmodLongOpt]"
+    ],
+    "[ChmodPerms]": [
+        "[chmodType][chmodModifers][chmodPermList]",
+        "[chmodOctalPerm]"
+    ],
+    "[chownChar]": [
+        "H",
+        "L",
+        "P",
+        "R",
+        "c",
+        "f",
+        "h",
+        "v"
+    ],
+    "[chownOptions]": [
+        "-[chownChar]<ns>",
+        "<ns>[chownChar]<ns>",
+        "[chownLongOpt]"
+    ],
+    "[chgrpChar]": [
+        "H",
+        "L",
+        "P",
+        "R",
+        "c",
+        "f",
+        "h",
+        "v"
+    ],
+    "[chgrpOptions]": [
+        "-[chgrpChar]<ns>",
+        "<ns>[chgrpChar]<ns>",
+        "[chgrpLongOpt]"
+    ],
+    "[rmChar]": [
+        "f",
+        "r",
+        "R",
+        "d",
+        "v"
+    ],
+    "[rmOptions]": [
+        "-[rmChar]<ns>",
+        "<ns>[rmChar]<ns>",
+        "[rmLongOpt]"
+    ],
+    "[fileCharOpt]": [
+        "e [cFileType]",
+        "f [FileTarget]",
+        "F [Character]",
+        "P [cFileParam]=[Number]"
+    ],
+    "[fileChar]": [
+        "z",
+        "Z",
+        "b",
+        "c",
+        "i",
+        "k",
+        "l",
+        "L",
+        "h",
+        "n",
+        "N",
+        "0",
+        "p",
+        "r",
+        "s",
+        "S",
+        "C",
+        "d",
+        "v"
+    ],
+    "[fileOptions]": [
+        "-[fileChar]<ns>",
+        "<ns>[fileChar]<ns>",
+        "-[fileCharOpt]",
+        "<ns>[fileCharOpt]",
+        "[fileLongOpt]"
+    ],
+    "[unameChar]": [
+        "a",
+        "i",
+        "m",
+        "n",
+        "o",
+        "p",
+        "r",
+        "s",
+        "v"
+    ],
+    "[unameOptions]": [
+        "-[unameChar]<ns>",
+        "<ns>[unameChar]<ns>",
+        "[unameLongOpt]"
+    ],
+    "[findOptions]": [
+        "-[findChar]<ns>",
+        "<ns>[findChar]<ns>",
+        "-[findCharOpt]",
+        "<ns>[findCharOpt]",
+        "[findLongOpt]"
+    ],
+    "[findExpr]": [
+        "[findAction]",
+        "\\( [findAction] \\)",
+        "! [findAction]",
+        "-not [findAction]",
+        "[findAction] -a [findAction]",
+        "[findAction] -and [findAction]",
+        "[findAction] -o [findAction]",
+        "[findAction] -or [findAction]",
+        "[findAction], [findAction]"
+    ],
+    "[whoChar]": [
+        "H",
+        "T",
+        "a",
+        "b",
+        "d",
+        "l",
+        "m",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u"
+    ],
+    "[whoOptions]": [
+        "-[whoChar]<ns>",
+        "<ns>[whoChar]<ns>",
+        "[whoLongOpt]"
+    ],
+    "[duChar]": [
+        "0",
+        "D",
+        "H",
+        "L",
+        "P",
+        "S",
+        "a",
+        "b",
+        "c",
+        "h",
+        "k",
+        "l",
+        "m",
+        "s",
+        "x"
+    ],
+    "[duOptions]": [
+        "-[duChar]<ns>",
+        "<ns>[duChar]<ns>",
+        "-[duCharOpt]",
+        "<ns>[duCharOpt]",
+        "[duLongOpt]"
+    ],
+    "[psChar]": [
+        "y",
+        "F",
+        "H",
+        "L",
+        "M",
+        "N",
+        "P",
+        "T",
+        "V",
+        "c",
+        "e",
+        "f",
+        "j",
+        "l",
+        "m",
+        "w"
+    ],
+    "[psOptions]": [
+        "-[psChar]<ns>",
+        "<ns>[psChar]<ns>",
+        "-[psCharOpt]",
+        "<ns>[psCharOpt]",
+        "[psLongOpt]"
+    ],
+    "[ulimitOptions]": [
+        "-[ulimitChar]<ns>",
+        "<ns>[ulimitChar]<ns>",
+        "-[ulimitCharOpt]",
+        "<ns>[ulimitCharOpt]",
+        "[ulimitLongOpt]"
+    ],
+    "[uptimeOptions]": [
+        "-[uptimeChar]<ns>",
+        "<ns>[uptimeChar]<ns>",
+        "[uptimeLongOpt]"
+    ],
+    "[pwdOptions]": [
+        "-[pwdChar]<ns>",
+        "<ns>[pwdChar]<ns>",
+        "[pwdLongOpt]"
+    ],
+    "[ddOptions]": [
+        "[ddLongOpt]"
+    ],
+    "[lnOptions]": [
+        "-[lnChar]<ns>",
+        "<ns>[lnChar]<ns>",
+        "-[lnCharOpt]",
+        "<ns>[lnCharOpt]",
+        "[lnLongOpt]"
+    ],
+    "[touchOptions]": [
+        "-[touchChar]<ns>",
+        "<ns>[touchChar]<ns>",
+        "-[touchCharOpt]",
+        "<ns>[touchCharOpt]",
+        "[touchLongOpt]"
+    ],
+    "[freeUnitChar]": [
+        "b",
+        "k",
+        "m",
+        "g"
+    ],
+    "[freeCharOpt]": [
+        "c [SmallNumber]"
+    ],
+    "[freeChar]": [
+        "b",
+        "g",
+        "h",
+        "k",
+        "l",
+        "m",
+        "t",
+        "w",
+        "V"
+    ],
+    "[freeOptions]": [
+        "-[freeChar]<ns>",
+        "<ns>[freeChar]<ns>",
+        "-[freeCharOpt]",
+        "<ns>[freeCharOpt]",
+        "[freeLongOpt]"
+    ],
+    "[idOnlyChar]": [
+        "Z",
+        "g",
+        "u"
+    ],
+    "[idChar]": [
+        "G",
+        "Z",
+        "a",
+        "g",
+        "n",
+        "r",
+        "u",
+        "z"
+    ],
+    "[idOptions]": [
+        "-[idChar]<ns>",
+        "<ns>[idChar]<ns>",
+        "[idLongOpt]"
+    ],
+    "[exportOptions]": [
+        "-[exportChar]<ns>",
+        "<ns>[exportChar]<ns>",
+        "[exportLongOpt]"
+    ],
+    "[SystemVarAssign]": [
+        "[Variable]=[String]",
+        "[String]=[String]"
+    ],
+    "[envOptions]": [
+        "-[envChar]<ns>",
+        "<ns>[envChar]<ns>",
+        "-[envCharOpt]",
+        "<ns>[envCharOpt]",
+        "[envLongOpt]"
+    ],
+    "[lastCharOpt]": [
+        "f [FileTarget]",
+        "[SmallNumber]",
+        "n [SmallNumber]",
+        "p [LastTime]",
+        "s [LastTime]",
+        "t [LastTime]"
+    ],
+    "[lastChar]": [
+        "a",
+        "d",
+        "F",
+        "i",
+        "R",
+        "w",
+        "x",
+        "h",
+        "V"
+    ],
+    "[lastOptions]": [
+        "-[lastChar]<ns>",
+        "<ns>[lastChar]<ns>",
+        "-[lastCharOpt]",
+        "<ns>[lastCharOpt]",
+        "[lastLongOpt]"
+    ],
+    "[grepCharOpt]": [
+        "e [QuotePattern]",
+        "f [FileTarget]",
+        "m [Number]",
+        "d [grepDirOpts]",
+        "D [grepDirOpts]",
+        "B [SmallNumber]",
+        "A [SmallNumber]",
+        "C [SmallNumber]",
+        "[SmallNumber]",
+        "[SmallNumber]",
+        "[SmallNumber]",
+        "[SmallNumber]"
+    ],
+    "[grepChar]": [
+        "E",
+        "F",
+        "G",
+        "P",
+        "i",
+        "w",
+        "x",
+        "z",
+        "s",
+        "v",
+        "b",
+        "n",
+        "H",
+        "h",
+        "o",
+        "q",
+        "a",
+        "I",
+        "r",
+        "R",
+        "L",
+        "l",
+        "c",
+        "T",
+        "Z",
+        "U",
+        "V"
+    ],
+    "[grepOptions]": [
+        "-[grepChar]<ns>",
+        "<ns>[grepChar]<ns>",
+        "-[grepCharOpt]",
+        "<ns>[grepCharOpt]",
+        "[grepLongOpt]"
+    ],
+    "[tarCatOpt]": [
+        "-[tarCatCharOpt]<ns>",
+        "<ns>[tarCatCharOpt]<ns>",
+        "[tarCatLongOpt]"
+    ],
+    "[tarCharOpt]": [
+        "C [DirectoryTarget]",
+        "H [MediumNumber]",
+        "I [ZipCommand]",
+        "K [FileTarget]",
+        "L [MediumNumber]",
+        "N [TarDate]",
+        "T [FileTarget]",
+        "V [String]",
+        "X [FileTarget]",
+        "b [MediumNumber]",
+        "g [FileTarget]"
+    ],
+    "[tarChar]": [
+        "B",
+        "G",
+        "J",
+        "M",
+        "O",
+        "P",
+        "R",
+        "S",
+        "U",
+        "W",
+        "Z",
+        "a",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "s",
+        "w",
+        "z",
+        "?"
+    ],
+    "[tarOptions]": [
+        "-[tarChar]<ns>",
+        "<ns>[tarChar]<ns>",
+        "-[tarCharOpt]",
+        "<ns>[tarCharOpt]",
+        "[tarLongOpt]"
+    ],
+    "[tarOperation]": [
+        "-[tarOpChar]<ns>",
+        "<ns>[tarOpChar]<ns>",
+        "[tarOpLongOpt]"
+    ],
+    "[tarArchiveUseOpt]": [
+        "-f [TarFile]",
+        ""
+    ],
+    "[tarDelExtractOpt]": [
+        "-[tarDelExtOpChar]<ns>",
+        "<ns>[tarDelExtOpChar]<ns>",
+        "[tarDelExtOpLongOpt]"
+    ],
+    "[gzipCharOpt]": [
+        "S [Character]"
+    ],
+    "[gzipChar]": [
+        "c",
+        "d",
+        "f",
+        "h",
+        "k",
+        "l",
+        "L",
+        "n",
+        "N",
+        "q",
+        "r",
+        "t",
+        "v",
+        "V",
+        "1",
+        "9"
+    ],
+    "[gzipLongOpt]": [
+        "--stdout",
+        "--decompress",
+        "--force",
+        "--help",
+        "--keep",
+        "--list",
+        "--license",
+        "--no",
+        "--name",
+        "--quiet",
+        "--recursive",
+        "--rsyncable",
+        "--suffix=[Character]",
+        "--synchronous",
+        "--test",
+        "--verbose",
+        "--fast",
+        "--best",
+        "--version"
+    ],
+    "[gzipOptions]": [
+        "-[gzipChar]<ns>",
+        "<ns>[gzipChar]<ns>",
+        "-[gzipCharOpt]",
+        "<ns>[gzipCharOpt]",
+        "[gzipLongOpt]"
+    ],
+    "[catOptions]": [
+        "-[catChar]<ns>",
+        "<ns>[catChar]<ns>",
+        "[catLongOpt]"
+    ],
+    "[wcOptions]": [
+        "-[wcChar]<ns>",
+        "<ns>[wcChar]<ns>",
+        "[wcLongOpt]"
+    ],
+    "[rmdirOptions]": [
+        "-[rmdirChar]<ns>",
+        "<ns>[rmdirChar]<ns>",
+        "[rmdirLongOpt]"
+    ],
+    "[mkdirOptions]": [
+        "-[mkdirChar]<ns>",
+        "<ns>[mkdirChar]<ns>",
+        "-[mkdirCharOpt]",
+        "<ns>[mkdirCharOpt]",
+        "[mkdirLongOpt]"
+    ],
+    "[mvOptions]": [
+        "-[mvChar]<ns>",
+        "<ns>[mvChar]<ns>",
+        "-[mvCharOpt]",
+        "<ns>[mvCharOpt]",
+        "[mvLongOpt]"
+    ],
+    "[cpOptions]": [
+        "-[cpChar]<ns>",
+        "<ns>[cpChar]<ns>",
+        "-[cpCharOpt]",
+        "<ns>[cpCharOpt]",
+        "[cpLongOpt]"
+    ],
+    "[ethAOpts]": [
+        "autoneg [onoff]",
+        "rx [onoff]",
+        "tx [onoff]"
+    ],
+    "[ethCOpts]": [
+        "adaptive-rx [onoff]",
+        "adaptive-tx [onoff]",
+        "rx-usecs [Number]",
+        "rx-frames [Number]",
+        "rx-usecs-irq [Number]",
+        "rx-frames-irq [Number]",
+        "tx-usecs [Number]",
+        "tx-frames [Number]",
+        "tx-usecs-irq [Number]",
+        "tx-frames-irq [Number]",
+        "stats-block-usecs [Number]",
+        "pkt-rate-low [Number]",
+        "rx-usecs-low [Number]",
+        "rx-frames-low [Number]",
+        "tx-usecs-low [Number]",
+        "tx-frames-low [Number]",
+        "pkt-rate-high [Number]",
+        "rx-usecs-high [Number]",
+        "rx-frames-high [Number]",
+        "tx-usecs-high [Number]",
+        "tx-frames-high [Number]",
+        "sample-interval [SmallNumber]",
+        "cqe-mode-rx [onoff]",
+        "cqe-mode-tx [onoff]"
+    ],
+    "[ethGOpts]": [
+        "rx [LargeNumber]",
+        "rx-mini [SmallNumber]",
+        "rx-jumbo [SmallNumber]",
+        "tx [SmallNumber]"
+    ],
+    "[ethDOpts]": [
+        "raw [onoff]",
+        "hex [onoff]",
+        "file [NewFile]"
+    ],
+    "[ethEOpts]": [
+        "raw [onoff]",
+        "offset [LargeNumber]",
+        "length [MediumNumber]"
+    ],
+    "[ethEEOpts]": [
+        "magic [Number]",
+        "offset [Number]",
+        "length [Number]",
+        "value [Number]"
+    ],
+    "[ethKOpts]": [
+        "rx [onoff]",
+        "tx [onoff]",
+        "sg [onoff]",
+        "tso [onoff]",
+        "ufo [onoff]",
+        "gso [onoff]",
+        "gro [onoff]",
+        "lro [onoff]",
+        "rxvlan [onoff]",
+        "txvlan [onoff]",
+        "ntuple [onoff]",
+        "rxhash [onoff]"
+    ],
+    "[ethPOpts]": [
+        "",
+        "[SmallNumber]"
+    ],
+    "[ethTOpts]": [
+        "offline",
+        "online",
+        "external_lb"
+    ],
+    "[ethSOpts]": [
+        "--all-groups",
+        "--groups eth-phy",
+        "--groups eth-mac",
+        "--groups eth-ctrl"
+    ],
+    "[ethNOpts]": [
+        "rx-flow-hash [EthtoolProto]",
+        "rule [SmallNumber]",
+        "rule [MediumNumber]"
+    ],
+    "[ethNNOpts]": [
+        "rx-flow-hash [EthtoolProto] m",
+        "rx-flow-hash [EthtoolProto] v",
+        "rx-flow-hash [EthtoolProto] t",
+        "rx-flow-hash [EthtoolProto] s",
+        "rx-flow-hash [EthtoolProto] d",
+        "rx-flow-hash [EthtoolProto] f",
+        "rx-flow-hash [EthtoolProto] n",
+        "rx-flow-hash [EthtoolProto] r",
+        "flow-type [EthtoolProto] src [MACAddr]",
+        "flow-type [EthtoolProto] src [MACAddr] m FF:FF:FF:00:00:00",
+        "flow-type [EthtoolProto] dst [MACAddr]",
+        "flow-type [EthtoolProto] dst [MACAddr] m FF:FF:FF:00:00:00",
+        "flow-type [EthtoolProto] proto [SmallNumber]",
+        "flow-type [EthtoolProto] src-ip [IP]",
+        "flow-type [EthtoolProto] dst-ip [IP]",
+        "flow-type [EthtoolProto] src-ip [IP] m [IPMask]",
+        "flow-type [EthtoolProto] dst-ip [IP] m [IPMask]",
+        "flow-type [EthtoolProto] src-ip [IP] m [IPMask]",
+        "flow-type [EthtoolProto] tos [SmallNumber]",
+        "flow-type [EthtoolProto] tclass [SmallNumber]",
+        "flow-type [EthtoolProto] l4proto [SmallNumber]",
+        "flow-type [EthtoolProto] src-port [Number]",
+        "flow-type [EthtoolProto] dst-port [Number]",
+        "flow-type [EthtoolProto] spi [SmallNumber]",
+        "flow-type [EthtoolProto] l4data 0x[HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar]",
+        "flow-type [EthtoolProto] vlan-ethtype [SmallNumber]",
+        "flow-type [EthtoolProto] vlan [SmallNumber]",
+        "flow-type [EthtoolProto] vlan-ethtype [SmallNumber]",
+        "flow-type [EthtoolProto] vlan-ethtype [Character][Character][Character][Character][Character][Character][Character][Character]",
+        "flow-type [EthtoolProto] dst-mac [MACAddr]",
+        "flow-type [EthtoolProto] dst-mac [MACAddr] m FF:FF:FF:00:00:00",
+        "flow-type [EthtoolProto] action -1",
+        "flow-type [EthtoolProto] action -2",
+        "flow-type [EthtoolProto] action [SmallNumber]",
+        "flow-type [EthtoolProto] context 0",
+        "flow-type [EthtoolProto] context [SmallNumber]",
+        "flow-type [EthtoolProto] vf [SmallNumber]",
+        "flow-type [EthtoolProto] queue [SmallNumber]",
+        "flow-type [EthtoolProto] loc [SmallNumber]",
+        "flow-type [EthtoolProto] delete [SmallNumber]"
+    ],
+    "[ethWOpts]": [
+        "",
+        "[FileTarget]"
+    ],
+    "[ethWWOpts]": [
+        "[SmallNumber]"
+    ],
+    "[ethXOpts]": [
+        "hkey [MACAddr]",
+        "hfunc [ethXHfuncOpt]",
+        "start [SmallNumber]",
+        "equal [SmallNumber]",
+        "default"
+    ],
+    "[ethFOpts]": [
+        "",
+        "[Number]"
+    ],
+    "[ethLOpts]": [
+        "rx [SmallNumber]",
+        "tx [SmallNumber]",
+        "other [SmallNumber]",
+        "combined [SmallNumber]"
+    ],
+    "[ethMOpts]": [
+        "raw [onoff]",
+        "hex [onoff]",
+        "offset [Number]",
+        "length [Number]",
+        "page [SmallNumber]",
+        "bank [SmallNumber]",
+        "i2c [SmallNumber]"
+    ],
+    "[ethSPFOpts]": [
+        "[String] [onoff]"
+    ],
+    "[ethSEEEOpts]": [
+        "eee [onoff]",
+        "tx-lpi [onoff]",
+        "tx-timer [LargeNumber]",
+        "advertise [EthtoolChangeHex]"
+    ],
+    "[ethSPTOpts]": [
+        "downshift [onoff]",
+        "downshift [onoff] [SmallNumber]",
+        "fast-link-down [onoff]",
+        "fast-link-down [onoff] [LargeNumber]",
+        "energy-detect-power-down [onoff]",
+        "energy-detect-power-down [onoff] [LargeNumber]"
+    ],
+    "[ethGPTOpts]": [
+        "downshift",
+        "fast-link-down",
+        "energy-detect-power-down"
+    ],
+    "[ethResetOpts]": [
+        "rx-copybreak",
+        "tx-copybreak",
+        "pfc-prevention-tout"
+    ],
+    "[ethSFopts]": [
+        "auto",
+        "off",
+        "rs",
+        "baser"
+    ],
+    "[dateOptions]": [
+        "-[dateChar]<ns>",
+        "<ns>[dateChar]<ns>",
+        "-[dateCharOpt]",
+        "<ns>[dateCharOpt]",
+        "[dateLongOpt]"
+    ],
+    "[dmesgOptions]": [
+        "-[dmesgChar]<ns>",
+        "<ns>[dmesgChar]<ns>",
+        "-[dmesgCharOpt]",
+        "<ns>[dmesgCharOpt]",
+        "[dmesgLongOpt]"
+    ],
+    "[lsblkOptions]": [
+        "-[lsblkChar]<ns>",
+        "<ns>[lsblkChar]<ns>",
+        "-[lsblkCharOpt]",
+        "<ns>[lsblkCharOpt]",
+        "[lsblkLongOpt]"
+    ],
+    "[lscpuOptions]": [
+        "-[lscpuChar]<ns>",
+        "<ns>[lscpuChar]<ns>",
+        "-[lscpuCharOpt]",
+        "<ns>[lscpuCharOpt]",
+        "[lscpuLongOpt]"
+    ],
+    "[dfType]": [
+        "tmpfs",
+        "ext4",
+        "rootfs",
+        "overlay",
+        "fuse.snapfuse"
+    ],
+    "[lsFormat]": [
+        "verbose",
+        "long",
+        "commas",
+        "horizontal",
+        "across",
+        "vertical",
+        "single-column"
+    ],
+    "[lsIndicatorStyle]": [
+        "none",
+        "slash",
+        "file-type",
+        "classify"
+    ],
+    "[lsQuotingStyle]": [
+        "literal",
+        "locale",
+        "shell",
+        "shell-always",
+        "shell-escape",
+        "shell-escape-always",
+        "c",
+        "escape"
+    ],
+    "[lsSort]": [
+        "none",
+        "size",
+        "time",
+        "version",
+        "extension"
+    ],
+    "[lsTime]": [
+        "atime",
+        "access",
+        "use",
+        "ctime",
+        "status",
+        "birth",
+        "creation"
+    ],
+    "[duTimeStyle]": [
+        "full-iso",
+        "long-iso",
+        "iso",
+        "+[DateTimeFormatList]"
+    ],
+    "[chmodType]": [
+        "u",
+        "g",
+        "o",
+        "a",
+        ""
+    ],
+    "[chmodModifers]": [
+        "+",
+        "-",
+        "=",
+        ""
+    ],
+    "[chmodPermChar]": [
+        "r",
+        "w",
+        "x",
+        "X",
+        "s",
+        "t"
+    ],
+    "[chmodPermList]": [
+        "[chmodPermCharList]",
+        "[chmodType]"
+    ],
+    "[chmodOctalPerm]": [
+        "[SmallNumber]",
+        "[SmallNumber][SmallNumber]",
+        "[SmallNumber][SmallNumber][SmallNumber]",
+        "[SmallNumber][SmallNumber][SmallNumber][SmallNumber]"
+    ],
+    "[cFileType]": [
+        "apptype",
+        "ascii",
+        "cdf",
+        "compress",
+        "csv",
+        "elf",
+        "encoding",
+        "soft",
+        "tar",
+        "json",
+        "text",
+        "tokens"
+    ],
+    "[cFileParam]": [
+        "bytes",
+        "elf_notes",
+        "elf_phnum",
+        "elf_shnum",
+        "encoding",
+        "indir",
+        "name",
+        "regex"
+    ],
+    "[findDOpts]": [
+        "exec",
+        "opt",
+        "rates",
+        "search",
+        "stat",
+        "tree",
+        "all",
+        "help"
+    ],
+    "[findAction]": [
+        "-daystart",
+        "-follow",
+        "-regextype grep",
+        "-regextype egrep",
+        "-warn",
+        "-nowarn",
+        "-d",
+        "-mount",
+        "-depth",
+        "-maxdepth [SmallNumber]",
+        "-mindepth [SmallNumber]",
+        "-nomount",
+        "-noleaf",
+        "xdev",
+        "-ignore_readdr_race",
+        "-noignore_readdr_race",
+        "-amin [plusminusnone][SmallNumber]",
+        "-anewer [FileTarget]",
+        "-atime [plusminusnone][SmallNumber]",
+        "-cmin [plusminusnone][SmallNumber]",
+        "-cnewer [FileTarget]",
+        "-ctime [plusminusnone][SmallNumber]",
+        "-empty",
+        "-executable",
+        "-false",
+        "-fstype [findFSType]",
+        "-gid [plusminusnone][SmallNumber]",
+        "-group [Groupname]",
+        "-group [LargeNumber]",
+        "-ilname [QuotePattern]",
+        "-iname [QuotePattern]",
+        "-inum [plusminusnone][SmallNumber]",
+        "-ipath [QuotePattern]",
+        "-iregex [QuotePattern]",
+        "-iwholename [QuotePattern]",
+        "-links [plusminusnone][SmallNumber]",
+        "-lname [QuotePattern]",
+        "-mmin [plusminusnone][SmallNumber]",
+        "-mtime [plusminusnone][SmallNumber]",
+        "-name [QuotePattern]",
+        "-newer[newerFindOpt][newerFindOpt] [FileTarget]",
+        "-nogroup",
+        "-nouser",
+        "-path \"[DirectoryTarget]/[Pattern]\"",
+        "-perm /[SmallNumber][SmallNumber][SmallNumber]",
+        "-perm [plusminusnone][SmallNumber][SmallNumber][SmallNumber]",
+        "-readable",
+        "-regex [QuotePattern]",
+        "-samefile [FileTarget]",
+        "-size [Number][findSizeOpt]",
+        "-true",
+        "-type [findType]",
+        "-uid [plusminusnone][Number]",
+        "-used [plusminusnone][SmallNumber]",
+        "-user [Username]",
+        "-wholename [GlobalFile]",
+        "-writable",
+        "-xtype [Character]",
+        "-context [QuotePattern]",
+        "-delete",
+        "-exec [findCommand] \\;",
+        "-exec [findCommand] {} +",
+        "-execdir [findCommand] \\;",
+        "-execdir [findCommand] {} +",
+        "-fls [FileTarget]",
+        "-fprint [FileTarget]",
+        "-fprint0 [FileTarget]",
+        "-fprintf [FileTarget] '[PrintfFormat]'",
+        "-ls",
+        "-print",
+        "-print0",
+        "-printf '[PrintfFormat]'",
+        "-prune",
+        "-quit"
+    ],
+    "[duTime]": [
+        "atime",
+        "access",
+        "use",
+        "ctime",
+        "status"
+    ],
+    "[ulimitValue]": [
+        "",
+        "[Number]",
+        "[LargeLargeNumber]",
+        "unlimited"
+    ],
+    "[ddConvTypes]": [
+        "ascii",
+        "ebcdic",
+        "ibm",
+        "block",
+        "unblock",
+        "lcase",
+        "ucase",
+        "sparse",
+        "swab",
+        "sync",
+        "excl",
+        "nocreat",
+        "notrunc",
+        "noerror",
+        "fdatasync",
+        "fsync"
+    ],
+    "[ddFlagTypes]": [
+        "append",
+        "direct",
+        "directory",
+        "dsync",
+        "sync",
+        "fullblock",
+        "nonblock",
+        "noatime",
+        "nocache",
+        "noctty",
+        "nofollow",
+        "count_bytes",
+        "skip_bytes",
+        "seek_bytes"
+    ],
+    "[ddStatusTypes]": [
+        "none",
+        "noxfer",
+        "progress"
+    ],
+    "[lnControlOpt]": [
+        "none",
+        "off",
+        "numbered",
+        "t",
+        "existing",
+        "nil",
+        "simple",
+        "never"
+    ],
+    "[TimeString]": [
+        "[TarDate]",
+        "'@[Number]'",
+        "yesterday",
+        "today",
+        "tomorrow",
+        "'[SmallNumber] [LastSuffix] ago'",
+        "[SmallNumber] [LastSuffix]",
+        "[Year]-[Month]-[Day]",
+        "[Hour]:[Minute]:[Second]",
+        "[MonthText] [Day]",
+        "[DayShort]"
+    ],
+    "[touchTimeStamp]": [
+        "[Year][Month][Day][Hour][Minute]",
+        "[Year][Month][Day][Hour][Minute].[Second]",
+        "[YearShort][Month][Day][Hour][Minute]",
+        "[YearShort][Month][Day][Hour][Minute].[Second]",
+        "[Month][Day][Hour][Minute]",
+        "[Month][Day][Hour][Minute].[Second]"
+    ],
+    "[TouchTimeType]": [
+        "access",
+        "atime",
+        "modify",
+        "mtime"
+    ],
+    "[Signal]": [
+        "SIGKILL",
+        "SIGTERM",
+        "SIGHUP",
+        "SIGINT",
+        "SIGQUIT"
+    ],
+    "[LastTime]": [
+        "now",
+        "yesterday",
+        "today",
+        "tomorrow",
+        "-[SmallNumber] [LastSuffix]",
+        "+[SmallNumber] [LastSuffix]",
+        "-[MediumNumber] [LastSuffix]",
+        "+[MediumNumber] [LastSuffix]",
+        "[Year][Month][Day][Hour][Minute][Second]",
+        "[Year]-[Month]-[Day] [Hour]:[Minute]:[Second]",
+        "[Year]-[Month]-[Day]",
+        "[Hour]:[Minute]:[Second]",
+        "[Hour]:[Minute]"
+    ],
+    "[grepBinFiles]": [
+        "binary",
+        "text",
+        "without-match"
+    ],
+    "[grepDirOpts]": [
+        "read",
+        "recurse",
+        "skip"
+    ],
+    "[Separator]": [
+        ",",
+        " ",
+        ".",
+        "\n",
+        ":",
+        "?"
+    ],
+    "[tarTimeOpt]": [
+        "replace",
+        "system"
+    ],
+    "[tarBackupOpt]": [
+        "none",
+        "off",
+        "t",
+        "numbered",
+        "nil",
+        "existing",
+        "never",
+        "simple"
+    ],
+    "[tarHoleOpt]": [
+        "seek",
+        "raw"
+    ],
+    "[TarFileDate]": [
+        "[FileTarget]",
+        "[TarDate]"
+    ],
+    "[TarDate]": [
+        "[Year]-[SmallNumber]-[Day]",
+        "'UTC [Year]-[SmallNumber]-[Day]'"
+    ],
+    "[tarTopLevelOpt]": [
+        "=[DirectoryTarget]",
+        ""
+    ],
+    "[tarQuoteStyleOpt]": [
+        "literal",
+        "shell",
+        "shell-always",
+        "c",
+        "c-maybe",
+        "escape",
+        "locale",
+        "clocale"
+    ],
+    "[tarSortOpt]": [
+        "none",
+        "name",
+        "inode"
+    ],
+    "[tarSparseVerOpt]": [
+        "0.0",
+        "0.1",
+        "1.0"
+    ],
+    "[SedInner]": [
+        "s/[String]/[String]/[SedEnd]",
+        "s/[Pattern]/[String]/[SedEnd]",
+        "/[String]/d",
+        "/[Pattern]/d",
+        "[SedEnd]"
+    ],
+    "[tarWarningOpt]": [
+        "all",
+        "none",
+        "cachedir",
+        "ignore-archive",
+        "file-removed",
+        "file-changed",
+        "failed-read",
+        "existing-file",
+        "unknown-keyword",
+        "decompress-program",
+        "record-size",
+        "new-directory"
+    ],
+    "[tarFormatOpt]": [
+        "gnu",
+        "oldgnu",
+        "pax",
+        "posix",
+        "v7"
+    ],
+    "[ZipCommand]": [
+        "gzip",
+        "unzip"
+    ],
+    "[cpBackupOpt]": [
+        "none",
+        "off",
+        "numbered",
+        "t",
+        "existing",
+        "nil",
+        "simple",
+        "never"
+    ],
+    "[cutByte]": [
+        "[SmallNumber]",
+        "[SmallNumber]-",
+        "[SmallNumber]-[SmallNumber]",
+        "-[SmallNumber]"
+    ],
+    "[onoff]": [
+        "on",
+        "off"
+    ],
+    "[EthtoolProto]": [
+        "ether",
+        "ip4",
+        "tcp4",
+        "udp4",
+        "ah4",
+        "esp4",
+        "sctp4",
+        "tcp6",
+        "udp6",
+        "ah6",
+        "esp6",
+        "sctp6"
+    ],
+    "[ethXHfuncOpt]": [
+        "xor",
+        "toeplitz",
+        "crc32"
+    ],
+    "[EthtoolChangeHex]": [
+        "0x001",
+        "0x002",
+        "0x004",
+        "0x008",
+        "0x010",
+        "0x020",
+        "0x1000",
+        "0x40000",
+        "0x80000",
+        "0x100000"
+    ],
+    "[dateTimeOpts]": [
+        "hours",
+        "minutes",
+        "date",
+        "seconds",
+        "ns"
+    ],
+    "[DateTimeObj]": [
+        "%[DateTimeModifierPadFlagOpt][DateFormatOptions][DateTimeModifierDoubleFlagOpt]"
+    ],
+    "[dmesgTimeFormat]": [
+        "delta",
+        "realtime",
+        "ctime",
+        "notime",
+        "iso"
+    ],
+    "[dmesgLogLevel]": [
+        "emerg",
+        "alert",
+        "crit",
+        "err",
+        "warn",
+        "notice",
+        "info",
+        "debug"
+    ],
+    "[lsblkCol]": [
+        "NAME",
+        "KNAME",
+        "PATH",
+        "MAJ:MIN",
+        "FSAVAIL",
+        "FSSIZE",
+        "FSTYPE",
+        "FSUSED",
+        "FSUSE%",
+        "FSROOTS",
+        "FSVER",
+        "MOUNTPOINT",
+        "MOUNTPOINTS",
+        "LABEL",
+        "UUID",
+        "PTUUID",
+        "PTTYPE",
+        "PARTTYPE",
+        "PARTTYPENAME",
+        "PARTLABEL",
+        "PARTUUID",
+        "PARTFLAGS",
+        "RA",
+        "RO",
+        "RM",
+        "HOTPLUG",
+        "MODEL",
+        "SERIAL",
+        "SIZE",
+        "STATE",
+        "OWNER",
+        "GROUP",
+        "MODE",
+        "ALIGNMENT",
+        "MIN-IO",
+        "OPT-IO",
+        "PHY-SEC",
+        "LOG-SEC",
+        "ROTA",
+        "SCHED",
+        "RQ-SIZE",
+        "TYPE",
+        "DISC-ALN",
+        "DISC-GRAN",
+        "DISC-MAX",
+        "DISC-ZERO",
+        "WSAME",
+        "WWN",
+        "RAND",
+        "PKNAME",
+        "HCTL",
+        "TRAN",
+        "SUBSYSTEMS",
+        "REV",
+        "VENDOR",
+        "ZONED",
+        "DAX"
+    ],
+    "[lsCacheListOpt]": [
+        "=[lsCacheList]",
+        ""
+    ],
+    "[lsParseListOpt]": [
+        "[lsParseList]",
+        ""
+    ],
+    "[lsParse]": [
+        "BOGOMIPS",
+        "CPU",
+        "CORE",
+        "SOCKET",
+        "CLUSTER",
+        "NODE",
+        "BOOK",
+        "DRAWER",
+        "CACHE",
+        "POLARIZATION",
+        "ADDRESS",
+        "CONFIGURED",
+        "ONLINE",
+        "MHZ",
+        "MAXMHZ",
+        "MINMHZ"
+    ],
+    "[findFSType]": [
+        "ufs",
+        "4.2",
+        "4.3",
+        "nfs",
+        "tmp",
+        "mfs"
+    ],
+    "[newerFindOpt]": [
+        "a",
+        "B",
+        "c",
+        "m",
+        "t"
+    ],
+    "[findSizeOpt]": [
+        "c",
+        "w",
+        "b",
+        "k",
+        "M",
+        "G"
+    ],
+    "[findType]": [
+        "b",
+        "c",
+        "d",
+        "p",
+        "f",
+        "l",
+        "s"
+    ],
+    "[findCommand]": [
+        "ls",
+        "rm",
+        "chmod [Number][Number][Number]",
+        "chown [Username]",
+        "chgrp [Username]"
+    ],
+    "[PrintfFormat]": [
+        "[PrintfArg]",
+        "[PrintfArg] [PrintfArg]",
+        "[PrintfArg] [PrintfArg] [PrintfArg]",
+        "[PrintfArg]\n[PrintfArg]\n[PrintfArg]",
+        "[PrintfArg]\n[PrintfArg]"
+    ],
+    "[psCommand]": [
+        "ssh",
+        "kworker",
+        "docker"
+    ],
+    "[UID]": [
+        "[Number]",
+        "[Username]"
+    ],
+    "[psPIDFormat]": [
+        "args",
+        "cmd",
+        "comm",
+        "command",
+        "fname",
+        "ucmd",
+        "ucomm",
+        "lstart",
+        "bsdstart",
+        "start"
+    ],
+    "[psSortOrderOpt]": [
+        "c",
+        "C",
+        "f",
+        "g",
+        "G",
+        "j",
+        "J",
+        "k",
+        "m",
+        "M",
+        "n",
+        "N",
+        "o",
+        "p",
+        "P",
+        "r",
+        "R",
+        "s",
+        "S",
+        "t",
+        "T",
+        "U",
+        "u",
+        "v",
+        "y"
+    ],
+    "[SedEnd]": [
+        "[SedEndLetter]",
+        "[SedEndLetter][SedEndLetter]",
+        "[SedEndLetter][SedEndLetter][SedEndLetter]",
+        "[SmallNumber]",
+        "[SmallNumber][SedEndLetter]"
+    ],
+    "[cpPreserveOpt]": [
+        "mode",
+        "ownership",
+        "timestamps",
+        "context",
+        "links",
+        "xattr",
+        "all"
+    ],
+    "[DateFormatOptions]": [
+        "%",
+        "a",
+        "A",
+        "b",
+        "B",
+        "c",
+        "C",
+        "d",
+        "D",
+        "e",
+        "F",
+        "g",
+        "G",
+        "h",
+        "H",
+        "I",
+        "j",
+        "k",
+        "l",
+        "m",
+        "M",
+        "n",
+        "N",
+        "p",
+        "P",
+        "q",
+        "r",
+        "R",
+        "s",
+        "S",
+        "t",
+        "T",
+        "u",
+        "U",
+        "V",
+        "w",
+        "W",
+        "x",
+        "X",
+        "y",
+        "Y",
+        "z",
+        ":z",
+        "::z",
+        ":::z",
+        "Z"
+    ],
+    "[DateTimeModifierDoubleFlagOpt]": [
+        "[DateTimeModifierDoubleFlag]",
+        ""
+    ],
+    "[DateTimeModifierPadFlagOpt]": [
+        "[DateTimeModifierPadFlag]",
+        ""
+    ],
+    "[dmesgLogFacility]": [
+        "kern",
+        "user",
+        "mail",
+        "daemon",
+        "auth",
+        "syslog",
+        "lpr",
+        "news"
+    ],
+    "[PrintfArg]": [
+        "%[PrintfFlagArgs][PrintfFormatArgs]",
+        "%[PrintfFormatArgs]",
+        "%[PrintfFlagArgs][SmallNumber][PrintfFormatArgs]",
+        "%[SmallNumber][PrintfFormatArgs]",
+        "%.[SmallNumber]f",
+        "%0.[SmallNumber]f"
+    ],
+    "[SedEndLetter]": [
+        "g",
+        "c",
+        "p",
+        "i",
+        "d"
+    ],
+    "[DateTimeModifierDoubleFlag]": [
+        "[SmallNumber]",
+        "0",
+        "E"
+    ],
+    "[DateTimeModifierPadFlag]": [
+        "-",
+        "_",
+        "0",
+        "+",
+        "^",
+        "#"
+    ],
+    "[lsCache]": [
+        "ALL-SIZE",
+        "LEVEL",
+        "NAME",
+        "ONE-SIZE",
+        "TYPE",
+        "WAYS",
+        "ALLOC-POLICY",
+        "WRITE-POLICY",
+        "PHY-LINE",
+        "SETS",
+        "COHERENCY-SIZE"
+    ],
+    "[PrintfFlagArgs]": [
+        "-",
+        "+",
+        "0"
+    ],
+    "[PrintfFormatArgs]": [
+        "%",
+        "b",
+        "q",
+        "d",
+        "i",
+        "u",
+        "o",
+        "x",
+        "X",
+        "e",
+        "E",
+        "a",
+        "A",
+        "g",
+        "G",
+        "c",
+        "f",
+        "s"
+    ],
+    "[wget]": [
+        "wget [wgetOptions] [WebFile]"
+    ],
+    "[curl]": [
+        "curl [curlOptions] [WebFile]"
+    ],
+    "[wgetOptions]": [
+        "-[wgetChar]<ns>",
+        "<ns>[wgetChar]<ns>",
+        "-[wgetCharOpt]",
+        "<ns>[wgetCharOpt]",
+        "[wgetLongOpt]"
+    ],
+    "[wgetRestrictFileNameOpt]": [
+        "unix",
+        "windows",
+        "nocontrol",
+        "ascii",
+        "lowercase",
+        "uppercase"
+    ],
+    "[wgetFamiliyOpt]": [
+        "none",
+        "IPv4",
+        "IPv6"
+    ],
+    "[wgetRateType]": [
+        "m",
+        "k",
+        ""
+    ],
+    "[wgetProgressOpt]": [
+        "dot[wgetProgressOptParamList]",
+        "bar[wgetProgressOptParamList]"
+    ],
+    "[wgetProgressOptParam]": [
+        "force",
+        "noscroll",
+        "[wgetProgressOptStyle]"
+    ],
+    "[wgetProgressOptStyle]": [
+        "default",
+        "binary",
+        "mega",
+        "giga"
+    ],
+    "[CertTypeOpts]": [
+        "PEM",
+        "DER",
+        "ENG",
+        "P12"
+    ],
+    "[curlProtos]": [
+        "http",
+        "https",
+        "all"
+    ],
+    "[curlProtoFilter]": [
+        "[curlProtos]",
+        "+[curlProtos]",
+        "-[curlProtos]",
+        "=[curlProtos]"
+    ],
+    "[TLSVers]": [
+        "1.0",
+        "1.1",
+        "1.2",
+        "1.3"
+    ],
+    "[curlKrbDelegationOptions]": [
+        "none",
+        "policy",
+        "always"
+    ],
+    "[curlDataEncode]": [
+        "\"[String]\"",
+        "=[String]",
+        "[String]=[String]",
+        "@[FileTarget]",
+        "[String]@[FileTarget]"
+    ],
+    "[curlOptions]": [
+        "-[curlChar]<ns>",
+        "<ns>[curlChar]<ns>",
+        "-[curlCharOpt]",
+        "<ns>[curlCharOpt]",
+        "[curlLongOpt]"
+    ],
+    "[curlHelpCategory]": [
+        " auth",
+        " connection",
+        " curl",
+        " dns",
+        " file",
+        " ftp",
+        " http",
+        " imap",
+        " misc",
+        " output",
+        " pop3",
+        " post",
+        " proxy",
+        " scp",
+        " sftp",
+        " smtp",
+        " ssh",
+        " telnet",
+        " tftp",
+        " tls",
+        " upload",
+        " verbose",
+        ""
+    ],
+    "[CurlWriteOutFmtString]": [
+        "'%{[CurlWriteOutFmt]}\\n'",
+        "'%{[CurlWriteOutFmt]}\\n%{[CurlWriteOutFmt]}'",
+        "'%{[CurlWriteOutFmt]}\\n%{[CurlWriteOutFmt]}\\n%{[CurlWriteOutFmt]}'"
+    ],
+    "[HTTPHeader]": [
+        "\"Content-Length: [LargeNumber]\"",
+        "\"Accept: [HTTPContentType]\"",
+        "\"User-Agent: [HTTPAgent]\"",
+        "\"Host: [URL]\"",
+        "\"Accept-Charset: utf-8\"",
+        "\"Accept-Encoding: gzip, deflate\"",
+        "\"Accept-Languagr: [HTMLLanguage]\"",
+        "\"Cache-Control: no-cache\"",
+        "\"Connection: keep-alive\"",
+        "\"Connection: Upgrade\"",
+        "\"Content-Encoding: [WgetEncoding]\"",
+        "\"Content-Type: [HTTPContentType]\"",
+        "\"Date: [DayShort], [SmallNumber] [Month] [Year] [Hour]:[Minute]:[Minute] [TZ]\"",
+        "\"If-Modified-Since: [DayShort], [SmallNumber] [Month] [Year] [Hour]:[Minute]:[Minute] [TZ]\"",
+        "\"Max-Forwards: [SmallNumber]\"",
+        "\"Range: [Number]-[Number]\""
+    ],
+    "[HTMLLanguage]": [
+        "*",
+        "en-US",
+        "fr-CA",
+        "en-US,en;q=0.[SmallNumber]",
+        "de",
+        "en"
+    ],
+    "[TZ]": [
+        "UTC",
+        "GMT",
+        "CST",
+        "PST",
+        "MST",
+        "EST"
+    ],
+    "[WgetEncoding]": [
+        "locale",
+        "ASCII",
+        "UTF-8",
+        "gzip",
+        "deflate"
+    ],
+    "[CurlWriteOutFmt]": [
+        "certs",
+        "content_type",
+        "errormsg",
+        "exitcode",
+        "filename_effective",
+        "ftp_entry_path",
+        "http_code",
+        "http_connect",
+        "http_version",
+        "json",
+        "local_ip",
+        "local_port",
+        "method",
+        "num_certs",
+        "num_connects",
+        "num_headers",
+        "num_redirects",
+        "onerror",
+        "proxy_ssl_verify_result",
+        "redirect_url",
+        "remote_ip",
+        "remote_port",
+        "response_code",
+        "scheme",
+        "size_download",
+        "size_header",
+        "size_request",
+        "size_upload",
+        "speed_download",
+        "speed_upload",
+        "ssl_verify_result",
+        "stderr",
+        "stdout",
+        "time_appconnect",
+        "time_connect",
+        "time_namelookup",
+        "time_pretransfer",
+        "time_redirect",
+        "time_starttransfer",
+        "time_total",
+        "url",
+        "url_effective",
+        "urlnum"
+    ],
+    "[CurlProtocol]": [
+        "http",
+        "https"
+    ],
+    "[wgetCompressionOpt]": [
+        "auto",
+        "gzip",
+        "none"
+    ],
+    "[netstat]": [
+        "netstat [netstatOptions]",
+        "netstat [netstatStr]"
+    ],
+    "[netstatStr]": [
+        "-[netstatChar]",
+        "-[netstatChar][netstatChar]",
+        "-[netstatChar][netstatChar][netstatChar]",
+        "-[netstatChar][netstatChar][netstatChar][netstatChar]",
+        "-[netstatChar][netstatChar][netstatChar][netstatChar][netstatChar]"
+    ],
+    "[netstatChar]": [
+        "t",
+        "u",
+        "U",
+        "S",
+        "w",
+        "2",
+        "f",
+        "l",
+        "a",
+        "n",
+        "N",
+        "e",
+        "o",
+        "p",
+        "W",
+        "r",
+        "g",
+        "M",
+        "s",
+        "4",
+        "6",
+        "x",
+        "C",
+        "F",
+        "i",
+        "h",
+        "V"
+    ],
+    "[netstatOptions]": [
+        "-[netstatChar]<ns>",
+        "<ns>[netstatChar]<ns>",
+        "[netstatLongOpt]"
+    ],
+    "[IPTablesProtocol]": [
+        "tcp",
+        "udp",
+        "icmp"
+    ],
+    "[IPTablesJob]": [
+        "-j [iptablesAction]",
+        "--jump [iptablesAction]",
+        "-g [iptablesAction]",
+        "--goto [iptablesAction]"
+    ],
+    "[IPTablesRuleSpec]": [
+        "[IPTablesParams]",
+        "[IPTablesParams] [IPTablesParams]",
+        "[IPTablesParams] [IPTablesParams] [IPTablesParams]",
+        "[IPTablesParams] [IPTablesParams] [IPTablesParams] [IPTablesParams]"
+    ],
+    "[IPTablesTimes]": [
+        "second",
+        "minute",
+        "hour",
+        "day"
+    ],
+    "[IPTablesIPSwitch]": [
+        "! [IP]",
+        "[IP]",
+        "! [IP]/[SubMask]",
+        "[IP]/[SubMask]"
+    ],
+    "[IPTablesInterfaceSwitch]": [
+        "[Interface]",
+        "! [Interface]"
+    ],
+    "[IPTablesPort]": [
+        "[LargeNumber]",
+        "[LargeNumber],[LargeNumber]",
+        "[LargeNumber]:[LargeNumber]",
+        "[LargeNumber],[LargeNumber]:[LargeNumber]",
+        "[LargeNumber]:[LargeNumber],[LargeNumber]"
+    ],
+    "[IPTablesPortSwitch]": [
+        "[IPTablesPort]",
+        "! [IPTablesPort]"
+    ],
+    "[IPTablesState]": [
+        "INVALID",
+        "ESTABLISHED",
+        "RELATED",
+        "NEW"
+    ],
+    "[IPTablesParams]": [
+        "-p [IPTablesProtocol]",
+        "--protocol [IPTablesProtocol]",
+        "-s [IPTablesIPSwitch]",
+        "--src [IPTablesIPSwitch]",
+        "--source [IPTablesIPSwitch]",
+        "-d [IPTablesIPSwitch]",
+        "--dst [IPTablesIPSwitch]",
+        "--destination [IPTablesIPSwitch]",
+        "-i [IPTablesInterfaceSwitch]",
+        "--in-interface [IPTablesInterfaceSwitch]",
+        "-o [IPTablesInterfaceSwitch]",
+        "--out-interface [IPTablesInterfaceSwitch]",
+        "-m limit",
+        "--limit [SmallNumber]",
+        "--limit [SmallNumber]/[IPTablesTimes]",
+        "--limit-burst [SmallNumber]",
+        "-m multiport",
+        "--sports [IPTablesPortSwitch]",
+        "--source-ports [IPTablesPortSwitch]",
+        "--dports [IPTablesPortSwitch]",
+        "--destination-ports [IPTablesPortSwitch]",
+        "--ports [IPTablesPortSwitch]",
+        "-m state",
+        "--state [IPTablesStateList]",
+        "-m [IPTablesProtocol]",
+        "--syn",
+        "! --syn",
+        "--tcp-flags SYN,ACK,FIN,RST,ECH",
+        "--sport [IPTablesPortSwitch]",
+        "--source-port [IPTablesPortSwitch]",
+        "--dport [IPTablesPortSwitch]",
+        "--destination-port [IPTablesPortSwitch]"
+    ],
+    "[iptablesOptions]": [
+        "-t [iptablesTable]",
+        "--table [iptablesTable]",
+        "-A [iptablesChain] [IPTablesRuleSpec]",
+        "--append [iptablesChain] [IPTablesRuleSpec]",
+        "-C [iptablesChain] [IPTablesRuleSpec]",
+        "--check [iptablesChain] [IPTablesRuleSpec]",
+        "-D [iptablesChain] [IPTablesRuleSpec]",
+        "-D [iptablesChain] [SmallNumber]",
+        "--delete [iptablesChain] [IPTablesRuleSpec]",
+        "--delete [iptablesChain] [SmallNumber]",
+        "-L",
+        "--list",
+        "-L [iptablesChain]",
+        "--list [iptablesChain]",
+        "-S",
+        "--list-rules",
+        "-S [iptablesChain]",
+        "--list-rules [iptablesChain]",
+        "-F",
+        "--flush",
+        "-F [iptablesChain]",
+        "--flush [iptablesChain]",
+        "-Z",
+        "--zero",
+        "-Z [iptablesChain]",
+        "--zero [iptablesChain]",
+        "-N [iptablesChain]",
+        "--new-chain [iptablesChain]",
+        "-X [iptablesChain]",
+        "--delete-chain [iptablesChain]",
+        "-X",
+        "--delete-chain",
+        "-P [iptablesChain] [iptablesAction]",
+        "--policy [iptablesChain] [iptablesAction]",
+        "-E [String] [String]",
+        "--rename-chain [String] [String]"
+    ],
+    "[iptables]": [
+        "iptables [iptablesOptions] [IPTablesRuleSpec] [IPTablesJob]",
+        "iptables [iptablesOptions]"
+    ],
+  "[IPDomain]": [
+    "www.[Domain]"
+  ],
+    "[ping]": [
+        "[pingSw] [pingOptions] [IP]",
+        "[pingSw] [pingOptions] [IPDomain]"
+    ],
+    "[pingSw]": [
+        "ping -c [SmallNumber]"
+    ],
+    "[pingOptions]": [
+        "-[pingChar]<ns>",
+        "<ns>[pingChar]<ns>",
+        "-[pingCharOpt]",
+        "<ns>[pingCharOpt]",
+        "[pingLongOpt]"
+    ],
+    "[pingMOpt]": [
+        "do",
+        "want",
+        "dont"
+    ],
+    "[pingNopt]": [
+        "help",
+        "ipv6",
+        "ipv6-global",
+        "ipv6-sitelocal",
+        "ipv6-linklocal",
+        "ipv6-all",
+        "ipv4",
+        "ipv4-all",
+        "subject-ipv4=[IP]"
+    ],
+    "[pingTOpt]": [
+        "tsonly",
+        "tsandaddr",
+        "tsprespec"
+    ],
+    "[IPcFouAlias]": [
+        "fou",
+        "f"
+    ],
+    "[ip]": [
+        "[ipcaddr]",
+        "[ipcroute]",
+        "[ipclink]"
+    ],
+    "[DevInterface]": [
+    "dev [Interface]"
+    ],
+
+    "[ipcaddr]": [
+        "ip [ipOptions] [IPcAddrAlias] [addchangerepl] [IPcAddressIFADDR] [DevInterface] [IPcAddressSwLifeTime][IPcAddressSwConfFlagList]",
+        "ip [ipOptions] [IPcAddrAlias] del [IPcAddressIFADDR] [DevInterface] [IPcSwMngtmpaddr]",
+        "ip [ipOptions] [IPcAddrAlias] [saveflush][IPcAddrSaveFlushActionList]",
+        "ip [ipOptions] [IPcAddrAlias] [IPcAddressShow]",
+        "ip [ipOptions] [IPcAddrAlias] [IPcAddressShowdump]"
+    ],
+    "[ipcroute]": [
+        "ip [ipOptions] [IPcRouteAlias] [IPcListFlush] [IPcRouteSelectorList]",
+        "ip [ipOptions] [IPcRouteAlias] save [IPcRouteSelectorList]",
+        "ip [ipOptions] [IPcRouteAlias] [restoreshow]",
+        "ip [ipOptions] [IPcRouteAlias] get[IPcRouteGetFlags] [IPAddr][IPcRouteGetActionList]",
+        "ip [ipOptions] [IPcRouteAlias] [IPcMainAction] [IPcRouteRoute]"
+    ],
+    "[ipclink]": [
+        "ip [ipOptions] [IPcLinkAlias] [IPcLinkAdder] [String][IPcLinkAddActionList] [IPTypeInner]",
+        "ip [ipOptions] [IPcLinkAlias] [IPcDelInner] [IPTypeInner]",
+        "ip [ipOptions] [IPcLinkAlias] [IPcSetInner][IPcLinkSetActionList]",
+        "ip [ipOptions] [IPcLinkAlias] [IPcShowInner]",
+        "ip [ipOptions] [IPcLinkAlias] xstats [IPTypeInner]",
+        "ip [ipOptions] [IPcLinkAlias] afstats[IPcSwDev]",
+        "ip [ipOptions] [IPcLinkAlias] property [addel] [DevInterface]",
+        "ip [ipOptions] [IPcLinkAlias] help[IPcSwType]"
+    ],
+    "[IPcLinkAdder]": [
+      "add[IPcLinkSwLinkDev][IPcLinkSwName]"
+    ],
+    "[IPcShowInner]": [
+      "show[IPcLinkShowActionList]"
+    ],
+    "[IPcDelInner]": [
+      "delete [IPcDevGroup]"
+    ],
+    "[IPcSetInner]": [
+      "set [IPcDevGroup]"
+    ],
+    "[IPTypeInner]": [
+      "type [IPcType]"
+    ],
+    "[ipOptions]": [
+        "-[ipChar]<ns>",
+        "<ns>[ipChar]<ns>",
+        "-[ipCharOpt]",
+        "<ns>[ipCharOpt]",
+        "[ipLongOpt]"
+    ],
+  "[ipLongOpt]": [
+        "-Version",
+        "-statistics",
+        "-details",
+        "-resolve",
+        "-human-readable",
+        "-iec",
+        "-json",
+        "-pretty",
+        "-family [ipcFamily]",
+        "-loops [SmallNumber]",
+        "-brief",
+        "-oneline",
+        "-timestamp",
+        "-tshort",
+        "-batch [FileTarget]",
+        "-rcvbuf [Number]",
+        "-netns [String]",
+        "-Numeric",
+        "-all",
+        "-color",
+        "-iec",
+        "-br",
+        "-ts"
+  ],
+    "[IPcListFlush]": [
+        "list",
+        "flush"
+    ],
+    "[IPcRouteAlias]": [
+        "route",
+        "r"
+    ],
+    "[IPcSwRoot]": [
+        "root [IP]/[SubMask]",
+        ""
+    ],
+    "[IPcSwMatch]": [
+        "match [IP]/[SubMask]",
+        ""
+    ],
+    "[IPcSwExact]": [
+        "exact [IP]/[SubMask]",
+        ""
+    ],
+    "[IPcSwTable]": [
+        "table [IpcTableID]",
+        ""
+    ],
+    "[IPcVRFName]": [
+        "[String]"
+    ],
+    "[IpcSwVRF]": [
+        "vrf [IPcVRFName]",
+        ""
+    ],
+    "[IpcTableID]": [
+        "local",
+        "main",
+        "default",
+        "all",
+        "[Number]"
+    ],
+    "[IPcRTProto]": [
+        "kernel",
+        "boot",
+        "static",
+        "[Number]"
+    ],
+    "[IPcSwProto]": [
+        "proto [IPcRTProto]",
+        ""
+    ],
+    "[IPcRouteType]": [
+        "unicast",
+        "local",
+        "broadcast",
+        "multicast",
+        "throw",
+        "unreachable",
+        "prohibit",
+        "blackhole",
+        "nat"
+    ],
+    "[IPcSwRouteType]": [
+        " type [IPcRouteType]",
+        ""
+    ],
+    "[IPcRouteScope]": [
+        "host",
+        "link",
+        "global",
+        "[Number]"
+    ],
+    "[IPcSwRouteScope]": [
+        "scope [IPcRouteScope]",
+        ""
+    ],
+    "[IPcRouteSelector]": [
+        " [IPcSwRoot]",
+        " [IPcSwMatch]",
+        " [IPcSwExact]",
+        " [IPcSwTable]",
+        " [IpcSwVRF]",
+        " [IPcSwProto]",
+        " [IPcSwType]",
+        " [IPcSwRouteScope]"
+    ],
+    "[IPcRouteGetFlags]": [
+        " fibmatch",
+        ""
+    ],
+    "[IPcRouteGetSwFrom]": [
+        " from [IP] iif [String]",
+        ""
+    ],
+    "[IPcRouteSwOif]": [
+        " oif [String]",
+        ""
+    ],
+    "[IPcRouteSwTOS]": [
+        " tos [IPcRouteTOS]",
+        ""
+    ],
+    "[IPcRouteTOS]": [
+        "default",
+        "AF11",
+        "AF12",
+        "AF13",
+        "AF21",
+        "AF22",
+        "AF23",
+        "AF31",
+        "AF32",
+        "AF33",
+        "AF41",
+        "AF42",
+        "AF43",
+        "CS1",
+        "CS2",
+        "CS3",
+        "CS4",
+        "CS5",
+        "CS6",
+        "CS7",
+        "EF"
+    ],
+    "[IPcRouteIpProto]": [
+        "tcp",
+        "udp",
+        "icmp"
+    ],
+    "[IPcRouteSwIpProto]": [
+        " ipproto [IPcRouteIpProto]",
+        ""
+    ],
+    "[IPcRouteSwIpSport]": [
+        " sport [Number]",
+        ""
+    ],
+    "[IPcRouteSwIpDport]": [
+        " dport [Number]"
+    ],
+    "[IPcRouteRoute]": [
+        "[IPcRouteNodeSpec][IPcRouteSwInfoSpec]"
+    ],
+    "[IPcRouteNodeSpec]": [
+        "[IPcSwRouteType] [IP]/[SubMask][IPcRouteNodeList]"
+    ],
+    "[IPcRouteNodes]": [
+        "[IPcRouteSwTOS]",
+        "[IPcSwTable]",
+        "[IPcSwProto]",
+        "[IPcSwScope]",
+        "[IPcSwMetric]",
+        "[IPcSwTTLProp]"
+    ],
+    "[enableddisabled]": [
+        "enabled",
+        "disabled"
+    ],
+    "[IPcSwTTLProp]": [
+        " ttl-propagate [enableddisabled]",
+        ""
+    ],
+    "[IPcFamily]": [
+        "inet",
+        "inet6",
+        "mpls",
+        "bridge",
+        "link"
+    ],
+    "[IPcRouteSwFamily]": [
+        " [IPcFamily]",
+        ""
+    ],
+    "[IPcRouteNHSwAddr]": [
+        "via[IPcRouteSwFamily] [IP]",
+        ""
+    ],
+    "[IPcRouteNHSwDev]": [
+        " dev [Interface]",
+        ""
+    ],
+    "[IPcRouteNHSwWeight]": [
+        " weight [Number]",
+        ""
+    ],
+    "[IPcRouteSwNHFlags]": [
+        "[IPcRouteNHFlags]",
+        ""
+    ],
+    "[IPcTime]": [
+        "[Number][IPcTimesw]",
+        "[Number]"
+    ],
+    "[IPcRouteNH]": [
+        "[IPcRouteNHSwAddr][IPcRouteNHSwDev][IPcRouteNHSwWeight][IPcRouteSwNHFlags]",
+        ""
+    ],
+    "[IPcRouteFlags]": [
+        " equalize",
+        ""
+    ],
+    "[IPcSwMtu]": [
+        " mtu [Number]",
+        ""
+    ],
+    "[IPcRouteSwTo]": [
+        " to",
+        ""
+    ],
+    "[IPcRouteSwAsTo]": [
+        " as[IPcRouteSwTo] [IP]",
+        ""
+    ],
+    "[IPcRouteSwAdvmss]": [
+        " advmss [Number]",
+        ""
+    ],
+    "[IPcRouteSwRtt]": [
+        " rtt [IPcTime]",
+        ""
+    ],
+    "[IPcRouteSwRttvar]": [
+        " rttvar [IPcTime]",
+        ""
+    ],
+    "[IPcRouteSwReordering]": [
+        " reordering [Number]",
+        ""
+    ],
+    "[IPcRouteSwWindow]": [
+        " window [Number]",
+        ""
+    ],
+    "[IPcRouteSwCwnd]": [
+        " cwnd [Number]",
+        ""
+    ],
+    "[IPcRouteSwInitCwnd]": [
+        " initcwnd [Number]",
+        ""
+    ],
+    "[IPcRouteSwSsThresh]": [
+        " ssthresh [Number]",
+        ""
+    ],
+    "[IPcRouteSwRealms]": [
+        " realms [IPcRealms]",
+        ""
+    ],
+    "[IPcRouteSwSrc]": [
+        " src [IP]",
+        ""
+    ],
+    "[IPcRouteSwRtoMin]": [
+        " rto_min [IPcTime]",
+        ""
+    ],
+    "[IPcRouteSwHoplimit]": [
+        " hoplimit [Number]",
+        ""
+    ],
+    "[IPcRouteSwFeatures]": [
+        " features ecn",
+        ""
+    ],
+    "[IPcRouteSwQuickhack]": [
+        " quickhack [zeroone]",
+        ""
+    ],
+    "[IPcRouteSwCongctl]": [
+        " congctl [TCPCongAlgs]",
+        ""
+    ],
+    "[IPcRouteSwPref]": [
+        " pref [highmedlow]",
+        ""
+    ],
+    "[IPcRouteSwExpires]": [
+        " expires [IPcTime]",
+        ""
+    ],
+    "[IPcRouteSwInitrwnd]": [
+        " initrwnd [Number]",
+        ""
+    ],
+    "[IPcRouteSwFastopen]": [
+        " fastopen_no_cookie [zeroone]",
+        ""
+    ],
+    "[IPcRouteOption]": [
+        "[IPcRouteFlags]",
+        "[IPcSwMtu]",
+        "[IPcRouteSwAdvmss]",
+        "[IPcRouteSwAsTo]",
+        "[IPcRouteSwRtt]",
+        "[IPcRouteSwRttvar]",
+        "[IPcRouteSwReordering]",
+        "[IPcRouteSwCwnd]",
+        "[IPcRouteSwInitCwnd]",
+        "[IPcRouteSwInitrwnd]",
+        "[IPcRouteSwFeatures]",
+        "[IPcRouteSwQuickhack]",
+        "[IPcRouteSwCongctl]",
+        "[IPcRouteSwPref]",
+        "[IPcRouteSwExpires]",
+        "[IPcRouteSwFastopen]"
+    ],
+    "[IPcRouteInfoSpec]": [
+        "[IPcRouteNH][IPcRouteOptionList][IPcRouteFlags]",
+        "nhid [SmallNumber][IPcRouteOptionList][IPcRouteFlags]"
+    ],
+    "[IPcRouteSwInfoSpec]": [
+        " [IPcRouteInfoSpec]",
+        ""
+    ],
+    "[IPcMainAction]": [
+        "add",
+        "del",
+        "change",
+        "append",
+        "replace"
+    ],
+    "[restoreshow]": [
+        "restore",
+        "showdump"
+    ],
+    "[IPcRouteGetAction]": [
+        "[IPcRouteGetSwFrom]",
+        "[IPcRouteSwOif]",
+        "[IPcRouteSwTOS]",
+        "[IPcRouteSwIpProto]",
+        "[IPcRouteSwIpSport]",
+        "[IPcRouteSwIpDport]"
+    ],
+    "[IPcLinkAlias]": [
+        "link",
+        "l"
+    ],
+    "[IPcLinkSwLinkDev]": [
+        " link [Interface]",
+        ""
+    ],
+    "[IPcLinkSwTxquelen]": [
+        " txqueuelen [Number]",
+        ""
+    ],
+    "[IPcLinkSwAddress]": [
+        " address [MACAddr]",
+        ""
+    ],
+    "[IPcLinkSwBroadcast]": [
+        " broadcast [MACAddr]",
+        ""
+    ],
+    "[IPcSwIndex]": [
+        " index [SmallNumber]",
+        ""
+    ],
+    "[IPcSwNumTxQueues]": [
+        " numtxqueues [Number]",
+        ""
+    ],
+    "[IPcSwNumRxQueues]": [
+        " numrxqueues [Number]",
+        ""
+    ],
+    "[IPcSwGsoMaxSize]": [
+        " gso_max_size [Number]",
+        ""
+    ],
+    "[IPcSwGsoMaxSegs]": [
+        " gso_max_segs [Number]",
+        ""
+    ],
+    "[IPcGroup]": [
+        "[SmallNumber]",
+        "default"
+    ],
+    "[IPcSwDevGroup]": [
+        " [IPcDevGroup]",
+        ""
+    ],
+    "[IPcEtype]": [
+        "[IPcType]",
+        "bridge_slave",
+        "bond_slave"
+    ],
+    "[IPcSwEtype]": [
+        " type [IPcEtype]",
+        ""
+    ],
+    "[IPcSwUpDown]": [
+        " [updown]",
+        ""
+    ],
+    "[IPcSwArpOnOff]": [
+        " arp [onoff]",
+        ""
+    ],
+    "[IPcSwDynamicOnOff]": [
+        " dynamic [onoff]",
+        ""
+    ],
+    "[IPcSwMulticastOnOff]": [
+        " multicast [onoff]",
+        ""
+    ],
+    "[IPcSwAllMulticastOnOff]": [
+        " allmulticast [onoff]",
+        ""
+    ],
+    "[IPcSwPromiscOnOff]": [
+        " promisc [onoff]",
+        ""
+    ],
+    "[IPcSwProtodownOnOff]": [
+        " protodown [onoff]",
+        ""
+    ],
+    "[IPcPreason]": [
+        "[ThirtyTwoBit]"
+    ],
+    "[IPcSwProtodownReasonsOnOff]": [
+        " protodown_reason [IPcPreason] [onoff]",
+        ""
+    ],
+    "[IPcSwTrailersOnOff]": [
+        " trailers [onoff]"
+    ],
+    "[IPcLinkSwName]": [
+        " name",
+        ""
+    ],
+    "[IPcLinkSwFullName]": [
+        " name [String]",
+        ""
+    ],
+    "[IPcSwNetns]": [
+        " netns [Number]",
+        ""
+    ],
+    "[IPcSwLinkNetns]": [
+        " link-netnsid [Number]",
+        ""
+    ],
+    "[IPcSwAlias]": [
+        " alias [String]",
+        ""
+    ],
+    "[IPcLinkShowAction]": [
+        "[IPcSwDevGroup]",
+        "[IPcSwUp]",
+        "[IPcSwMaster]",
+        "[IPcSwEtype]",
+        "[IPcSwVrf]"
+    ],
+    "[IPcLinkAddAction]": [
+        "[IPcLinkSwTxquelen]",
+        "[IPcLinkSwAddress]",
+        "[IPcLinkSwBroadcast]",
+        "[IPcSwMtu]",
+        "[IPcSwIndex]",
+        "[IPcSwNumTxQueues]",
+        "[IPcSwNumRxQueues]",
+        "[IPcSwGsoMaxSize]",
+        "[IPcSwGsoMaxSegs]"
+    ],
+    "[IPcLinkSetAction]": [
+        "[IPcSwUpDown]",
+        "[IPcSwArpOnOff]",
+        "[IPcSwDynamicOnOff]",
+        "[IPcSwMulticastOnOff]",
+        "[IPcSwAllMulticastOnOff]",
+        "[IPcSwPromiscOnOff]",
+        "[IPcSwProtodownOnOff]",
+        "[IPcPreason]",
+        "[IPcSwProtodownReasonsOnOff]",
+        "[IPcSwTrailersOnOff]",
+        "[IPcLinkSwTxquelen]",
+        "[IPcLinkSwFullName]",
+        "[IPcLinkSwAddress]",
+        "[IPcLinkSwBroadcast]",
+        "[IPcSwMtu]",
+        "[IPcSwNetns]",
+        "[IPcSwLinkNetns]",
+        "[IPcSwAlias]",
+        "[IPcSwVf]",
+        "[IPcXDPOpts] [IPcXdpActs]",
+        "[IPcSwMaster]",
+        "[IPcSwNoMaster]",
+        "[IPcSwVrf]",
+        "[IPcSwAddrgenmode]",
+        "[IPcSwMacAddr]"
+    ],
+    "[IPcSwMac]": [
+        " [MACAddr]",
+        ""
+    ],
+    "[IPcSwFlushAddDel]": [
+        " [IPcFlushAddDel]",
+        ""
+    ],
+    "[IPcSwSetMac]": [
+        " set [MACAddr]",
+        ""
+    ],
+    "[IPcSwMacAddr]": [
+        " macaddr[IPcSwMac][IPcSwFlushAddDel] [MACAddr][IPcSwSetMac]"
+    ],
+    "[IPcAddrgenmode]": [
+        "eui64",
+        "none",
+        "stable_secret",
+        "random"
+    ],
+    "[IPcSwAddrgenmode]": [
+        " addrgenmode [IPcAddrgenmode]",
+        ""
+    ],
+    "[IPcSwVrf]": [
+        " vrf [String]",
+        ""
+    ],
+    "[IPcSwNoMaster]": [
+        " nomaster",
+        ""
+    ],
+    "[IPcSwVf]": [
+        " vf [Number][IPcSwVFInnerList]",
+        ""
+    ],
+    "[IPcSwVFInner]": [
+        "mac [MACAddr]",
+        "[IPcVfvlanList]",
+        "rate [Number]",
+        "max_tx_rate [Number]",
+        "min_tx_rate [Number]",
+        "spoofchk [onoff]",
+        "query_rss [onoff]",
+        "state [autoenabledisable]",
+        "trust [onoff]",
+        "node_guid [euisixtyfour]",
+        "port_guid [euisixtyfour]"
+    ],
+    "[IPcXDPOpts]": [
+        "xdp",
+        "xdpgeneric",
+        "xdpdrv",
+        "xdpoffload"
+    ],
+    "[IPcXdpSwSection]": [
+        " section [String]",
+        ""
+    ],
+    "[SwVerbose]": [
+        "verbose",
+        ""
+    ],
+    "[IPcXdpActs]": [
+        "off",
+        "object [GlobalFile][IPcXdpSwSection][SwVerbose]",
+        "pinned [File"
+    ],
+    "[IPcVfvlanSwQos]": [
+        " qos [SmallNumber]",
+        ""
+    ],
+    "[vlanproto]": [
+        "802.1Q",
+        "802.1ad"
+    ],
+    "[IPcVfvlanSwProto]": [
+        " proto [vlanproto]",
+        ""
+    ],
+    "[IPcVfvlan]": [
+        " vlan [SmallNumber][IPcVfvlanSwQos][IPcVfvlanSwProto]",
+        ""
+    ],
+    "[IPcL2tpAction]": [
+        "add tunnel remote [IP] local [IP] tunnel_id [Number] peer_tunnel_id [Number] ",
+        "add session [IPcSwName] tunnel_id [Number] session_id [Number] peer_session_id [Number][IPcSwCookie][IPcSwPeerCookie][IPcSwL2TPSeq][IPcSwL2Type]",
+        "del tunnel tunnel_id [Number]",
+        "del session tunnel_id [Number] session_id [Number]",
+        "show tunnel[IPcSwTunnelId]",
+        "show session[IPcSwTunnelId][IPcSwSessionId]"
+    ],
+    "[IPcAddrlabelAction]": [
+        "[IPcAddrlabelAddDel]",
+        "[IPcAddrlabelBase]"
+    ],
+    "[IPcAddrlabelAddDel]": [
+        "[IPcSwAddDel] prefix [IP]/[SubMask][IPcSwDev][IPcSwLabel]"
+    ],
+    "[IPcAddrlabelBase]": [
+        "list",
+        "flush",
+        "help",
+        ""
+    ],
+    "[IPcAddrAlias]": [
+        "address",
+        "addr",
+        "a"
+    ],
+    "[saveflush]": [
+        "save",
+        "flush"
+    ],
+    "[IPcAddrSaveFlushAction]": [
+        "[IPcSwDev]",
+        "[IPcSwScope]",
+        "[IPcSwTo]",
+        "[IPcSwFlag]",
+        "[IPcSwLabel]",
+        "[IPcSwUp]"
+    ],
+    "[IPcAddressShow]": [
+        "",
+        "show[IPcAddressShowList]"
+    ],
+    "[IPcAddressShowAction]": [
+        "[IPcSwDev]",
+        "[IPcSwScope]",
+        "[IPcSwMaster]",
+        "[IPcSwType]",
+        "[IPcSwTo]",
+        "[IPcSwFlag]",
+        "[IPcSwLabel]",
+        "[IPcSwUp]",
+        "[IPcSwVRF]"
+    ],
+    "[IPcAddressShowdump]": [
+        "showdump",
+        "restore"
+    ],
+    "[IPcAddressIFADDR]": [
+        "[IP]/[SubMask]",
+        "[IP]/[SubMask] peer [IP]/[SubMask][IPcAddrPeerList]"
+    ],
+    "[IPcAddrPeer]": [
+        "[IPcSwBroadCast]",
+        "[IPcSwAnycast]",
+        "[IPcSwLabel]",
+        "[IPcSwScope]",
+        "[IPcSwMetric]"
+    ],
+    "[IPcAddressScopeID]": [
+        "host",
+        "link",
+        "global",
+        "[Number]",
+        ""
+    ],
+    "[IPcAddressSwConfFlagList]": [
+        " [IPcAddressConfFlagList]",
+        ""
+    ],
+    "[IPcAddressFlag]": [
+        " permanent",
+        " dynamic",
+        " secondary",
+        " primary",
+        " tentative",
+        " -tentative",
+        " deprecated",
+        " -deprecated",
+        " dadfailed",
+        " -dadfailed",
+        " temporary",
+        ""
+    ],
+    "[IPcAddressConfFlag]": [
+        " home",
+        " nodad",
+        " mngtmpaddr",
+        " noprefixroute",
+        " autojoin",
+        ""
+    ],
+    "[IPcAddrLft]": [
+        "preferred_lft [IPcAddressLFT]",
+        "valid_lft [IPcAddressLFT]"
+    ],
+    "[IPcAddrSwLft]": [
+        "[IPcAddrLft]",
+        "[IPcAddrLft] [IPcAddrLft]"
+    ],
+    "[IPcAddressSwLifeTime]": [
+        " [IPcAddrSwLft]",
+        ""
+    ],
+    "[IPcAddressLFT]": [
+        "forever",
+        "[Number]"
+    ],
+    "[IPcAddressLabelGlobal]": [
+        "[IPcSwAddDel] prefix [IP]/[SubMask][IPcSwDev][IPcSwLabel]",
+        "list",
+        "flush",
+        "help",
+        ""
+    ],
+    "[IPcSwL2TPSeq]": [
+        "seq [IPcL2SeqType]",
+        ""
+    ],
+    "[IPcSwL2Type]": [
+        "l2spec_type [IPcL2SpecType]",
+        ""
+    ],
+    "[IPcL2SeqType]": [
+        "none",
+        "send",
+        "recv",
+        "both"
+    ],
+    "[IPcL2SpecType]": [
+        "none",
+        "default"
+    ],
+    "[IPcSwCookie]": [
+        " cookie [HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar]",
+        " cookie [HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar]",
+        ""
+    ],
+    "[IPcSwPeerCookie]": [
+        " peer_cookie [HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar]",
+        " peer_cookie [HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar][HexChar]",
+        ""
+    ],
+    "[IPcSwName]": [
+        " name [String]",
+        ""
+    ],
+    "[IPcSwSessionId]": [
+        " session_id [Number]",
+        ""
+    ],
+    "[IPcSwTunnelId]": [
+        " tunnel_id [Number]",
+        ""
+    ],
+    "[IPcSwMngtmpaddr]": [
+        "",
+        " mngtmpaddr"
+    ],
+    "[IPcSwDev]": [
+        "",
+        " dev [Interface]"
+    ],
+    "[IPcSwScope]": [
+        "",
+        " scope [IPcAddressScopeID]"
+    ],
+    "[IPcSwMaster]": [
+        "",
+        " master [Interface]"
+    ],
+    "[IPcSwType]": [
+        "",
+        " type [IPcType]"
+    ],
+    "[IPcSwTo]": [
+        "",
+        " to [IP]/[SubMask]"
+    ],
+    "[IPcSwFlag]": [
+        "",
+        " [IPcAddressFlagList]"
+    ],
+    "[IPcSwLabel]": [
+        "",
+        " label [IPcLabel]"
+    ],
+    "[IPcSwUp]": [
+        "",
+        " up"
+    ],
+    "[IPcSwVRF]": [
+        "",
+        " vrf [IPcName]"
+    ],
+    "[IPcSwBroadCast]": [
+        "",
+        " broadcast [IP]"
+    ],
+    "[IPcSwAnycast]": [
+        "",
+        " anycast [IP]"
+    ],
+    "[IPcSwMetric]": [
+        "",
+        " metric [Number]"
+    ],
+    "[usersOptions]": [
+        "[usersLongOpt]"
+    ],
+    "[true]": [
+        "true",
+        "/usr/bin/true --help",
+        "/usr/bin/true --version"
+    ],
+  "[cpioTarget]": [
+    "[NewDirectory].cpio",
+    "[NewDirectory]"
+  ],
+  "[cpioPipe]": [
+    "cpio [cpioOptions] > [cpioTarget]"
+  ],
+  "[cpioCharOpt]": [
+    "C [Number]",
+    "D [DirectoryTarget]",
+    "H [cpioArchiveFmt]",
+    "R [cpioUserExp]",
+    "M [String]",
+    "W [cpioFlag]"
+  ],
+  "[cpioChar]": [
+    "?",
+    "0",
+    "a",
+    "A",
+    "b",
+    "B",
+    "c",
+    "d",
+    "f",
+    "i",
+    "m",
+    "l",
+    "L",
+    "n",
+    "o",
+    "p",
+    "r",
+    "t",
+    "s",
+    "S",
+    "u",
+    "v",
+    "V"
+  ],
+  "[cpioArchiveFmt]": [
+    "bin",
+    "odc",
+    "newc",
+    "crc",
+    "tar",
+    "ustart",
+    "hpbin",
+    "hpodc"
+  ],
+  "[cpioUserIDExp]": [
+    "+[Number]",
+    "+[SmallNumber]",
+    "+[Number]:+[Number]",
+    "+[SmallNumber]:+[SmallNumber]"
+  ],
+  "[cpioUserStrExp]": [
+    "[Username]",
+    "[Username]:[Groupname]"
+  ],
+  "[cpioUserExp]": [
+    "[cpioUserStrExp]",
+    "[cpioUserIdExp]"
+  ],
+  "[cpioFlag]": [
+    "none",
+    "all",
+    "truncate",
+    "no-truncate"
+  ],
+  "[cpioLongOpt]": [
+    "--absolute-filenames",
+    "--append",
+    "--block-size=[Number]",
+    "--create",
+    "--dereference",
+    "--device-independent,",
+    "--directory=[DirectoryTarget]",
+    "--dot",
+    "--extract",
+    "--force-local",
+    "--format=[cpioArchiveFmt]",
+    "--help",
+    "--ignore-devno",
+    "--io-size=[Number]",
+    "--link",
+    "--list",
+    "--make-directories",
+    "--message=[String]",
+    "--no-absolute-filenames",
+    "--nonmatching",
+    "--no-preserve-owner",
+    "--null",
+    "--numeric-uid-gid",
+    "--only-verify-crc",
+    "--owner=[cpioUserExp]",
+    "--pass-through",
+    "--preserve-modification-time",
+    "--quiet",
+    "--rename",
+    "--renumber-inodes",
+    "--reproducible",
+    "--reset-access-time",
+    "--sparse",
+    "--swap",
+    "--swap-bytes",
+    "--swap-halfwords",
+    "--to-stdout",
+    "--unconditional",
+    "--usage",
+    "--verbose",
+    "--version",
+    "--warning=[cpioFlag]"
+  ],
+  "[cpioOptions]": [
+    "<ns>[cpioChar]<ns>",
+    "-[cpioChar]<ns>",
+    "-[cpioCharOpt]<ns>",
+    "[cpioLongOpt]"
+  ],
+  "[teePipe]": [
+    "tee [teeOptions] [FileTarget]"
+  ],
+  "[teeChar]": [
+    "a",
+    "i",
+    "p"
+  ],
+  "[teeOutOpt]": [
+    "",
+    "=warn",
+    "=warn-nopipe",
+    "=exit",
+    "=exit-nopipe"
+  ],
+  "[teeLongOpt]": [
+    "--append",
+    "--ignore-interrupts",
+    "--output-error[teeOutOpt]",
+    "--help",
+    "--version"
+  ],
+  "[teeOptions]": [
+    "<ns>[teeChar]<ns>",
+    "-[teeChar]<ns>",
+    "[teeLongOpt]"
+  ],
+  "[odCharOpt]": [
+    "A [odRadixOpt]",
+    "j [Number][ByteSuffixOpt]",
+    "N [Number][ByteSuffixOpt]",
+    "S [Number][ByteSuffixOpt]",
+    "t [odFmtType][odTypezOpt]",
+    "w[Number][ByteSuffixOpt]"
+  ],
+  "[odChar]": [
+    "v"
+  ],
+  "[odTypezOpt]": [
+    "z",
+    ""
+  ],
+  "[odFmtType]": [
+    "a",
+    "c",
+    "d[odSize]",
+    "f[odSize]",
+    "o[odSize]",
+    "u[odSize]",
+    "x[odSize]"
+  ],
+  "[odSize]": [
+    "[Number]",
+    "c",
+    "S",
+    "I",
+    "L",
+    "F",
+    "D"
+  ],
+  "[bigLittle]": [
+    "big",
+    "little"
+  ],
+  "[ByteSuffixOpt]": [
+    "",
+    "b",
+    "kB",
+    "K",
+    "MB",
+    "M"
+  ],
+  "[odByteOpt]": [
+    "",
+    "=[Number][ByteSuffixOpt]"
+  ],
+  "[odLongOpt]": [
+    "--address-radix=[odRadixOpt]",
+    "--endian=[bigLittle]",
+    "--skip-bytes=[Number][ByteSuffixOpt]",
+    "--read-bytes=[Number][ByteSuffixOpt]",
+    "--strings[odByteOpt]",
+    "--format=[odFmtType][odTypezOpt]",
+    "--output-duplicates",
+    "--width[odByteOpt]",
+    "--traditional",
+    "--help",
+    "--version"
+  ],
+  "[odOptions]": [
+    "<ns>[odChar]<ns>",
+    "-[odChar]<ns>",
+    "-[odCharOpt]",
+    "<ns>[odCharOpt]",
+    "[odLongOpt]"
+  ],
+  "[odPipe]": [
+    "od [odOptions]",
+    "od [odOptions] -"
+  ],
+  "[od]": [
+    "od [odOptions] [FileTarget]"
+  ],
+  "[trPipe]": [
+    "tr [trOptions] [trSet][trOptSet]"
+  ],
+  "[trChar]": [
+    "c",
+    "C",
+    "d",
+    "s",
+    "t"
+  ],
+  "[trLongOpt]": [
+    "--complement",
+    "--delete",
+    "--squeeze-repeats",
+    "--truncate-set1",
+    "--help",
+    "--version"
+  ],
+  "[trOptions]": [
+    "-[trChar]<ns>",
+    "<ns>[trChar]<ns>",
+    "[trLongOpt]"
+  ],
+  "[trString]": [
+    "\"[Character]\"",
+    "\"\\[chmodOctalPerm]\"",
+    "\"\\\\\"",
+    "\"\\a\"",
+    "\"\\b\"",
+    "\"\\f\"",
+    "\"\\n\"",
+    "\"\\r\"",
+    "\"\\t\"",
+    "\\v",
+    "[Character]-[Character]",
+    "\"[[Character]*]\"",
+    "\"[[Character]*REPEAT]\"",
+    "\"[:alnum:]\"",
+    "\"[:alpha:]\"",
+    "\"[:blank:]\"",
+    "\"[:cntrl:]\"",
+    "\"[:digit:]\"",
+    "\"[:graph:]\"",
+    "\"[:lower:]\"",
+    "\"[:print:]\"",
+    "\"[:punct:]\"",
+    "\"[:space:]\"",
+    "\"[:upper:]\"",
+    "\"[:xdigit:]\"",
+    "\"[=[Character]=]\""
+  ],
+  "[trSet]": [
+    "[Character]",
+    "[trString]"
+  ],
+  "[trOptSet]": [
+    " [trSet]",
+    ""
+  ],
+  "[rmCharSw]": [
+    " [rmChar]",
+    ""
+  ],
+  "[lsCharSw]": [
+    " [lsChar]",
+    ""
+  ],
+  "[readlinkCharSw]": [
+    " [readlinkChar]",
+    ""
+  ],
+  "[xargsCmd]": [
+    "rm[rmCharSw]",
+    "ls[lsCharSw]",
+    "touch",
+    "echo",
+    "readlink[readlinkCharSw]"
+  ],
+  "[xargsPipe]": [
+    "xargs [xargsOptions] [xargsCmd]"
+  ],
+  "[xargsLongOpt]": [
+    "--null",
+    "--delimiter=[Character]",
+    "--max-lines=[Number]",
+    "--max-args=[SmallNumber]",
+    "--max-procs=[Number]",
+    "--process-slot-var=[Variable]",
+    "--show-limits",
+    "--verbose",
+    "--exit",
+    "--help",
+    "--version"
+  ],
+  "[xargsCharOpt]": [
+    "d [Character]",
+    "L [Number]",
+    "l[Number]",
+    "n [SmallNumber]",
+    "P [Number]",
+    "s [Number]"
+  ],
+  "[xargsChar]": [
+    "0",
+    "r",
+    "t",
+    "x"
+  ],
+  "[xargsOptions]": [
+    "<ns>[xargsChar]<ns>",
+    "-[xargsChar]<ns>",
+    "-[xargsCharOpt]",
+    "<ns>[xargsCharOpt]",
+    "[xargsLongOpt]"
+  ],
+  "[foldCharOpt]": [
+    "w [Number]"
+  ],
+  "[foldChar]": [
+    "b",
+    "s"
+  ],
+  "[foldLongOpt]": [
+    "--bytes",
+    "--spaces",
+    "--width=[Number]",
+    "--help",
+    "--version"
+  ],
+  "[foldOptions]": [
+    "<ns>[foldChar]<ns>",
+    "-[foldChar]<ns>",
+    "-[foldCharOpt]",
+    "<ns>[foldCharOpt]",
+    "[foldLongOpt]"
+  ],
+  "[fold]": [
+    "fold [foldOptions] [FileTarget]"
+  ],
+  "[foldPipe]": [
+    "fold [foldOptions] -",
+    "fold [foldOptions]"
+  ],
+  "[revChar]": [
+    "h",
+    "V"
+  ],
+  "[revLongOpt]": [
+    "--help",
+    "--version"
+  ],
+  "[revOptions]": [
+    "",
+    "",
+    "",
+    "<ns>[revChar]<ns>",
+    "-[revChar]<ns>",
+    "[revLongOpt]"
+  ],
+  "[revPipe]": [
+    "rev [revOptions]"
+  ],
+  "[rev]": [
+    "rev [revOptions] [FileTarget]"
+  ],
+  "[commChar]": [
+    "1",
+    "2",
+    "3",
+    "z"
+  ],
+  "[commLongOpt]": [
+    "--check-order",
+    "--nocheck-order",
+    "--output-delimiter=[String]",
+    "--total",
+    "--zero-terminated",
+    "--help",
+    "--version"
+  ],
+  "[commOptions]": [
+    "<ns>[commChar]<ns>",
+    "-[commChar]<ns>",
+    "[commLongOpt]"
+  ],
+  "[commPipe]": [
+    "comm [commOptions] - [FileTarget]",
+    "comm [commOptions] [FileTarget] -"
+  ],
+  "[comm]": [
+    "comm [commOptions] [FileTarget] [FileTarget]"
+  ],
+  "[readlinkChar]": [
+    "f",
+    "f",
+    "m",
+    "n",
+    "q",
+    "s",
+    "v",
+    "z"
+  ],
+  "[readlinkLongOpt]": [
+    "--canonicalize",
+    "--canonicalize-missing",
+    "--no-newline",
+    "--quiet",
+    "--silent",
+    "--verbose",
+    "--zero",
+    "--help",
+    "--version"
+  ],
+  "[readlinkOptions]": [
+    "<ns>[readlinkChar]<ns>",
+    "-[readlinkChar]<ns>",
+    "[readlinkLongOpt]"
+  ],
+  "[readlink]": [
+    "readlink [readlinkOptions] [FileTarget]",
+    "ls [lsTarget] | readlink [readlinkOptions]"
+  ],
+    "[shred]": [
+        "shred [shredOptions] [Files]"
+    ],
+    "[shredOptions]": [
+        "-[shredChar]<ns>",
+        "<ns>[shredChar]<ns>",
+        "-[shredCharOpt]",
+        "<ns>[shredCharOpt]",
+        "[shredLongOpt]"
+    ],
+    "[shredSizeOpt]": [
+        "[SmallNumber]M",
+        "[MediumNumber]K",
+        "[LargerNumber]"
+    ],
+    "[shredRemoveOpt]": [
+        "unlink",
+        "wipe",
+        "wipesync"
+    ],
+    "[stat]": [
+        "stat [statOptions] [Files]"
+    ],
+    "[statOptions]": [
+        "-[statChar]<ns>",
+        "<ns>[statChar]<ns>",
+        "-[statCharOpt]",
+        "<ns>[statCharOpt]",
+        "[statLongOpt]"
+    ],
+    "[cacheMode]": [
+        "always",
+        "never",
+        "default"
+    ],
+    "[statFileFmt]": [
+        "%a",
+        "%A",
+        "%b",
+        "%B",
+        "%B",
+        "%b",
+        "%C",
+        "%d",
+        "%D",
+        "%f",
+        "%F",
+        "%g",
+        "%G",
+        "%h",
+        "%i",
+        "%m",
+        "%n",
+        "%N",
+        "%o",
+        "%s",
+        "%t",
+        "%T",
+        "%u",
+        "%U",
+        "%w",
+        "%W",
+        "%x",
+        "%X",
+        "%y",
+        "%Y",
+        "%z",
+        "%Z"
+    ],
+    "[statFmtString]": [
+        "\"[StringOpt][statFileFmt][StringOpt]\"",
+        "\"[StringOpt][statFileFmt][StringOpt][statFileFmt]\"",
+        "\"[StringOpt][statFileFmt][StringOpt][statFileFmt][StringOpt]\""
+    ],
+    "[statFSFmt]": [
+        "%a",
+        "%b",
+        "%c",
+        "%d",
+        "%f",
+        "%i",
+        "%l",
+        "%n",
+        "%s",
+        "%S",
+        "%t",
+        "%T"
+    ],
+    "[printenv]": [
+        "printenv [printenvOptions] [Variables]"
+    ],
+    "[printenvOptions]": [
+        "-[printenvChar]<ns>",
+        "<ns>[printenvChar]<ns>",
+        "[printenvLongOpt]"
+    ],
+    "[nproc]": [
+        "nproc [nprocOptions]"
+    ],
+    "[nprocOptions]": [
+        "[nprocLongOpt]"
+    ],
+    "[logname]": [
+        "logname [lognameOptions]"
+    ],
+    "[lognameOptions]": [
+        "[lognameLongOpt]"
+    ],
+    "[link]": [
+        "link [linkOptions]",
+        "link [GlobalFile] [FileTarget]",
+        "link [FileTarget] [FileTarget]"
+    ],
+    "[linkOptions]": [
+        "[linkLongOpt]"
+    ],
+    "[unlink]": [
+        "unlink [unlinkOptions]",
+        "unlink [FileTarget]"
+    ],
+    "[unlinkOptions]": [
+        "[unlinkLongOpt]"
+    ],
+    "[hostid]": [
+        "hostid [hostidOptions]"
+    ],
+    "[hostidOptions]": [
+        "[hostidLongOpt]"
+    ],
+    "[groups]": [
+        "groups [groupsOptions] [Username]",
+        "groups [groupsOptions]"
+    ],
+    "[groupsOptions]": [
+        "[groupsLongOpt]"
+    ],
+    "[false]": [
+        "false",
+        "/usr/bin/false --help",
+        "/usr/bin/false --version"
+    ],
+    "[dirname]": [
+        "dirname [dirnameOptions] [Path]",
+        "dirname [dirnameOptions] [Path] [Path]",
+        "dirname [dirnameOptions] [FileTarget]"
+    ],
+    "[dirnameOptions]": [
+        "-[dirnameChar]<ns>",
+        "<ns>[dirnameChar]<ns>",
+        "[dirnameLongOpt]"
+    ],
+    "[basename]": [
+        "basename [basenameOptions] [Path]",
+        "basename [basenameOptions] [Path] [Path]",
+        "basename [basenameOptions] [FileTarget]",
+        "basename [basenameOptions] [FileTarget] [Extension]"
+    ],
+    "[basenameOptions]": [
+        "-[basenameChar]<ns>",
+        "<ns>[basenameChar]<ns>",
+        "-[basenameCharOpt]",
+        "<ns>[basenameCharOpt]",
+        "[basenameLongOpt]"
+    ],
+    "[arch]": [
+        "arch [archOptions]"
+    ],
+    "[archOptions]": [
+        "[archLongOpt]"
+    ],
+    "[unexpand]": [
+        "unexpand [unexpandOptions] [Files]"
+    ],
+    "[unexpandOptions]": [
+        "-[unexpandChar]<ns>",
+        "<ns>[unexpandChar]<ns>",
+        "-[unexpandCharOpt]",
+        "<ns>[unexpandCharOpt]",
+        "[unexpandLongOpt]"
+    ],
+    "[tail]": [
+        "tail [tailOptions] [Files]"
+    ],
+  "[tailPipe]": [
+        "tail [tailOptions]",
+        "tail [tailOptions] -"
+    ],
+    "[tailOptions]": [
+        "-[tailChar]<ns>",
+        "<ns>[tailChar]<ns>",
+        "-[tailCharOpt]",
+        "<ns>[tailCharOpt]",
+        "[tailLongOpt]"
+    ],
+    "[head]": [
+        "head [headOptions] [Files]"
+    ],
+  "[headPipe]": [
+        "head [headOptions]",
+      "head [headOptions] -"
+    ],
+    "[headOptions]": [
+        "-[headChar]<ns>",
+        "<ns>[headChar]<ns>",
+        "-[headCharOpt]",
+        "<ns>[headCharOpt]",
+        "[headLongOpt]"
+    ],
+  "[CharacterOpt]": [
+    " [Character]",
+    ""
+  ],
+    "[split]": [
+        "split [splitOptions] [FileTarget][CharacterOpt]"
+    ],
+    "[splitPipe]": [
+        "split [splitOptions] -",
+        "split [splitOptions]"
+    ],
+    "[splitOptions]": [
+        "-[splitChar]<ns>",
+        "<ns>[splitChar]<ns>",
+        "-[splitCharOpt]",
+        "<ns>[splitCharOpt]",
+        "[splitLongOpt]"
+    ],
+    "[sort]": [
+        "sort [sortOptions] [Files]"
+    ],
+  "[sortPipe]": [
+        "sort [sortOptions]",
+        "sort [sortOptions] -"
+    ],
+    "[sortOptions]": [
+        "-[sortChar]<ns>",
+        "<ns>[sortChar]<ns>",
+        "-[sortCharOpt]",
+        "<ns>[sortCharOpt]",
+        "[sortLongOpt]"
+    ],
+    "[sortWord]": [
+        "general-numeric",
+        "human-numeric",
+        "month",
+        "numeric",
+        "random",
+        "version"
+    ],
+    "[paste]": [
+        "paste [pasteOptions] [Files]"
+    ],
+  "[pastePipe]": [
+        "paste [pasteOptions]",
+        "paste [pasteOptions] -"
+    ],
+    "[pasteOptions]": [
+        "-[pasteChar]<ns>",
+        "<ns>[pasteChar]<ns>",
+        "[pasteLongOpt]"
+    ],
+    "[nl]": [
+        "nl [nlOptions] [Files]"
+    ],
+  "[nlPipe]": [
+        "nl [nlOptions]"
+    ],
+    "[nlOptions]": [
+        "-[nlChar]<ns>",
+        "<ns>[nlChar]<ns>",
+        "-[nlCharOpt]",
+        "<ns>[nlCharOpt]",
+        "[nlLongOpt]"
+    ],
+    "[nlStyle]": [
+        "a",
+        "t",
+        "n",
+        "pBRE"
+    ],
+    "[nlFormat]": [
+        "ln",
+        "rn",
+        "rz"
+    ],
+    "[truncate]": [
+        "truncate [truncateOptions] [Files]"
+    ],
+    "[truncateOptions]": [
+        "-[truncateChar]<ns>",
+        "<ns>[truncateChar]<ns>",
+        "-[truncateCharOpt]",
+        "<ns>[truncateCharOpt]",
+        "[truncateLongOpt]"
+    ],
+    "[vdir]": [
+        "vdir [lsOptions] [lsTarget]"
+    ],
+    "[dir]": [
+        "dir [lsOptions] [lsTarget]"
+    ],
+    "[mkfifo]": [
+        "mkfifo [mkfifoOptions] [String]"
+    ],
+    "[mkfifoOptions]": [
+        "-[mkfifoChar]<ns>",
+        "<ns>[mkfifoChar]<ns>",
+        "-[mkfifoCharOpt]",
+        "<ns>[mkfifoCharOpt]",
+        "[mkfifoLongOpt]"
+    ],
+    "[mkfifoCTXSwOpt]": [
+        "=SELinux",
+        "=SMACK",
+        ""
+    ],
+    "[mktemp]": [
+        "mktemp [mktempOptions] [mktempTemplate]"
+    ],
+    "[mktempOptions]": [
+        "-[mktempChar]<ns>",
+        "<ns>[mktempChar]<ns>",
+        "-[mktempCharOpt]",
+        "<ns>[mktempCharOpt]",
+        "[mktempLongOpt]"
+    ],
+    "[mktempTemplate]": [
+        "[StringOpt]XXX[NewDirectory]XXX[StringOpt]"
+    ],
+    "[mktmpSwDirOpt]": [
+        "=[DirectoryTarget]",
+        ""
+    ],
+    "[cut]": [
+        "cut [cutOptions] [Files]"
+    ],
+  "[cutPipe]": [
+        "cut [cutOptions]"
+  ],
+    "[cutOptions]": [
+        "-[cutChar]<ns>",
+        "<ns>[cutChar]<ns>",
+        "-[cutCharOpt]",
+        "<ns>[cutCharOpt]",
+        "[cutLongOpt]"
+    ],
+    "[uniq]": [
+        "uniq [uniqOptions] [FileTarget] [NewFile]",
+        "uniq [uniqOptions] [FileTarget]"
+    ],
+  "[uniqPipe]": [
+    "uniq [uniqOptions]"
+  ],
+    "[uniqOptions]": [
+        "-[uniqChar]<ns>",
+        "<ns>[uniqChar]<ns>",
+        "-[uniqCharOpt]",
+        "<ns>[uniqCharOpt]",
+        "[uniqLongOpt]"
+    ],
+    "[uniqMethodSw]": [
+        "=separate",
+        "=prepend",
+        "=append",
+        "=both",
+        ""
+    ],
+    "[addel]": [
+        "add",
+        "del"
+    ],
+    "[IPcFlushAddDel]": [
+        "flush",
+        "add",
+        "del"
+    ],
+    "[autoenabledisable]": [
+        "auto",
+        "enable",
+        "disable"
+    ],
+    "[addchangerepl]": [
+        "add",
+        "change",
+        "replace"
+    ],
+    "[IPcSwAddDel]": [
+        " add",
+        " del"
+    ],
+    "[updown]": [
+        "up",
+        "down"
+    ],
+    "[zeroone]": [
+        "0",
+        "1"
+    ],
+    "[IPcRouteNHFlags]": [
+        "onlink",
+        "pervasive"
+    ],
+    "[IPcTimesw]": [
+        "s",
+        "ms"
+    ],
+    "[ipcFamily]": [
+        "inet",
+        "inet6",
+        "mpls",
+        "bridge",
+        "link"
+    ],
+    "[highmedlow]": [
+        "high",
+        "medium",
+        "low"
+    ],
+    "[IPcType]": [
+        "bareudp",
+        "bond",
+        "bond_slave",
+        "bridge",
+        "bridge_slave",
+        "dummy",
+        "erspan",
+        "geneve",
+        "gre",
+        "gretap",
+        "ifb",
+        "ip6erspan",
+        "ip6gre",
+        "ip6gretap",
+        "ip6tnl",
+        "ipip",
+        "ipoib",
+        "ipvlan",
+        "ipvtap",
+        "macsec",
+        "macvlan",
+        "macvtap",
+        "netdevsim",
+        "nlmon",
+        "rmnet",
+        "sit",
+        "team",
+        "team_slave",
+        "vcan",
+        "veth",
+        "vlan",
+        "vrf",
+        "vti",
+        "vxcan",
+        "vxlan",
+        "wwan",
+        "xfrm"
+    ],
+    "[cDFBlockSize]": [
+        "K",
+        "M",
+        "G",
+        ""
+    ],
+    "[dfField]": [
+        "source",
+        "fstype",
+        "itotal",
+        "iused",
+        "iavail",
+        "ipcent",
+        "size",
+        "used",
+        "avail",
+        "pcent",
+        "file",
+        "target"
+    ],
+    "[plusNone]": [
+        "+",
+        ""
+    ],
+    "[AlwaysAutoNever]": [
+        "always",
+        "auto",
+        "never"
+    ],
+    "[plusminusnone]": [
+        "+",
+        "-",
+        ""
+    ],
+    "[LastSuffix]": [
+        "min",
+        "day",
+        "days",
+        "hours",
+        "hour",
+        "second",
+        "seconds",
+        "month",
+        "months",
+        "year",
+        "years"
+    ],
+    "[psHelpType]": [
+        "simple",
+        "list",
+        "output",
+        "threads",
+        "misc",
+        "all",
+        "s",
+        "l",
+        "o",
+        "t",
+        "m",
+        "a",
+        ""
+    ],
+    "[IPcDevGroup]": [
+        "[Interface]",
+        "group [IPcGroup]"
+    ],
+    "[euisixtyfour]": [
+        "[MACAddr][HexChar][HexChar][HexChar][HexChar]"
+    ],
+    "[IPcLabel]": [
+        "[Interface]:[SmallNumber]"
+    ],
+    "[IPcName]": [
+        "[IPcLabel]",
+        "[String]"
+    ],
+    "[DateTimeFormatList]": [
+        "[DateTimeObj][DateTimeObj][DateTimeObj]",
+        "[DateTimeObj][DateTimeObj]",
+        "[DateTimeObj]"
+    ],
+    "[curlProtoList]": [
+        "[curlProtoFilter]",
+        "[curlProtoFilter],[curlProtoFilter]",
+        "[curlProtoFilter],[curlProtoFilter],[curlProtoFilter]"
+    ],
+    "[IPTablesStateList]": [
+        "[IPTablesState]",
+        "[IPTablesState],[IPTablesState]",
+        "[IPTablesState],[IPTablesState],[IPTablesState]"
+    ],
+    "[IPcRouteSelectorList]": [
+        "[IPcRouteSelector]",
+        "[IPcRouteSelector][IPcRouteSelector]",
+        "[IPcRouteSelector][IPcRouteSelector][IPcRouteSelector]"
+    ],
+    "[IPcLinkShowActionList]": [
+        "[IPcLinkShowAction][IPcLinkShowAction][IPcLinkShowAction]",
+        "[IPcLinkShowAction][IPcLinkShowAction]",
+        "[IPcLinkShowAction]"
+    ],
+    "[IPcLinkAddActionList]": [
+        "[IPcLinkAddAction][IPcLinkAddAction][IPcLinkAddAction]",
+        "[IPcLinkAddAction][IPcLinkAddAction]",
+        "[IPcLinkAddAction]"
+    ],
+    "[IPcLinkSetActionList]": [
+        "[IPcLinkSetAction][IPcLinkSetAction][IPcLinkSetAction]",
+        "[IPcLinkSetAction][IPcLinkSetAction]",
+        "[IPcLinkSetAction]"
+    ],
+    "[IPcRouteGetActionList]": [
+        "[IPcRouteGetAction][IPcRouteGetAction][IPcRouteGetAction]",
+        "[IPcRouteGetAction][IPcRouteGetAction]",
+        "[IPcRouteGetAction]"
+    ],
+    "[IPcSwVFInnerList]": [
+        " [IPcSwVFInner]",
+        " [IPcSwVFInner] [IPcSwVFInner]",
+        " [IPcSwVFInner] [IPcSwVFInner] [IPcSwVFInner]",
+        ""
+    ],
+    "[IPcVfvlanList]": [
+        "[IPcVfvlan]",
+        "[IPcVfvlan] [IPcVfvlan]",
+        "[IPcVfvlan] [IPcVfvlan] [IPcVfvlan]",
+        ""
+    ],
+    "[IPcAddressShowList]": [
+        "[IPcAddressShowAction]",
+        "[IPcAddressShowAction][IPcAddressShowAction]",
+        "[IPcAddressShowAction][IPcAddressShowAction][IPcAddressShowAction]"
+    ],
+    "[IPcAddrSaveFlushActionList]": [
+        "[IPcAddrSaveFlushAction] [IPcAddrSaveFlushAction] [IPcAddrSaveFlushAction]",
+        "[IPcAddrSaveFlushAction] [IPcAddrSaveFlushAction]",
+        "[IPcAddrSaveFlushAction] "
+    ],
+    "[IPcRouteNodeList]": [
+        "[IPcRouteNodes][IPcRouteNodes][IPcRouteNodes]",
+        "[IPcRouteNodes][IPcRouteNodes]",
+        "[IPcRouteNodes]"
+    ],
+    "[IPcRouteOptionList]": [
+        "[IPcRouteOption]",
+        "[IPcRouteOption][IPcRouteOption]",
+        "[IPcRouteOption][IPcRouteOption][IPcRouteOption]"
+    ],
+    "[IPcAddrPeerList]": [
+        "[IPcAddrPeer][IPcAddrPeer][IPcAddrPeer]",
+        "[IPcAddrPeer][IPcAddrPeer]",
+        "[IPcAddrPeer]"
+    ],
+    "[IPcAddressFlagList]": [
+        "[IPcAddressFlag][IPcAddressFlag][IPcAddressFlag]",
+        "[IPcAddressFlag][IPcAddressFlag]",
+        "[IPcAddressFlag]",
+        ""
+    ],
+    "[IPcAddressConfFlagList]": [
+        "[IPcAddressConfFlag][IPcAddressConfFlag][IPcAddressConfFlag]",
+        "[IPcAddressConfFlag][IPcAddressConfFlag]",
+        "[IPcAddressConfFlag]"
+    ],
+    "[psPIDList]": [
+        "[Number]",
+        "[Number],[Number]",
+        "[Number],[Number],[Number]"
+    ],
+    "[psTTYList]": [
+        "[psTTY]",
+        "[psTTY],[psTTY]",
+        "[psTTY],[psTTY],[psTTY]"
+    ],
+    "[psTTY]": [
+        "tty[SmallNumber]",
+        "pts/[SmallNumber]"
+    ],
+    "[psCommandList]": [
+        "[psCommand]",
+        "[psCommand],[psCommand]",
+        "[psCommand],[psCommand],[psCommand]"
+    ],
+    "[psUserList]": [
+        "[UID]",
+        "[UID],[UID]",
+        "[UID],[UID],[UID]"
+    ],
+    "[psPIDFormatList]": [
+        "[psPIDFormat]",
+        "[psPIDFormat],[psPIDFormat]",
+        "[psPIDFormat],[psPIDFormat],[psPIDFormat]"
+    ],
+    "[psSortOrderList]": [
+        "[plusminusnone][psSortOrderOpt]",
+        "[plusminusnone][psSortOrderOpt],[plusminusnone][psSortOrderOpt]",
+        "[plusminusnone][psSortOrderOpt],[plusminusnone][psSortOrderOpt],[plusminusnone][psSortOrderOpt]"
+    ],
+    "[psSessList]": [
+        "[SmallNumber]",
+        "[SmallNumber],[SmallNumber]",
+        "[SmallNumber],[SmallNumber],[SmallNumber]"
+    ],
+    "[cutByteList]": [
+        "[Character]",
+        "[Character],[Character]"
+    ],
+    "[dfFieldList]": [
+        "[dfField]",
+        "[dfField],[dfField]",
+        "[dfField],[dfField],[dfField]"
+    ],
+    "[chmodPermCharList]": [
+        "[chmodPermChar]",
+        "[chmodPermChar][chmodPermChar]",
+        "[chmodPermChar][chmodPermChar][chmodPermChar]"
+    ],
+    "[cpPreserveList]": [
+        "[cpPreserveOpt]",
+        "[cpPreserveOpt],[cpPreserveOpt]",
+        "[cpPreserveOpt],[cpPreserveOpt],[cpPreserveOpt]"
+    ],
+    "[dmesgLogFacilityList]": [
+        "[dmesgLogFacility]",
+        "[dmesgLogFacility],[dmesgLogFacility]",
+        "[dmesgLogFacility],[dmesgLogFacility],[dmesgLogFacility]"
+    ],
+    "[dmesgLogLevelList]": [
+        "[dmesgLogLevel]",
+        "[dmesgLogLevel],[dmesgLogLevel]",
+        "[dmesgLogLevel],[dmesgLogLevel],[dmesgLogLevel]"
+    ],
+    "[lsblkColList]": [
+        "[lsblkCol]",
+        "[lsblkCol],[lsblkCol]",
+        "[lsblkCol],[lsblkCol],[lsblkCol]"
+    ],
+    "[lsParseList]": [
+        "[lsParse]",
+        "[lsParse],[lsParse]",
+        "[lsParse],[lsParse],[lsParse]"
+    ],
+    "[lsCacheList]": [
+        "[lsCache]",
+        "[lsCache],[lsCache]",
+        "[lsCache],[lsCache],[lsCache]"
+    ],
+    "[wgetRestrictFileNameOptList]": [
+        "[wgetRestrictFileNameOpt]",
+        "[wgetRestrictFileNameOpt],[wgetRestrictFileNameOpt]",
+        "[wgetRestrictFileNameOpt],[wgetRestrictFileNameOpt],[wgetRestrictFileNameOpt]"
+    ],
+    "[wgetProgressOptParamList]": [
+        ":[wgetProgressOptParam]",
+        ":[wgetProgressOptParam]:[wgetProgressOptParam]",
+        ""
+    ],
+    "[archLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[dfCharOpt]": [
+        "B [cDFBlockSize]",
+        "B [Number][cDFBlockSize]",
+        "t [dfType]",
+        "x [dfType]"
+    ],
+    "[dfLongOpt]": [
+        "--all",
+        "--block-size=[cDFBlockSize]",
+        "--block-size=[Number][cDFBlockSize]",
+        "--human-readable",
+        "--si",
+        "--inodes",
+        "--local",
+        "--no-sync",
+        "--output",
+        "--output=[dfFieldList]",
+        "--portability",
+        "--sync",
+        "--total",
+        "--type=[dfType]",
+        "--exclude-type=[dfType]",
+        "--help",
+        "--version"
+    ],
+    "[grepLongOpt]": [
+        "--extended-regexp",
+        "--fixed-strings",
+        "--basic-regexp",
+        "--perl-regexp",
+        "--regexp=[QuotePattern]",
+        "--file=[FileTarget]",
+        "--ignore-case",
+        "--no-ignore-case",
+        "--word-regexp",
+        "--line-regexp",
+        "--null-data",
+        "--no-messages",
+        "--invert-match",
+        "--max-count=[Number]",
+        "--byte-offset",
+        "--line-number",
+        "--line-buffered",
+        "--with-filename",
+        "--no-filename",
+        "--label=[FileTarget]",
+        "--only-matching",
+        "--quiet",
+        "--silent",
+        "--binary-files=[grepBinFiles]",
+        "--text",
+        "--directories=[grepDirOpts]",
+        "--devices=[grepDirOpts]",
+        "--recursive",
+        "--dereference-recursive",
+        "--include=[FilePattern]",
+        "--exclude=[FilePattern]",
+        "--exclude-from=[FileTarget]",
+        "--excluder-dir=[FilePattern]",
+        "--files-without-match",
+        "--files-with-matches",
+        "--count",
+        "--initial-tab",
+        "--null",
+        "--before-context=[SmallNumber]",
+        "--after-context=[SmallNumber]",
+        "--context=[SmallNumber]",
+        "--group-separator=[Separator]",
+        "--no-group-separator",
+        "--color=[AlwaysAutoNever]",
+        "--binary",
+        "--help",
+        "--version"
+    ],
+    "[lsCharOpt]": [
+        "I [FilePattern]",
+        "T [SmallNumber]",
+        "w [SmallNumber]"
+    ],
+    "[lsLongOpt]": [
+        "--author",
+        "--block-size=[MediumNumber]",
+        "--color=[AlwaysAutoNever]",
+        "--dereference-command-line-symlink-to-dir",
+        "--file-type",
+        "--format=[lsFormat]",
+        "--full-time",
+        "--group-directories-first",
+        "--hide=[FilePattern]",
+        "--hyperlink=[AlwaysAutoNever]",
+        "--indicator-style=[lsIndicatorStyle]",
+        "--quoting-style=[lsQuotingStyle]",
+        "--show-control-chars",
+        "--si",
+        "--sort=[lsSort]",
+        "--time=[lsTime]",
+        "--time-style=[duTimeStyle]",
+        "--almost-all",
+        "--ignore-backups",
+        "--dired",
+        "--classify",
+        "--no-group",
+        "--dereference-command-line",
+        "--ignore=[FilePattern]",
+        "--dereference",
+        "--literal",
+        "--quote-name",
+        "--recursive",
+        "--tabsize=[SmallNumber]",
+        "--context",
+        "--all",
+        "--escape",
+        "--directory",
+        "--human-readable",
+        "--inode",
+        "--kibibytes",
+        "--numeric-uid-gid",
+        "--hide-control-chars",
+        "--reverse",
+        "--size",
+        "--width [SmallNumber]",
+        "--help",
+        "--version"
+    ],
+    "[psCharOpt]": [
+        "[Number]",
+        "C [psCommandList]",
+        "O",
+        "G [psUserList]",
+        "O [psPIDFormatList]",
+        "U [psUserList]",
+        "g [psUserList]",
+        "o [psPIDFormatList]",
+        "p [MediumNumber]",
+        "q [psPIDList]",
+        "s [psSessList]",
+        "t [psTTYList]",
+        "u [psUserList]"
+    ],
+    "[psLongOpt]": [
+        "--Group [psUserList]",
+        "--User [psUserList]",
+        "--cols [MediumNumber]",
+        "--columns [MediumNumber]",
+        "--context",
+        "--cumulative",
+        "--deselect",
+        "--forest",
+        "--format [psPIDList]",
+        "--group [psUserList]",
+        "--headers",
+        "--info",
+        "--lines [MediumNumber]",
+        "--no-headers",
+        "--pid [psPIDList]",
+        "--ppid [psPIDList]",
+        "--quick-pid [psPIDList]",
+        "--rows [MediumNumber]",
+        "--sid [psSessList]",
+        "--signames",
+        "--sort pid",
+        "--sort ppid,-uid",
+        "--sort uid,+pid",
+        "--tty [psTTYList]",
+        "--user [psUserList]",
+        "--width [MediumNumber]",
+        "--help [psHelpType]",
+        "--version"
+    ],
+    "[ulimitChar]": [
+        "S",
+        "H",
+        "a"
+    ],
+    "[ulimitCharOpt]": [
+        "b [ulimitValue]",
+        "c [ulimitValue]",
+        "d [ulimitValue]",
+        "e [ulimitValue]",
+        "f [ulimitValue]",
+        "i [ulimitValue]",
+        "k [ulimitValue]",
+        "l [ulimitValue]",
+        "m [ulimitValue]",
+        "n [ulimitValue]",
+        "p [ulimitValue]",
+        "q [ulimitValue]",
+        "r [ulimitValue]",
+        "s [ulimitValue]",
+        "t [ulimitValue]",
+        "u [ulimitValue]",
+        "v [ulimitValue]",
+        "x [ulimitValue]",
+        "P [ulimitValue]",
+        "R [ulimitValue]",
+        "T [ulimitValue]"
+    ],
+    "[ulimitLongOpt]": [
+        "--help"
+    ],
+    "[basenameChar]": [
+        "z",
+        "a"
+    ],
+    "[basenameCharOpt]": [
+        "s [Extension]"
+    ],
+    "[basenameLongOpt]": [
+        "--zero",
+        "--multiple",
+        "--suffix=[Extension]",
+        "--help",
+        "--version"
+    ],
+    "[dirCharOpt]": [
+        "[lsChar]<ns>",
+        "[lsCharOpt]"
+    ],
+    "[dirLongOpt]": [
+        "<ns>[lsChar]<ns>",
+        "<ns>[lsCharOpt]",
+        "[lsLongOpt]"
+    ],
+    "[groupsLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[lsblkChar]": [
+        "D",
+        "J",
+        "O",
+        "P",
+        "S",
+        "a",
+        "b",
+        "d",
+        "f",
+        "i",
+        "l",
+        "M",
+        "m",
+        "n",
+        "p",
+        "r",
+        "s",
+        "t",
+        "z",
+        "h",
+        "V"
+    ],
+    "[lsblkCharOpt]": [
+        "E [lsblkCol]",
+        "T [lsblkCol]",
+        "o [lsblkColList]",
+        "w [MediumNumber]",
+        "x [lsblkCol]"
+    ],
+    "[lsblkLongOpt]": [
+        "--discard",
+        "--dedup [lsblkCol]",
+        "--json",
+        "--output-all",
+        "--pairs",
+        "--scsi",
+        "--tree=[lsblkCol]",
+        "--all",
+        "--bytes",
+        "--nodeps",
+        "--fs",
+        "--ascii",
+        "--list",
+        "--merge",
+        "--perms",
+        "--noheadings",
+        "--output [lsblkColList]",
+        "--paths",
+        "--raw",
+        "--inverse",
+        "--topology",
+        "--width [MediumNumber]",
+        "--sort [lsblkCol]",
+        "--zoned",
+        "--sysroot [DirectoryTarget]",
+        "--help",
+        "--version"
+    ],
+    "[pwdChar]": [
+        "L",
+        "P"
+    ],
+    "[pwdLongOpt]": [
+        "--logical",
+        "--physical",
+        "--help",
+        "--version"
+    ],
+    "[unameLongOpt]": [
+        "--all",
+        "--hardware-platform",
+        "--machine",
+        "--nodename",
+        "--operating-system",
+        "--processor",
+        "--kernel-release",
+        "--kernel-name",
+        "--kernel-version",
+        "--help",
+        "--version"
+    ],
+    "[catChar]": [
+        "A",
+        "E",
+        "T",
+        "b",
+        "e",
+        "n",
+        "s",
+        "t",
+        "u",
+        "v"
+    ],
+    "[catLongOpt]": [
+        "--show-all",
+        "--show-ends",
+        "--show-tabs",
+        "--number",
+        "--squeeze-blank",
+        "--show-nonprinting",
+        "--help",
+        "--version"
+    ],
+    "[dirnameChar]": [
+        "z"
+    ],
+    "[dirnameLongOpt]": [
+        "--zero",
+        "--help",
+        "--version"
+    ],
+    "[lscpuChar]": [
+        "a",
+        "b",
+        "B",
+        "C",
+        "c",
+        "J",
+        "x",
+        "y",
+        "h",
+        "V"
+    ],
+    "[lscpuCharOpt]": [
+        "e [lsParseListOpt]",
+        "p [lsParseListOpt]",
+        "s [DirectoryTarget]"
+    ],
+    "[lscpuLongOpt]": [
+        "--all",
+        "--online",
+        "--bytes",
+        "--caches[lsCacheListOpt]",
+        "--offline",
+        "--json",
+        "--extended=[lsParse]",
+        "--parse=[lsParseList]",
+        "--sysroot [DirectoryTarget]",
+        "--hex",
+        "--physical",
+        "--output-all",
+        "--help",
+        "--version"
+    ],
+    "[rmLongOpt]": [
+        "--force",
+        "--one-file-system",
+        "--no-preserve-root",
+        "--preserve-root",
+        "--preserve-root=all",
+        "--recursive",
+        "--dir",
+        "--verbose",
+        "--help",
+        "--version"
+    ],
+    "[unexpandChar]": [
+        "a"
+    ],
+    "[unexpandCharOpt]": [
+        "t [SmallNumber]"
+    ],
+    "[unexpandLongOpt]": [
+        "--all",
+        "--first-only",
+        "--tabs=[SmallNumber]",
+        "--help",
+        "--version"
+    ],
+    "[cdLongOpt]": [
+        "--help"
+    ],
+    "[dmesgChar]": [
+        "C",
+        "c",
+        "D",
+        "E",
+        "H",
+        "k",
+        "l",
+        "P",
+        "p",
+        "r",
+        "S",
+        "u",
+        "x",
+        "d",
+        "e",
+        "T",
+        "t",
+        "h",
+        "V"
+    ],
+    "[dmesgCharOpt]": [
+        "F [FileTarget]",
+        "f [dmesgLogFacilityList]",
+        "L [AlwaysAutoNever],",
+        "n [dmesgLogLevel]",
+        "s [MediumNumber]"
+    ],
+    "[dmesgLongOpt]": [
+        "--noescape",
+        "--time-format [dmesgTimeFormat]",
+        "--clear",
+        "--read-clear",
+        "--console-off",
+        "--console-on",
+        "--file [FileTarget]",
+        "--facility [dmesgLogFacilityList]",
+        "--human",
+        "--kernel",
+        "--color=[AlwaysAutoNever]",
+        "--level [dmesgLogLevelList]",
+        "--console-level [dmesgLogLevel]",
+        "--nopager",
+        "--force-prefix",
+        "--raw",
+        "--syslog",
+        "--buffer-size [MediumNumber]",
+        "--userspace",
+        "--decode",
+        "--show-delta",
+        "--reltime",
+        "--ctime",
+        "--notime",
+        "--help",
+        "--version"
+    ],
+    "[headChar]": [
+        "q",
+        "v",
+        "z"
+    ],
+    "[headCharOpt]": [
+        "c [plusNone][Number][cDFBlockSize]",
+        "n [plusNone][Number][cDFBlockSize]"
+    ],
+    "[headLongOpt]": [
+        "--bytes=[plusNone][Number][cDFBlockSize]",
+        "--lines=[plusNone][Number][cDFBlockSize]",
+        "--quiet",
+        "--silent",
+        "--verbose",
+        "--zero-terminated",
+        "--help",
+        "--version"
+    ],
+    "[mkdirChar]": [
+        "p",
+        "v",
+        "Z"
+    ],
+    "[mkdirCharOpt]": [
+        "m [ChmodPerms]"
+    ],
+    "[mkdirLongOpt]": [
+        "--mode=[ChmodPerms]",
+        "--parents",
+        "--verbose",
+        "--help",
+        "--version"
+    ],
+    "[rmdirChar]": [
+        "p",
+        "v"
+    ],
+    "[rmdirLongOpt]": [
+        "--ignore-fail-on-non-empty",
+        "--parents",
+        "--verbose",
+        "--help",
+        "--version"
+    ],
+    "[uniqChar]": [
+        "c",
+        "d",
+        "i",
+        "z"
+    ],
+    "[uniqCharOpt]": [
+        "blank",
+        "f [Number]",
+        "s [Number]",
+        "w [Number]"
+    ],
+    "[uniqLongOpt]": [
+        "--all-repeated",
+        "--check-chars=[Number]",
+        "--count",
+        "--group",
+        "--help",
+        "--ignore-case",
+        "--repeated",
+        "--skip-chars=[Number]",
+        "--skip-fields=[Number]",
+        "--unique",
+        "--version",
+        "--zero-terminated",
+        "--all-repeated[uniqMethodSw]",
+        "--group[uniqMethodSw]"
+    ],
+    "[chgrpLongOpt]": [
+        "--dereference",
+        "--no-preserve-root",
+        "--preserve-root",
+        "--recursive",
+        "--changes",
+        "--silent",
+        "--quiet",
+        "--no-dereference",
+        "--verbose",
+        "--help",
+        "--version"
+    ],
+    "[duCharOpt]": [
+        "B [Number]",
+        "X [FileTarget]",
+        "d [SmallNumber]",
+        "t [Number]"
+    ],
+    "[duLongOpt]": [
+        "--apparent-size",
+        "--block-size",
+        "--exclude=[FilePattern]",
+        "--inodes",
+        "--si",
+        "--time",
+        "--time=[duTime]",
+        "--time-style=[duTimeStyle]",
+        "--null",
+        "--block-size=[Number]",
+        "--dereference-args",
+        "--dereference",
+        "--no-dereference",
+        "--separate-dirs",
+        "--exclude-from=[FileTarget]",
+        "--all",
+        "--bytes",
+        "--total",
+        "--max-depth=[SmallNumber]",
+        "--human-readable",
+        "--count-links",
+        "--summarize",
+        "--threshold=[Number]",
+        "--one-file-system",
+        "--help",
+        "--version"
+    ],
+    "[hostidLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[mkfifoChar]": [
+        "Z"
+    ],
+    "[mkfifoCharOpt]": [
+        "m [chmodOctalPerm]"
+    ],
+    "[mkfifoLongOpt]": [
+        "--mode=[chmodOctalPerm]",
+        "--help",
+        "--version",
+        "--context[mkfifoCTXSwOpt]"
+    ],
+    "[sortChar]": [
+        "C",
+        "f",
+        "i",
+        "k",
+        "m",
+        "r",
+        "s",
+        "u",
+        "z"
+    ],
+    "[sortCharOpt]": [
+        "S [Number]",
+        "T [NewDirectory]",
+        "o [NewFile]",
+        "t [Character]"
+    ],
+    "[sortLongOpt]": [
+        "--batch-size=[SmallNumber]",
+        "--buffer-size=[Number]",
+        "--check",
+        "--check=diagnose-first",
+        "--check=quiet",
+        "--check=silent",
+        "--dictionary-order",
+        "--field-separator=[Character]",
+        "--files0-from=[FileTarget]",
+        "--general-numeric-sort",
+        "--help",
+        "--human-numeric-sort",
+        "--ignore-case",
+        "--ignore-leading-blanks",
+        "--ignore-nonprinting",
+        "--merge",
+        "--month-sort",
+        "--numeric-sort",
+        "--output=[NewFile]",
+        "--parallel=[Number]",
+        "--random-sort",
+        "--random-source=FILE",
+        "--reverse",
+        "--sort=[sortWord]",
+        "--stable",
+        "--temporary-directory=[NewDirectory]",
+        "--unique",
+        "--version",
+        "--version-sort",
+        "--zero-terminated"
+    ],
+    "[unlinkLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[chmodLongOpt]": [
+        "--no-preserve-root",
+        "--preserve-root",
+        "--recursive",
+        "--changes",
+        "--silent",
+        "--quiet",
+        "--verbose"
+    ],
+    "[echoLongOpt]": [
+        "[echoString]",
+        "--help",
+        "--version"
+    ],
+    "[idLongOpt]": [
+        "--context",
+        "--group",
+        "--name",
+        "--real",
+        "--user",
+        "--zero",
+        "--help",
+        "--version"
+    ],
+    "[mktempChar]": [
+        "d",
+        "u",
+        "q",
+        "t"
+    ],
+    "[mktempCharOpt]": [
+        "p [DirectoryTarget]"
+    ],
+    "[mktempLongOpt]": [
+        "--directory",
+        "--dry-run",
+        "--quiet",
+        "--suffix=[Extension]",
+        "--tmpdir[mktmpSwDirOpt]",
+        "--help",
+        "--version"
+    ],
+    "[splitChar]": [
+        "e",
+        "u"
+    ],
+    "[splitCharOpt]": [
+        "C [Number]",
+        "a [Number]",
+        "b [Number]",
+        "n [Number]",
+        "l [Number]",
+        "t [Character]"
+    ],
+    "[splitLongOpt]": [
+        "--additional-suffix=[Character]",
+        "--bytes=[Number]",
+        "--elide-empty-files",
+        "--help",
+        "--hex-suffixes",
+        "--line-bytes=[Number]",
+        "--lines=[Number]",
+        "--number=[Number]",
+        "--numeric-suffixes",
+        "--separator=[Character]",
+        "--suffix-length=N",
+        "--unbuffered",
+        "--verbose",
+        "--version"
+    ],
+    "[uptimeChar]": [
+        "p",
+        "s",
+        "h",
+        "V"
+    ],
+    "[uptimeLongOpt]": [
+        "--pretty",
+        "--since",
+        "--help",
+        "--version"
+    ],
+    "[chownLongOpt]": [
+        "--dereference",
+        "--from=[Username]:[Groupname]",
+        "--from=[Username]",
+        "--from=[Groupname]",
+        "--no-preserve-root",
+        "--preserve-root",
+        "--recursive",
+        "--changes",
+        "--silent",
+        "--quiet",
+        "--no-dereference",
+        "--verbose",
+        "--help",
+        "--version"
+    ],
+    "[envChar]": [
+        "-",
+        "0",
+        "i",
+        "v"
+    ],
+    "[envCharOpt]": [
+        "C [DirectoryTarget]",
+        "S [SystemVarAssign]",
+        "u [Variable]"
+    ],
+    "[envLongOpt]": [
+        "--block-signal=[Signal]",
+        "--default-signal=[Signal]",
+        "--ignore-signal=[Signal]",
+        "--list-signal-handling",
+        "--null",
+        "--chdir=[DirectoryTarget]",
+        "--split-string ",
+        "--ignore-environment",
+        "--unset=[Variable]",
+        "--debug",
+        "--help",
+        "--version"
+    ],
+    "[ipChar]": [
+        "4",
+        "6",
+        "M",
+        "B",
+        "0",
+        "V",
+        "s",
+        "d",
+        "r",
+        "h",
+        "j",
+        "p",
+        "o",
+        "t",
+        "N",
+        "a",
+        "c"
+    ],
+    "[ipCharOpt]": [
+        "f [ipcFamily]",
+        "l [SmallNumber]",
+
+        "b [FileTarget]",
+        "rc [Number]",
+        "n [String]"
+    ],
+    "[mvChar]": [
+        "b",
+        "f",
+        "n",
+        "T",
+        "u",
+        "v",
+        "Z"
+    ],
+    "[mvCharOpt]": [
+        "S [Character]",
+        "t [DirectoryTarget]"
+    ],
+    "[mvLongOpt]": [
+        "--backup",
+        "--backup=[cpBackupOpt]",
+        "--force",
+        "--no-clobber",
+        "--strip-trailing-slashes",
+        "--suffix=[Character]",
+        "--target-directory=[DirectoryTarget]",
+        "--no-target-directory",
+        "--update",
+        "--verbose",
+        "--context",
+        "--help",
+        "--version"
+    ],
+    "[statChar]": [
+        "L",
+        "f",
+        "t"
+    ],
+    "[statCharOpt]": [
+        "c [statFmtString]"
+    ],
+    "[statLongOpt]": [
+        "--dereference",
+        "--file-system",
+        "--cached=[cacheMode]",
+        "--terse",
+        "--help",
+        "--version",
+        "--format=[statFmtString]"
+    ],
+    "[usersLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[ethtoolLongOpt]": [
+        "[ethAOpts]",
+        "[ethCOpts]",
+        "[ethGOpts]",
+        "[ethDOpts]",
+        "[ethEOpts]",
+        "[ethEEOpts]",
+        "[ethKOpts]",
+        "[ethPOpts]",
+        "[ethSOpts]",
+        "[ethTOpts]",
+        "[ethNOpts]",
+        "[ethNNOpts]",
+        "[ethWOpts]",
+        "[ethWWOpts]",
+        "[ethXOpts]",
+        "[ethFOpts]",
+        "[ethLOpts]",
+        "[ethMOpts]",
+        "[ethSPFOpts]",
+        "[ethSEEEOpts]",
+        "[ethSPTOpts]",
+        "[ethGPTOpts]",
+        "[ethResetOpts]",
+        "[ethSFopts]"
+    ],
+    "[netstatLongOpt]": [
+        "--tcp",
+        "--udp",
+        "--udplite",
+        "--sctp",
+        "--raw",
+        "--l2cap",
+        "--rfcomm",
+        "--listening",
+        "--all",
+        "--numeric",
+        "--numeric-hosts",
+        "--numeric-ports",
+        "--numeric-users",
+        "--symbolic",
+        "--extend",
+        "--timers",
+        "--program",
+        "--wide",
+        "--route",
+        "--groups",
+        "--masquerade",
+        "--statistics",
+        "--inet",
+        "--inet6",
+        "--protocol=[IPTablesProtocol]",
+        "--protocol=[IPTablesProtocol],[IPTablesProtocol]",
+        "--unix",
+        "--ip",
+        "--tcpip",
+        "--ax25",
+        "--x25",
+        "--rose",
+        "--ash",
+        "--bluetooth",
+        "--ipx",
+        "--netrom",
+        "--ddp",
+        "--appletalk",
+        "--econet",
+        "--ec",
+        "--interfaces",
+        "--help",
+        "--version"
+    ],
+    "[tailChar]": [
+        "q",
+        "v",
+        "z"
+    ],
+    "[tailCharOpt]": [
+        "c [plusNone][Number][cDFBlockSize]",
+        "n [plusNone][Number][cDFBlockSize]"
+    ],
+    "[tailLongOpt]": [
+        "--bytes=[plusNone][Number][cDFBlockSize]",
+        "--lines=[plusNone][Number][cDFBlockSize]",
+        "--quiet",
+        "--silent",
+        "--retry",
+        "--verbose",
+        "--zero-terminated",
+        "--help",
+        "--version"
+    ],
+    "[vdirCharOpt]": [
+        "[dirCharOpt]"
+    ],
+    "[vdirLongOpt]": [
+        "<ns>[dirCharOpt]",
+        "[dirLongOpt]"
+    ],
+    "[cpChar]": [
+        "a",
+        "b",
+        "d",
+        "f",
+        "i",
+        "H",
+        "l",
+        "L",
+        "n",
+        "P",
+        "P",
+        "R",
+        "r",
+        "s",
+        "T",
+        "u",
+        "v",
+        "Z"
+    ],
+    "[cpCharOpt]": [
+        "S [Character]",
+        "t [DirectoryTarget]"
+    ],
+    "[cpLongOpt]": [
+        "--archive",
+        "--attributes-only",
+        "--backup",
+        "--backup=[cpBackupOpt]",
+        "--copy-contents",
+        "--force",
+        "--interactive",
+        "--link",
+        "--dereference",
+        "--no-clobber",
+        "--no-dereference",
+        "--preserve",
+        "--preserve=[cpPreserveList]",
+        "--no-preserve=[cpPreserveList]",
+        "--parents",
+        "--recursive",
+        "--reflink",
+        "--reflink=[AlwaysAutoNever]",
+        "--remove-destination",
+        "--sparse=[AlwaysAutoNever]",
+        "--strip-trailing-slashes",
+        "--symbolic-link",
+        "--suffix=[Character]",
+        "--target-directory=[DirectoryTarget]",
+        "--no-target-directory",
+        "--update",
+        "--verbose",
+        "--context",
+        "--help",
+        "--version"
+    ],
+    "[exportChar]": [
+        "f",
+        "n",
+        "p"
+    ],
+    "[exportLongOpt]": [
+        "--",
+        "--help"
+    ],
+    "[nlChar]": [
+        "p"
+    ],
+    "[nlCharOpt]": [
+        "b [nlStyle]",
+        "f [nlStyle]",
+        "h [nlStyle]",
+        "n [nlFormat]",
+        "i [Number]",
+        "l [Number]",
+        "v [Number]",
+        "d [Character]",
+        "w [Number]"
+    ],
+    "[nlLongOpt]": [
+        "--body-numbering=[nlStyle]",
+        "--footer-numbering=[nlStyle]",
+        "--header-numbering=[nlStyle]",
+        "--help",
+        "--join-blank-lines=[Number]",
+        "--line-increment=[Number]",
+        "--no-renumber",
+        "--number-format=[nlFormat]",
+        "--number-separator=[Character]",
+        "--number-width=[Number]",
+        "--section-delimiter=[String]",
+        "--starting-line-number=[Number]",
+        "--version"
+    ],
+    "[tarLongOpt]": [
+        "--acls",
+        "--add-file=[FileTarget]",
+        "--anchored",
+        "--atime-preserve=[tarTimeOpt]",
+        "--auto-compress",
+        "--backup=[tarBackupOpt]",
+        "--check-device",
+        "--checkpoint=[MediumNumber]",
+        "--clamp-mtime",
+        "--delay-directory-restore",
+        "--exclude=[FilePattern]",
+        "--exclude-backups",
+        "--exclude-caches",
+        "--exclude-caches-all",
+        "--exclude-caches-under",
+        "--exclude-ignore=[FileTarget]",
+        "--exclude-ignore-recursive=[FileTarget]",
+        "--exclude-tag=[FileTarget]",
+        "--exclude-tag-all=[FileTarget]",
+        "--exclude-tag-under=[FileTarget]",
+        "--exclude-vcs",
+        "--exclude-vcs-ignores",
+        "--file [FileTarget]",
+        "--force-local",
+        "--full-time",
+        "--group=[Username]",
+        "--hard-dereference",
+        "--hole-detection=[tarHoleOpt]",
+        "--ignore-case",
+        "--ignore-command-error",
+        "--ignore-failed-read",
+        "--index-file=[FileTarget]",
+        "--keep-directory-symlink",
+        "--keep-newer-files",
+        "--level=[SmallNumber]",
+        "--list",
+        "--lzip",
+        "--lzma",
+        "--lzop",
+        "--mode=[Number][Number][Number]",
+        "--mtime=[TarFileDate]",
+        "--multi-volume",
+        "--newer-mtime=[TarDate]",
+        "--no-acls",
+        "--no-anchored",
+        "--no-auto-compress",
+        "--no-check-device",
+        "--no-delay-directory-restore",
+        "--no-ignore-case",
+        "--no-ignore-command-error",
+        "--no-null",
+        "--no-overwrite-dir",
+        "--no-quote-chars=[String]",
+        "--no-recursion",
+        "--no-same-owner",
+        "--no-same-permissions",
+        "--no-seek",
+        "--no-selinux",
+        "--no-unquote",
+        "--no-verbatim-files-from",
+        "--no-wildcards",
+        "--no-wildcards-match-slash",
+        "--no-xattrs",
+        "--null",
+        "--numeric-owner",
+        "--occurrence=[Number]",
+        "--old-archive",
+        "--portability",
+        "--one-file-system",
+        "--one-top-level[tarTopLevelOpt]",
+        "--overwrite",
+        "--overwrite-dir",
+        "--owner=[Username]",
+        "--posix",
+        "--quote-chars=[String]",
+        "--quoting-style=[tarQuoteStyleOpt]",
+        "--record-size=[Number]",
+        "--recursion",
+        "--recursive-unlink",
+        "--remove-files",
+        "--restrict",
+        "--same-owner",
+        "--selinux",
+        "--show-defaults",
+        "--show-omitted-dirs",
+        "--show-transformed-names",
+        "--show-stored-names",
+        "--skip-old-files",
+        "--sort=[tarSortOpt]",
+        "--sparse-version=[tarSparseVerOpt]",
+        "--strip-components=[MediumNumber]",
+        "--suffix=[String]",
+        "--totals",
+        "--totals=[Signal]",
+        "--transform=[SedInner]",
+        "--xform=[SedInner]",
+        "--unquote",
+        "--utc",
+        "--verbatim-files-from",
+        "--volno-file=[FileTarget]",
+        "--warning=[tarWarningOpt]",
+        "--wildcards",
+        "--wildcards-match-slash",
+        "--xattrs",
+        "--xattrs-exclude=[QuotePattern]",
+        "--xattrs-include=[QuotePattern]",
+        "--zstd",
+        "--read-full-records",
+        "--directory=[DirectoryTarget]",
+        "--incremental",
+        "--format=[tarFormatOpt]",
+        "--use-compress-program=[ZipCommand]",
+        "--xz",
+        "--starting-file=[FileTarget]",
+        "--tape-length=[Number]",
+        "--newer=[TarDate]",
+        "--after-date=[TarDate]",
+        "--to-stdout",
+        "--absolute-names",
+        "--block-number",
+        "--sparse",
+        "--files-from=[FileTarget]",
+        "--unlink-first",
+        "--label=[String]",
+        "--verify",
+        "--exclude-from=[FileTarget]",
+        "--compress",
+        "--uncompress",
+        "--blocking-factor=[MediumNumber]",
+        "--listed-incremental=[FileTarget]",
+        "--dereference",
+        "--ignore-zeros",
+        "--bzip2",
+        "--keep-old-files",
+        "--check-links",
+        "--touch",
+        "--seek",
+        "--preserve-permissions",
+        "--same-permissions",
+        "--preserve-order",
+        "--same-order",
+        "--gzip",
+        "--gunzip",
+        "--ungzip",
+        "--help",
+        "--version"
+    ],
+    "[wLongOpt]": [
+        "--no-header",
+        "--from",
+        "--ip-addr",
+        "--old-style",
+        "--short",
+        "--no-current",
+        "--help",
+        "--version"
+    ],
+    "[curlChar]": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "6",
+        ":",
+        "B",
+        "G",
+        "I",
+        "J",
+        "L",
+        "M",
+        "N",
+        "O",
+        "R",
+        "S",
+        "Z",
+        "a",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "n",
+        "p",
+        "q",
+        "s",
+        "v",
+        "V"
+    ],
+    "[curlCharOpt]": [
+        "A \"[HTTPAgent]\"",
+        "C [Number]",
+        "D [FileTarget]]",
+        "E [FileTarget]",
+        "F [String]=[String]",
+        "H [HTTPHeader]",
+        "K [FileTarget]",
+        "P [Interface]",
+        "P [IP]",
+        "P [URL]",
+        "P -",
+        "Q \"[Input]\"",
+        "T [FileTarget]",
+        "U [Username]:[Password]",
+        "X \"[HTTPMethod]\"",
+        "Y [LargeNumber]",
+        "b [FileTarget]",
+        "c [NewFile]",
+        "d [curlDataEncode]",
+        "e [URL]",
+        "m [MediumNumber]",
+        "o [FileTarget]",
+        "r [SmallNumber]-[SmallNumber]",
+        "t TTYPE=vt100",
+        "t NEW_ENV=[Variable],[String]",
+        "w [CurlWriteOutFmtString]",
+        "x [CurlProtocol]://[IP]:[LargeNumber]",
+        "y [MediumNumber]",
+        "z [TimeString]",
+        "h[curlHelpCategory]"
+    ],
+    "[curlLongOpt]": [
+        "--alt-svc [FileTarget]",
+        "--anyauth",
+        "--append",
+        "--basic",
+        "--ca-native",
+        "--ciphers ECDHE-ECDSA-AES256-CCM8",
+        "--ciphers AES128-SHA256",
+        "--ciphers DHE-RSA-AES256-SHA256",
+        "--compressed",
+        "--compressed-ssh",
+        "--config [FileTarget]",
+        "--connect-timeout [SmallNumber]",
+        "--continue-at [Number]",
+        "--cookie-jar [NewFile]",
+        "--cookie [FileTarget]",
+        "--create-dirs",
+        "--create-file-mode [SmallNumber][SmallNumber][SmallNumber]",
+        "--crlf",
+        "--crlfile [FileTarget]",
+        "--curves X25519",
+        "--data [curlDataEncode]",
+        "--data-ascii [curlDataEncode]",
+        "--data-binary [curlDataEncode]",
+        "--data-raw [curlDataEncode]",
+        "--data-urlencode [curlDataEncode]",
+        "--delegation [curlKrbDelegationOptions]",
+        "--digest",
+        "--disable-eprt",
+        "--disable-epsv",
+        "--disable",
+        "--disallow-username-in-url",
+        "--dns-interface [Interface]",
+        "--dns-ipv4-addr [DNSIP]",
+        "--dns-servers [DNSIP],[DNSIP]",
+        "--doh-cert-status",
+        "--doh-insecure",
+        "--doh-url [URL]",
+        "--dump-header [FileTarget]",
+        "--egd-file [FileTarget]",
+        "--engine list",
+        "--engine rdrand",
+        "--engine dynamic",
+        "--etag-compare [NewFile]",
+        "--etag-save [NewFile]",
+        "--expect100-timeout [SmallNumber]",
+        "--fail",
+        "--fail-early",
+        "--fail-with-body",
+        "--false-start",
+        "--form-escape",
+        "--form-string [String]",
+        "--form [String]=[String]",
+        "--get",
+        "--globoff",
+        "--happy-eyeballs-timeout-ms [LargeNumber]",
+        "--haproxy-protocol",
+        "--head",
+        "--header [HTTPHeader]",
+        "--hsts [FileTarget]",
+        "--http0.9",
+        "--http1.0",
+        "--http1.1",
+        "--http2",
+        "--http2-prior-knowledge",
+        "--http3",
+        "--ignore-content-length",
+        "--include",
+        "--insecure",
+        "--interface [Interface]",
+        "--ipv4",
+        "--ipv6",
+        "--junk-session-cookies",
+        "--keepalive-time [MediumNumber]",
+        "--key [FileTarget]",
+        "--key-type [CertTypeOpts]",
+        "--krb clear",
+        "--krb safe",
+        "--krb confidential",
+        "--krb private",
+        "--libcurl [FileTarget]",
+        "--limit-rate [Number][cDFBlockSize]",
+        "--list-only",
+        "--local-port [LargeNumber]",
+        "--local-port [LargeNumber]-[LargeNumber]",
+        "--location",
+        "--location-trusted",
+        "--manual",
+        "--max-filesize [Number][cDFBlockSize]",
+        "--max-redirs [SmallNumber]",
+        "--max-time [MediumNumber]",
+        "--metalink",
+        "--negotiate",
+        "--netrc-file [FileTarget]",
+        "--netrc-optional",
+        "--netrc",
+        "--next",
+        "--no-alpn",
+        "--no-buffer",
+        "--no-keepalive",
+        "--no-npn",
+        "--no-progress-meter",
+        "--no-sessionid",
+        "--noproxy \"[URL]\"",
+        "--ntlm",
+        "--ntlm-wb",
+        "--output-dir [DirectoryTarget]",
+        "--output [FileTarget]",
+        "--parallel-immediate",
+        "--parallel-max [MediumNumber]",
+        "--pass [Password]",
+        "--path-as-is",
+        "--post301",
+        "--post302",
+        "--post303",
+        "--progress-bar",
+        "--proto -ftps",
+        "--proto [curlProtoList]",
+        "--proto-default [curlProtos]",
+        "--proto-redir [curlProtoList]",
+        "--proxy-anyauth",
+        "--proxy-basic",
+        "--proxy-cacert [FileTarget]",
+        "--proxy-capath [DirectoryTarget]",
+        "--proxy-crlfile [FileTarget]",
+        "--proxy-digest",
+        "--proxy-header [HTTPHeader]",
+        "--proxy-insecure",
+        "--proxy-key [String]",
+        "--proxy-key-type [CertTypeOpts]",
+        "--proxy-negotiate",
+        "--proxy-ntlm",
+        "--proxy-pass [String]",
+        "--proxy-ssl-allow-beast",
+        "--proxy-ssl-auto-client-cert",
+        "--proxy-tls13-ciphers TLS_AES_128_GCM_SHA256",
+        "--proxy-tlsauthtype SRP",
+        "--proxy-tlsv1",
+        "--proxy [CurlProtocol]://[IP]:[LargeNumber]",
+        "--proxy-user [Username]:[Password]",
+        "--proxy1.0 [IP]:[LargeNumber]",
+        "--proxytunnel",
+        "--quote \"[Input]\"",
+        "--range [SmallNumber]-[SmallNumber]",
+        "--random-file [FileTarget]",
+        "--rate",
+        "--raw",
+        "--referer [URL]",
+        "--remote-header-name",
+        "--remote-name-all",
+        "--remote-name",
+        "--remote-time",
+        "--request-target [Path]",
+        "--request \"[HTTPMethod]\"",
+        "--resolve [IP]:[LargeNumber]:[IP]",
+        "--retry [MediumNumber]",
+        "--retry-all-errors",
+        "--retry-connrefused",
+        "--retry-delay [SmallNumber]",
+        "--retry-max-time [SmallNumber]",
+        "--sasl-ir",
+        "--service-name [Service]",
+        "--show-error",
+        "--silent",
+        "--socks4 [IP]",
+        "--socks4 [IP]:[LargeNumber]",
+        "--socks4a [IP]",
+        "--socks4a [IP]:[LargeNumber]",
+        "--socks5 [IP]",
+        "--socks5 [IP]:[LargeNumber]",
+        "--socks5-basic",
+        "--socks5-gssapi",
+        "--socks5-gssapi-nec",
+        "--socks5-gssapi-service sockd",
+        "--socks5hostname [IP]",
+        "--socks5hostname [IP]:[LargeNumber]",
+        "--speed-limit [LargeNumber]",
+        "--speed-time [MediumNumber]",
+        "--ssl",
+        "--ssl-allow-beast",
+        "--ssl-auto-client-cert",
+        "--ssl-no-revoke",
+        "--ssl-reqd",
+        "--ssl-revoke-best-effort",
+        "--sslv2",
+        "--sslv3",
+        "--stderr [FileTarget]",
+        "--styled-output",
+        "--suppress-connect-headers",
+        "--tcp-fastopen",
+        "--tcp-nodelay",
+        "--telnet-option TTYPE=vt100",
+        "--telnet-option NEW_ENV=[Variable],[String]",
+        "--tftp-blksize [LargeNumber]",
+        "--tftp-no-options",
+        "--tls-max [TLSVers]",
+        "--time-cond [TimeString]",
+        "--time-cond -[TimeString]",
+        "--tls13-ciphers TLS_AES_128_GCM_SHA256",
+        "--tlsauthtype SRP",
+        "--tlsv1",
+        "--tlsv[TLSVers]",
+        "--tr-encoding",
+        "--trace [FileTarget]",
+        "--trace-ascii [FileTarget]",
+        "--trace-time",
+        "--unix-socket [Path]",
+        "--upload-file [FileTarget]",
+        "--url [URL]",
+        "--use-ascii",
+        "--user-agent \"[HTTPAgent]\"",
+        "--verbose",
+        "--write-out [CurlWriteOutFmtString]",
+        "--xattr",
+        "--help[curlHelpCategory]",
+        "--version"
+    ],
+    "[lastLongOpt]": [
+        "--hostlast",
+        "--dns",
+        "--file [FileTarget]",
+        "--fulltimes",
+        "--ip",
+        "--limit [SmallNumber]",
+        "--present [LastTime]",
+        "--nohostname",
+        "--since [LastTime]",
+        "--until [LastTime]",
+        "--time-format [LastTime]",
+        "--fullnames",
+        "--system",
+        "--help",
+        "--version"
+    ],
+    "[nprocLongOpt]": [
+        "--all",
+        "--ignore=[Number]",
+        "--help",
+        "--version"
+    ],
+    "[shredChar]": [
+        "f",
+        "u",
+        "v",
+        "z"
+    ],
+    "[shredCharOpt]": [
+        "n [SmallNumber]",
+        "s [shredSizeOpt]"
+    ],
+    "[shredLongOpt]": [
+        "--force",
+        "--iterations=[SmallNumber]",
+        "--random-source=[FileTarget]",
+        "--size=[shredSizeOpt]",
+        "--remove=[shredRemoveOpt]",
+        "--verbose",
+        "--zero",
+        "--help",
+        "--version"
+    ],
+    "[wcChar]": [
+        "L",
+        "c",
+        "l",
+        "m",
+        "w"
+    ],
+    "[wcLongOpt]": [
+        "--files0-from=[FileTarget]",
+        "--total [MediumNumber]",
+        "--max-line-length",
+        "--bytes",
+        "--chars",
+        "--lines",
+        "--words"
+    ],
+    "[cutChar]": [
+        "n",
+        "s",
+        "z"
+    ],
+    "[cutCharOpt]": [
+        "b [cutByteList]",
+        "c [cutByteList]",
+        "f [cutByteList]",
+        "d '[Character]'"
+    ],
+    "[cutLongOpt]": [
+        "--bytes=[cutByteList]",
+        "--characters=[cutByteList]",
+        "--fields=[cutByteList]",
+        "--delimiter=[Character]",
+        "--complement",
+        "--only-delimited",
+        "--output-delimiter=[Character]",
+        "--zero-terminated",
+        "--help",
+        "--version"
+    ],
+    "[fileLongOpt]": [
+        "--uncompress",
+        "--uncompress-noreport",
+        "--brief",
+        "--checking-printout",
+        "--exclude [cFileType]",
+        "--exclude-quiet [cFileType]",
+        "--files-from [FileTarget]",
+        "--separator [Character]",
+        "--mime",
+        "--apple",
+        "--extension",
+        "--mime-type",
+        "--mime-encoding",
+        "--keep-going",
+        "--list",
+        "--dereference",
+        "--no-dereference",
+        "--no-buffer",
+        "--no-pad",
+        "--print0",
+        "--preserve-date",
+        "--raw",
+        "--special-files",
+        "--no-sandbox",
+        "--debug",
+        "--parameter [cFileParam]=[Number]",
+        "--help",
+        "--version"
+    ],
+    "[linkLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[pasteChar]": [
+        "s",
+        "z"
+    ],
+    "[pasteLongOpt]": [
+        "--serial",
+        "--zero-terminated",
+        "--help",
+        "--version"
+    ],
+    "[touchChar]": [
+        "a",
+        "c",
+        "f",
+        "h",
+        "m"
+    ],
+    "[touchCharOpt]": [
+        "d [TimeString]",
+        "r [FileTarget]",
+        "t [touchTimeStamp]"
+    ],
+    "[touchLongOpt]": [
+        "--no-create",
+        "--date=[TimeString]",
+        "--no-dereference",
+        "--reference=[FileTarget]",
+        "--time=[TouchTimeType]",
+        "--help",
+        "--version"
+    ],
+    "[wgetChar]": [
+        "4",
+        "6",
+        "D",
+        "E",
+        "F",
+        "H",
+        "K",
+        "L",
+        "N",
+        "S",
+        "c",
+        "k",
+        "m",
+        "p",
+        "q",
+        "r",
+        "v",
+        "x",
+        "h",
+        "V"
+    ],
+    "[wgetCharOpt]": [
+        "A [QuotePattern]",
+        "A [QuotePattern],[QuotePattern]",
+        "A [Extension]",
+        "A [Extension],[Extension]",
+        "B [WebFile]",
+        "O [FileTarget]",
+        "P [DirectoryTarget]",
+        "Q [Number][wgetRateType]",
+        "R [QuotePattern]",
+        "R [QuotePattern],[QuotePattern]",
+        "R [Extension]",
+        "R [Extension],[Extension]",
+        "T [SmallNumber]",
+        "U \"[HTTPAgent]\"",
+        "a [FileTarget]",
+        "d [String]",
+        "i [FileTarget]",
+        "l [SmallNumber]",
+        "nH",
+        "nc",
+        "nd",
+        "np",
+        "nv",
+        "o [NewFile]",
+        "t [SmallNumber]",
+        "w [MediumNumber]"
+    ],
+    "[wgetLongOpt]": [
+        "--accept-regex [QuotePattern]",
+        "--adjust-extension",
+        "--append-output [FileTarget]",
+        "--ask-password",
+        "--auth-no-challenge",
+        "--backup-converted",
+        "--backups=[FileTarget]",
+        "--base=[WebFile]",
+        "--bind-address=[IP]",
+        "--bind-dns-address=[DNSIP]",
+        "--body-data=[String]",
+        "--body-file=[FileTarget]",
+        "--check-certificate [MediumNumber]",
+        "--ciphers",
+        "--compression=[wgetCompressionOpt]",
+        "--config [FileTarget]",
+        "--connect-timeout=[SmallNumber]",
+        "--content-disposition",
+        "--content-on-error",
+        "--continue",
+        "--convert-file-only",
+        "--convert-links",
+        "--crl-file=[FileTarget]",
+        "--cut-dirs=[SmallNumber]",
+        "--debug",
+        "--default-page=[GlobalFile]",
+        "--delete-after",
+        "--directory-prefix=[DirectoryTarget]",
+        "--dns-servers=[DNSIP]",
+        "--dns-timeout=[SmallNumber]",
+        "--egd-file=[FileTarget]",
+        "--exclude-domains",
+        "--force-directories",
+        "--force-html",
+        "--header=[HTTPHeader]",
+        "--hsts-file=[FileTarget]",
+        "--https-only",
+        "--ignore-case",
+        "--ignore-length",
+        "--inet4-only",
+        "--inet6-only",
+        "--input-metalink=[FileTarget]",
+        "--keep-badhash",
+        "--keep-session-cookies",
+        "--level=[SmallNumber]",
+        "--limit-rate=[Number][wgetRateType]",
+        "--load-cookies [FileTarget]",
+        "--local-encoding [WgetEncoding]",
+        "--max-redirect=[MediumNumber]",
+        "--metalink-index=[MediumNumber]",
+        "--metalink-over-http",
+        "--method [HTTPMethod]",
+        "--mirror",
+        "--no",
+        "--no-cache",
+        "--no-check-certificate",
+        "--no-clobber",
+        "--no-cookies",
+        "--no-directories",
+        "--no-dns-cache",
+        "--no-glob",
+        "--no-host-directories",
+        "--no-hsts",
+        "--no-http-keep-alive",
+        "--no-if-modified-since",
+        "--no-iri",
+        "--no-netrc",
+        "--no-parent",
+        "--no-passive-ftp",
+        "--no-proxy",
+        "--no-remove-listing",
+        "--no-use-server-timestamps",
+        "--no-verbose",
+        "--no-warc-compression",
+        "--no-warc-digests",
+        "--no-warc-keep-log",
+        "--output-document=[FileTarget]",
+        "--output-file [FileTarget]",
+        "--page-requisites",
+        "--password [Password]",
+        "--post-data=[String][String][String][String][String][String]",
+        "--post-file=[FileTarget]",
+        "--prefer-family=[wgetFamiliyOpt]",
+        "--preferred-location",
+        "--preserve-permissions",
+        "--private-key=[FileTarget]",
+        "--private-key-type=[CertTypeOpts]",
+        "--progress=[wgetProgressOpt]",
+        "--protocol-directories",
+        "--quiet",
+        "--quota=[Number][wgetRateType]",
+        "--random-file=[FileTarget]",
+        "--random-wait",
+        "--read-timeout=[SmallNumber]",
+        "--recursive",
+        "--referer=[WebFile]",
+        "--regex-type posix",
+        "--regex-type pcre",
+        "--reject-regex [QuotePattern]",
+        "--rejected-log [FileTarget]",
+        "--relative",
+        "--remote-encoding [WgetEncoding]",
+        "--report-speed=bits",
+        "--restrict-file-names=[wgetRestrictFileNameOptList]",
+        "--retr-symlinks",
+        "--retry-connrefused",
+        "--retry-on-host-error",
+        "--retry-on-http-error=[HTTPCodeList]",
+        "--save-cookies [FileTarget]",
+        "--save-headers",
+        "--server-response",
+        "--show-progress",
+        "--span-hosts",
+        "--spider",
+        "--start-pos=[Number]",
+        "--strict-comments",
+        "--timeout=[SmallNumber]",
+        "--timestamping",
+        "--tries [SmallNumber]",
+        "--trust-server-names",
+        "--unlink",
+        "--user-agent=\"[HTTPAgent]\"",
+        "--verbose",
+        "--wait=[SmallNumber]",
+        "--waitretry=[SmallNumber]",
+        "--xattr",
+        "--input-file=[FileTarget]",
+        "--help",
+        "--version"
+    ],
+    "[dateChar]": [
+        "I",
+        "R",
+        "u"
+    ],
+    "[dateCharOpt]": [
+        "d [TimeString]",
+        "I[dateTimeOpts]",
+        "r [FileTarget]",
+        "s [TimeString]"
+    ],
+    "[dateLongOpt]": [
+        "--date=[TimeString]",
+        "--debug",
+        "--iso-8601=[dateTimeOpts]",
+        "--iso-8601",
+        "--rfc-email",
+        "--rfc-3339=[dateTimeOpts]",
+        "--reference=[FileTarget]",
+        "--set=[TimeString]",
+        "--utc",
+        "--universal",
+        "--help",
+        "--version"
+    ],
+    "[findChar]": [
+        "P",
+        "L",
+        "H"
+    ],
+    "[findCharOpt]": [
+        "D [findDOpts]",
+        "O[Number]"
+    ],
+    "[findLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[lnChar]": [
+        "b",
+        "d",
+        "F",
+        "f",
+        "L",
+        "n",
+        "P",
+        "r",
+        "s",
+        "T",
+        "v"
+    ],
+    "[lnCharOpt]": [
+        "S [Character]",
+        "t [DirectoryTarget]"
+    ],
+    "[lnLongOpt]": [
+        "--backup",
+        "--backup=[lnControlOpt]",
+        "--directory",
+        "--force",
+        "--logical",
+        "--no-dereference",
+        "--physical",
+        "--relative",
+        "--symbolic",
+        "--suffix=[Character]",
+        "--target=[DirectoryTarget]",
+        "--no-target-directory",
+        "--verbose",
+        "--help",
+        "--version"
+    ],
+    "[pingChar]": [
+        "4",
+        "6",
+        "A",
+        "B",
+        "D",
+        "L",
+        "O",
+        "R",
+        "U",
+        "V",
+        "a",
+        "b",
+        "d",
+        "f",
+        "n",
+        "q",
+        "r",
+        "v",
+        "h",
+        "V"
+    ],
+    "[pingCharOpt]": [
+        "F [SmallNumber]",
+        "I [Interface]",
+        "M [pingMOpt]",
+        "N [pingNopt]",
+        "Q [MediumNumber]",
+        "S [MediumNumber]",
+        "T [pingTOpt]",
+        "W [MediumNumber]",
+        "c [SmallNumber]",
+        "e [MediumNumber]",
+        "i [SmallNumber]",
+        "l [SmallNumber]",
+        "m [Character]",
+        "p [HexChar][HexChar]",
+        "s [MediumNumber]",
+        "t [MediumNumber]",
+        "w [MediumNumber]"
+    ],
+    "[pingLongOpt]": [
+        "--help"
+    ],
+    "[whoamiLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[ddLongOpt]": [
+        "bs=[LargeNumber]",
+        "cbs=[LargeNumber]",
+        "conv=[ddConvTypes]",
+        "count=[Number]",
+        "ibs=[LargeNumber]",
+        "if=[FileTarget]",
+        "iflag=[ddFlagTypes]",
+        "obs=[LargeNumber]",
+        "of=[NewFile]",
+        "oflag=[ddFlagTypes]",
+        "seek=[Number]",
+        "skip=[Number]",
+        "status=[ddStatusTypes]",
+        "--help",
+        "--version"
+    ],
+    "[freeLongOpt]": [
+        "--giga",
+        "--kilo",
+        "--mega",
+        "--pebi",
+        "--peta",
+        "--si",
+        "--tebi",
+        "--tera",
+        "--bytes",
+        "--gibi",
+        "--human",
+        "--kibi",
+        "--lohi",
+        "--mebi",
+        "--total",
+        "--wide",
+        "--count [SmallNumber]",
+        "--help",
+        "--version"
+    ],
+    "[lognameLongOpt]": [
+        "--help",
+        "--version"
+    ],
+    "[printenvChar]": [
+        "0"
+    ],
+    "[printenvLongOpt]": [
+        "--null",
+        "--help",
+        "--version"
+    ],
+    "[truncateChar]": [
+        "c",
+        "o"
+    ],
+    "[truncateCharOpt]": [
+        "r=[FileTarget]",
+        "s [Number][cDFBlockSize]"
+    ],
+    "[truncateLongOpt]": [
+        "--no-create",
+        "--io-blocks",
+        "--reference=[FileTarget]",
+        "--size=[Number][cDFBlockSize]",
+        "--help",
+        "--version"
+    ],
+    "[whoLongOpt]": [
+        "--lookup",
+        "--message",
+        "--writable",
+        "--heading",
+        "--ips",
+        "--all",
+        "--boot",
+        "--dead",
+        "--login",
+        "--process",
+        "--count",
+        "--runlevel",
+        "--short",
+        "--time",
+        "--users",
+        "--help",
+        "--version"
+    ],
+    "[tarOpChar]": [
+        "c",
+        "d",
+        "r",
+        "t",
+        "u"
+    ],
+    "[tarOpLongOpt]": [
+        "--create",
+        "--diff",
+        "--compare",
+        "--append",
+        "--list",
+        "--test-label",
+        "--update"
+    ],
+    "[tarDelExtOpChar]": [
+        "x"
+    ],
+    "[tarDelExtOpLongOpt]": [
+        "--extract",
+        "--get",
+        "--delete"
+    ],
+    "[tarCatCharOpt]": [
+        "A"
+    ],
+    "[tarCatLongOpt]": [
+        "--catenate",
+        "--concatenate"
+    ]
+}

@@ -1,0 +1,44 @@
+#!/bin/sh
+# init-agent
+set -eux
+# Send all logs to serial so can see them from firecracker console
+exec 1>/dev/ttyS0 2>&1
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin
+TMPFS_SIZE="${TMPFS_SIZE:-256M}"
+
+# Make sure mount propagation is sane for pivots
+mount --make-rprivate / || true
+
+# Ensure /dev exists. Kernel usually mounts devtmpfs for us.
+mount -n -t devtmpfs devtmpfs /dev 2>/dev/null || true
+
+# Overlay setup
+mkdir -p /dev/ovl
+mount -t tmpfs -o "size=${TMPFS_SIZE}" tmpfs /dev/ovl
+mkdir -p /dev/ovl/upper /dev/ovl/work /dev/ovl/merged
+
+mount -t overlay overlay -o lowerdir=/,upperdir=/dev/ovl/upper,workdir=/dev/ovl/work /dev/ovl/merged
+
+# Pivot into overlay
+mkdir -p /dev/ovl/merged/.oldroot
+pivot_root /dev/ovl/merged /dev/ovl/merged/.oldroot
+
+# Bring /dev along (the devtmpfs mount is at /.oldroot/dev now)
+mount --move /.oldroot/dev /dev 2>/dev/null || mount -t devtmpfs devtmpfs /dev
+
+# Usual virtual filesystems
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts 2>/dev/null || true
+mount -t proc  proc /proc
+mount -t sysfs sys  /sys
+chmod 1777 /tmp || true
+
+# Drop old root (optional)
+umount -l /.oldroot || true
+
+# Hostname (optional)
+[ -r /etc/hostname ] && HN="$(head -n1 /etc/hostname | tr -d '\r\n')" && [ -n "$HN" ] && printf %s "$HN" > /proc/sys/kernel/hostname
+
+# Start agent
+echo "[init] launching fc-agent"
+/usr/sbin/fc-agent || { echo "FC_AGENT_EXEC_FAILED:$?" ; exec /bin/sh; }

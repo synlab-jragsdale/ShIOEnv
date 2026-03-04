@@ -1,0 +1,60 @@
+{
+  "executor": {
+    "working_dirs": ["/home/ubuntu"],
+    "pre_exec_context_path": "maps/empty_map.json",
+
+    "docker_images": ["testubuntu"],
+
+    "fc_rootfs_store": "fc_store/fs/",
+    "fc_kernel_store": "fc_store/kernel/",
+    "fc_vcpus": [1],
+    "fc_mem_mib": [256],
+    "fc_base_id": "fc-shioenv",
+    "fc_path": "/usr/local/bin/firecracker",
+    "fc_active_tmp_path": "/tmp/fc-shioenv/",
+    "tap_host": true,
+    "fc_tap_dns": "10.100.1.1"
+  },
+
+  "env": {
+    "exec_method": "firecracker",
+    "global_horizon": 1,
+    "local_horizon": 8,
+    "horizon_margin": 4,
+
+    "cache_size": 25000,
+    "noise_runs": 3,
+    "noise_sigmaK": 1.0,
+
+    "get_final_score": true,
+    "contrib_samples": 128,
+    "timeout": 10
+  },
+
+  "runner": {
+    "verbose": false,
+    "debug": false,
+    "n_workers": 50,
+    "seed": 1,
+    "utility_map": "maps/util_map.json",
+    "repeat_productions": "maps/repeat_productions.json",
+    "test_cmd": ["[df]", "[cd]", "[w]", "[ls]", "[chmod]", "[chown]", "[chgrp]", "[rm]", "[file]", "[uname]",
+      "[find]", "[who]", "[du]", "[ps]", "[echo]", "[ulimit]", "[uptime]", "[pwd]", "[dd]", "[ln]",
+      "[touch]", "[free]", "[id]", "[export]", "[env]", "[last]", "[grep]", "[tar]", "[gzip]", "[cat]",
+      "[wc]", "[rmdir]", "[mkdir]", "[mv]", "[cp]", "[ethtool]", "[date]", "[dmesg]", "[lsblk]", "[lscpu]"],
+
+    "runprefix": "dataset",
+    "grammar_mask": true,
+    "random_arg_weight": 3,
+    "early_stop_repeated": true
+  },
+  "dataset": {
+    "intermed_dataset": true,
+    "dataset_every": 20000,
+    "datadir": "data/",
+    "datafile": "data.ndjson",
+    "seqsfile": "seqs.json",
+    "dataset_size": 10000,
+    "dataset_store_every": 500
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "env_vars": {
+    "repeatable": true,
+    "root": false,
+    "command": {
+      "export SHELL=": [
+        "/bin/bash",
+        "/bin/zsh",
+        "/bin/sh",
+        "/usr/bin/bash",
+        "/usr/bin/zsh",
+        "/usr/bin/sh"
+      ],
+      "export SHLVL=": [
+        "1",
+        "2",
+        "3"],
+      "export XDG_SESSION_CLASS=": [
+        "user",
+        "greeter"
+      ],
+      "export OLDPWD=": [
+        "[GlobalDirectory]"
+      ],
+      "export LANG=": [
+        "en_US.UTF-8",
+        "C.UTF-8"
+      ],
+      "export TERM=": [
+        "xterm-256color",
+        "linux",
+        "vt100"
+      ],
+      "export MAIL=": [
+        "/var/mail/demo",
+        "/var/spool/mail/root"
+      ],
+      "export EDITOR=": [
+        "vim",
+        "nano",
+        "code",
+        "emacs"
+      ],
+      "export HISTFILESIZE=": [
+        "5000",
+        "10000",
+        "20000"
+      ],
+      "export HISTSIZE=": [
+        "1000",
+        "5000",
+        "10000"
+      ],
+      "export LOGNAME=": [
+        "demo",
+        "root",
+        "[Username]"
+      ],
+      "export MOTD_SHOWN=": [
+        "pam",
+        "update-motd",
+        "static"
+      ],
+      "export HOME=": [
+        "/root",
+        "/home/[Username]"],
+      "export WAYLAND_DISPLAY=": [
+        "wayland-0",
+        "wayland-1"
+      ],
+      "export LESSOPEN=": [
+        "|/usr/bin/lesspipe %s"
+      ],
+      "export USER=": [
+        "[Username]"
+      ],
+      "export DISPLAY=": [
+        ":0",
+        ":1",
+        "localhost:10.0"
+      ],
+      "export XDG_RUNTIME_DIR=": [
+        "/run/user/1000",
+        "/run/user/0"
+      ],
+      "export XDG_DATA_DIRS=": [
+        "/usr/share/gnome:/usr/local/share/:/usr/share/",
+        "/usr/share"
+      ],
+      "export DBUS_SESSION_BUS_ADDRESS=": [
+        "unix:path=/run/user/1000/bus",
+        "systemd:guid=abcdef"
+      ],
+      "export HOSTTYPE=": [
+        "x86_64",
+        "aarch64"
+      ],
+      "export PULSE_SERVER=": [
+        "unix:/run/user/1000/pulse/native",
+        "tcp:127.0.0.1:4713"
+      ],
+      "export _=": [
+        "/usr/bin/env",
+        "/bin/true"
+      ],
+      "export _CE_M=": [
+        "-m"
+      ],
+      "export XDG_SESSION_TYPE=": [
+        "wayland",
+        "x11",
+        "tty"
+      ],
+      "export SSH_CONNECTION=": [
+        "192.168.0.2 34567 192.168.0.10 22",
+        "10.0.0.5 55555 10.0.0.10 22"
+      ],
+      "export SSH_CLIENT=": [
+        "192.168.0.2 34567 192.168.0.10 22",
+        "10.0.0.5 55555 10.0.0.10 22"
+      ],
+      "export LIBVIRT_DEFAULT_URI=": [
+        "qemu:///system",
+        "xen:///system"
+      ],
+      "export XDG_SESSION_ID=": [
+        "1",
+        "c2"
+      ]
+  }
+  },
+  "ulimit": {
+    "repeatable": true,
+    "root": false,
+    "command": {
+      "ulimit -c ": [
+        "0",
+        "1048576",
+        "unlimited"
+      ],
+      "ulimit -d ": [
+        "2097152",
+        "unlimited"
+      ],
+      "ulimit -e ": [
+        "0",
+        "20"
+      ],
+      "ulimit -f ": [
+        "10240",
+        "524288",
+        "unlimited"
+      ],
+      "ulimit -i ": [
+        "512",
+        "16384"
+      ],
+      "ulimit -l ": [
+        "64",
+        "65536"
+      , "unlimited"
+      ],
+      "ulimit -m ": [
+        "131072",
+        "262144",
+        "524288",
+        "unlimited"
+      ],
+      "ulimit -n ": [
+        "512",
+        "1024",
+        "2048",
+        "4096",
+        "8192"
+      ],
+      "ulimit -p ": [
+        "8",
+        "32",
+        "64",
+        "512"
+      ],
+      "ulimit -q ": [
+        "819200",
+        "unlimited"
+      ],
+      "ulimit -r ": [
+        "0",
+        "50",
+        "99"
+      ],
+      "ulimit -s ": [
+        "4096",
+        "8192",
+        "65532",
+        "unlimited"
+      ],
+      "ulimit -t ": [
+        "60",
+        "300",
+        "600",
+        "unlimited"
+      ],
+      "ulimit -u ": [
+        "256",
+        "512",
+        "4096",
+        "8192",
+        "513575",
+        "1027150",
+        "unlimited"
+      ],
+      "ulimit -v ": [
+        "2097152",
+        "4194304",
+        "8388608",
+        "16777216",
+        "unlimited"
+      ],
+      "ulimit -x ": [
+        "64",
+        "128",
+        "512",
+        "unlimited"
+      ]
+    }
+
+  },
+  "datetime": {
+    "repeatable": false,
+    "root": true,
+    "command": {
+      "date --set=\"2019-[Month]-[Day]\"": [],
+      "date --set=\"2020-[Month]-[Day]\"": [],
+      "date --set=\"2021-[Month]-[Day]\"": [],
+      "date --set=\"2022-[Month]-[Day]\"": [],
+      "date --set=\"2023-[Month]-[Day]\"": [],
+      "date --set=\"2024-[Month]-[Day]\"": [],
+      "date --set=\"2025-[Month]-[Day]\"": []
+    }
+  },
+  "tz": {
+    "repeatable": false,
+    "root": true,
+    "command": {
+      "timedatectl set-timezone UTC": [],
+      "timedatectl set-timezone America/Chicago": [],
+      "timedatectl set-timezone America/New_York": [],
+      "timedatectl set-timezone America/Denver": [],
+      "timedatectl set-timezone America/Los_Angeles": [],
+      "timedatectl set-timezone Europe/London": [],
+      "timedatectl set-timezone Europe/Paris": [],
+      "timedatectl set-timezone Asia/Tokyo": [],
+      "timedatectl set-timezone Asia/Shanghai": [],
+      "timedatectl set-timezone Australia/Sydney": []
+    }
+  },
+  "cd": {
+    "repeatable": false,
+    "root": false,
+    "command": {
+      "cd [GlobalDirectory]": []
+    }
+  },
+  "groupadd": {
+    "repeatable": true,
+    "root": true,
+    "command": {
+      "grpnew=[String]; addgroup $grpnew; usermod -aG $grpnew [Username]; exec newgrp $grpnew; unset grpnew": [],
+      "grpnew=[Variable]; addgroup $grpnew; usermod -aG $grpnew [Username]; exec newgrp $grpnew; unset grpnew": [],
+      "grpnew=docker; addgroup $grpnew; usermod -aG $grpnew [Username]; exec newgrp $grpnew; unset grpnew": [],
+      "grpnew=libvirt; addgroup $grpnew; usermod -aG $grpnew [Username]; exec newgrp $grpnew; unset grpnew": [],
+      "grpnew=wireshark; addgroup $grpnew; usermod -aG $grpnew [Username]; exec newgrp $grpnew; unset grpnew": [],
+      "grpnew=[Groupname]; usermod -aG $grpnew [Username]; exec newgrp $grpnew; unset grpnew": []
+    }
+  },
+  "iptables": {
+    "repeatable": true,
+    "root": true,
+    "command": {
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A INPUT -p tcp --dport 22 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A INPUT -p tcp --dport 80 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A INPUT -p tcp --dport 443 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -m conntrack --ctstate NEW,ESTABLISHED,RELATED -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A INPUT -s 10.0.0.0/8 -j DROP 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -p icmp -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A FORWARD -i eth0 -o eth1 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -I INPUT 1 -p tcp --dport 3306 -j DROP 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -D INPUT -p tcp --dport 22 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A INPUT -i lo -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -o lo -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A INPUT -p icmp -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -p udp --dport 53 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -p tcp --dport 53 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -p tcp --dport 80 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -p tcp --dport 443 -j ACCEPT 2>/dev/null": [],
+      "$(which iptables-legacy 2>/dev/null || which iptables) -A OUTPUT -p tcp --dport 22 -j ACCEPT 2>/dev/null": []
+    }
+  }
+}
