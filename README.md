@@ -205,10 +205,10 @@ Bug reports and pull requests are welcome. Please include a minimal reproduction
 If this dataset is used in support of research, please use the following citation:
 
 ```bibtex
-@misc{ragsdale2025shioenv,
-      title={ShIOEnv: A CLI Behavior-Capturing Environment Enabling Grammar-Guided Command Synthesis for Dataset Curation}, 
+@misc{ragsdale2026shioenv,
+      title={ShIOEnv: A Command Evaluation Environment for Grammar-Constrained Synthesis and Execution Behavior Modeling}, 
       author={Jarrod Ragsdale and Rajendra Boppana},
-      year={2025},
+      year={2026},
       eprint={2505.18374},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
